@@ -10,42 +10,60 @@
 <body>
 
 <div id="mySidebar" class="sidebar">
+
+<div class="text-center">
+  <img src="./assets/images/pain-k.png" alt="" width="120">
+</div>
+
+<h2 class="text-end text-center text-white">Bonjour</br>
+<?php if(isset($_SESSION['Auth'])){
+    echo $_SESSION['Auth']->firstname;
+     } ?>
+     </h2>
+
+<?php if(isset($_SESSION['Auth'])){ ?>
+  
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
-  <!-- <a href="#">About</a>
-  <a href="#">Services</a>
-  <a href="#">Clients</a> -->
-  <a href="#">Log out</a>
-  <button class="dropdown-btn">Categories
+ 
+  <a href="index.php?action=logout"><i class="fas fa-sign-out-alt"></i>Log out</a>
+
+  <div style="height:10px"></div>
+
+  <button class="dropdown-btn"><i class="fas fa-layer-group "></i>Categories
     <i class="fa fa-caret-down"></i>
   </button>
   <div class="dropdown-container">
-    <a href="index.php?action=list_cat">List</a>
-    <a href="index.php?action=add_cat">Add</a>
+    <a href="index.php?action=list_cat"><i class="fas fa-list"></i>List</a>
+    <a href="index.php?action=add_cat"><i class="fas fa-plus"></i>Add</a>
   </div>
 
-  <button class="dropdown-btn">Carving
+  <button class="dropdown-btn"><i class="fas fa-monument "></i>Carving
     <i class="fa fa-caret-down"></i>
   </button>
   <div class="dropdown-container">
-    <a href="index.php?action=list_carv">List</a>
-    <a href="index.php?action=add_carv">Add</a>
+    <a href="index.php?action=list_carv"><i class="fas fa-list"></i>List</a>
+    <a href="index.php?action=add_carv"><i class="fas fa-plus"></i>Add</a>
+  </div>
+  <?php if($_SESSION['Auth']->id_g != 3) {?>
+  <button class="dropdown-btn"><i class="fas fa-graduation-cap "></i>Grades
+    <i class="fa fa-caret-down"></i>
+  </button>
+  <div class="dropdown-container">
+    <a href="index.php?action=list_gr"><i class="fas fa-list"></i>List</a>
+    <a href="index.php?action=add_gr"><i class="fas fa-plus"></i>Add</a>
   </div>
 
-  <button class="dropdown-btn">Grades
+  <button class="dropdown-btn"><i class="fas fa-users "></i>Users
     <i class="fa fa-caret-down"></i>
   </button>
   <div class="dropdown-container">
-    <a href="index.php?action=list_gr">List</a>
-    <a href="index.php?action=add_gr">Add</a>
+    <a href="index.php?action=list_us"><i class="fas fa-list"></i>List</a>
+    <?php if($_SESSION['Auth']->id_g == 1) { ?>
+      <a href="index.php?action=record"><i class="fas fa-plus"></i>Recording</a>
+    <?php } ?>
   </div>
-
-  <button class="dropdown-btn">Users
-    <i class="fa fa-caret-down"></i>
-  </button>
-  <div class="dropdown-container">
-    <a href="index.php?action=list_us">List</a>
-    <a href="index.php?action=record">Recording</a>
-  </div>
+  <?php }} ?>
+  <a href="index.php" class="text-end "><i class="fas fa-arrow-circle-left"></i></a>
 </div>
 
 <div id="main">

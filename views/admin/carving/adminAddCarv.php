@@ -22,37 +22,35 @@
                         <?php   } ;?>
                         </select>
                     </div>
+                    <div class="col">
+                        <label for="dime">Dimension</label>
+                        <input type="text" id="dime" name="dime" class="form-control" placeholder="Please enter a dimension" >
+                    </div>
                 </div>
                 <div class="row">
-                    <div class="col">
-                        <label for="prix">Price</label>
-                        <input type="text" id="price" name="price" class="form-control" placeholder="Please enter a price" >
-                    </div>
                     <div class="col">
                         <label for="quantity">Quantity</label>
                         <input type="number" id="quantity" name="quantity" class="form-control" placeholder="Please enter your content" >
                     </div>
                     <div class="col">
-                        <label for="crea_date">Creation.D</label>
-                        <input type="date" id="crea_date" name="crea_date" class="form-control" placeholder="Please enter a creation date'" >
+                        <label for="prix">Price</label>
+                        <input type="text" id="price" name="price" class="form-control" placeholder="Please enter a price" >
+                    </div>
+                    <div class="col">
+                        <label for="date">Date.C</label>
+                        <input type="date" id="date" name="date" class="form-control" placeholder="Please enter a date'" >
                     </div>
                 </div>
                 <div class="row">
                     <div class="col">
-                        <label for="picture_f">Picture.F</label>
-                        <input type="file" id="image_f" name="image_f" class="form-control"  >
+                        <label for="image">Picture</label>
+                        <input type="file" id="image" name="image" class="form-control"  >
                     </div>
                 </div>
                 <div class="row">
                     <div class="col">
-                        <label for="picture_l">Picture.L</label>
-                        <input type="file" id="image_l" name="image_l" class="form-control"  >
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col">
-                        <label for="picture_r">Picture.R</label>
-                        <input type="file" id="image_r" name="image_r" class="form-control"  >
+                        <label for="qual">Quality</label>
+                        <textarea id="qual" name="qual" class="form-control" placeholder="Please enter the quality" rows="2"></textarea>
                     </div>
                 </div>
                 <div class="row">
@@ -61,7 +59,7 @@
                         <textarea id="content" name="content" class="form-control" placeholder="Please enter your content" rows="5"></textarea>
                     </div>
                 </div>
-                <button type="submit" class="btn btn-primary  col-12 mt-2" name="submit">Add</button>
+                <button type="submit" class="btn btn-success  col-12 mt-2" name="submit">Add</button>
             </form>
          </div>
      </div>

@@ -5,24 +5,28 @@ class Carving{
     private $id_carv;
     private $name;
     private $content;
-    private $crea_date;
-    private $picture_f;
-    private $picture_l;
-    private $picture_r;
+    private $picture;
+    private $dimension;
+    private $date;
+    private $quality;
     private $quantity;
     private $price;
     private $category;
+    private $shopping;
+    private $customer;
     
 
     
     public function __construct()
     {
         $this->category = new Category();
+        //$this->shopping = new Shopping();
+        //$this->customer = new Customer();
         
     }
 
     
-
+  
 
 
     /**
@@ -86,21 +90,81 @@ class Carving{
     }
 
     /**
-     * Get the value of price
+     * Get the value of picture
      */ 
-    public function getPrice()
+    public function getPicture()
     {
-        return $this->price;
+        return $this->picture;
     }
 
     /**
-     * Set the value of price
+     * Set the value of picture
      *
      * @return  self
      */ 
-    public function setPrice($price)
+    public function setPicture($picture)
     {
-        $this->price = $price;
+        $this->picture = $picture;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of dimension
+     */ 
+    public function getDimension()
+    {
+        return $this->dimension;
+    }
+
+    /**
+     * Set the value of dimension
+     *
+     * @return  self
+     */ 
+    public function setDimension($dimension)
+    {
+        $this->dimension = $dimension;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of date
+     */ 
+    public function getDate()
+    {
+        return $this->date;
+    }
+
+    /**
+     * Set the value of date
+     *
+     * @return  self
+     */ 
+    public function setDate($date)
+    {
+        $this->date = $date;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of quality
+     */ 
+    public function getQuality()
+    {
+        return $this->quality;
+    }
+
+    /**
+     * Set the value of quality
+     *
+     * @return  self
+     */ 
+    public function setQuality($quality)
+    {
+        $this->quality = $quality;
 
         return $this;
     }
@@ -126,62 +190,21 @@ class Carving{
     }
 
     /**
-     * Get the value of picture_f
+     * Get the value of price
      */ 
-    public function getPicture_f()
+    public function getPrice()
     {
-        return $this->picture_f;
+        return $this->price;
     }
 
     /**
-     * Set the value of picture_f
+     * Set the value of price
      *
      * @return  self
      */ 
-    public function setPicture_f($picture_f)
+    public function setPrice($price)
     {
-        $this->picture_f = $picture_f;
-
-        return $this;
-    }
-
-    
-    /**
-     * Get the value of picture_l
-     */ 
-    public function getPicture_l()
-    {
-        return $this->picture_l;
-    }
-
-    /**
-     * Set the value of picture_l
-     *
-     * @return  self
-     */ 
-    public function setPicture_l($picture_l)
-    {
-        $this->picture_l = $picture_l;
-
-        return $this;
-    }
-
-    /**
-     * Get the value of picture_r
-     */ 
-    public function getPicture_r()
-    {
-        return $this->picture_r;
-    }
-
-    /**
-     * Set the value of picture_r
-     *
-     * @return  self
-     */ 
-    public function setPicture_r($picture_r)
-    {
-        $this->picture_r = $picture_r;
+        $this->price = $price;
 
         return $this;
     }
@@ -205,25 +228,4 @@ class Carving{
 
         return $this;
     }
-
-    /**
-     * Get the value of crea_date
-     */ 
-    public function getCrea_date()
-    {
-        return $this->crea_date;
-    }
-
-    /**
-     * Set the value of crea_date
-     *
-     * @return  self
-     */ 
-    public function setCrea_date($crea_date)
-    {
-        $this->crea_date = $crea_date;
-
-        return $this;
-    }
-
 }

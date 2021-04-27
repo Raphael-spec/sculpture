@@ -10,10 +10,10 @@
             <th>Login</th>
             <th>Mail</th>
             <th>Grade</th>
-            <?php //if($_SESSION['Auth']->id_g == 1){ ?>
+            <?php if($_SESSION['Auth']->id_g == 1){ ?>
             <th class="text-center">In/Out</th>
             <th colspan="2" class="text-center">Actions</th>
-            <?php //} ?>
+            <?php } ?>
         </tr>
     </thead>
     <tbody>
@@ -25,14 +25,11 @@
             <td><?=$user->getLogin();?></td>
             <td><?=$user->getMail();?></td>
             <td><?=$user->getGrade()->getName_g();?></td>
-            
+            <?php if($_SESSION['Auth']->id_g == 1){ ?>
 
 
             <td class="text-center">
-                <!-- <a class="btn btn-success" href="">
-                    <i class="fas "></i>
-                    <?//php echo($user->getStatut()) ?"Désactiver" : "Activer";?>
-                </a> -->
+               
                 <?php
                    echo ($user->getStatus())
                     ? "<a href='index.php?action=list_us&id=".$user->getId_u()."&status=".$user->getStatus()."' onclick='return confirm(`Are you sure you want to unlock this status?`)' class='btn btn-success'><i class='fas fa-unlock'>Unlock</i></a>"
@@ -51,7 +48,7 @@
                 </a>
               </td>
           
-            
+              <?php } ?>
         </tr>
         <?php } ?>
     </tbody>

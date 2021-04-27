@@ -10,10 +10,10 @@ class AdminCarvingModel extends Tree{
                         FROM carving cv
                         INNER JOIN category ca
                         ON cv.id_cat = ca.id_cat
-                        WHERE name LIKE :name OR name_cat LIKE :name_cat OR crea_date LIKE :crea_date
+                        WHERE name LIKE :name OR name_cat LIKE :name_cat OR date LIKE :date
                         ORDER BY id_carv ASC";
             
-            $searchPar = ["name"=>"$search%", "name_cat"=>"$search%", "crea_date"=>"$search%"];
+            $searchPar = ["name"=>"$search%", "name_cat"=>"$search%", "date"=>"$search%"];
             
             $result = $this->getRequest($sql, $searchPar);
             //$carvings = $result->fetchAll(PDO::FETCH_OBJ);
@@ -39,11 +39,11 @@ class AdminCarvingModel extends Tree{
             $c = new Carving();
             $c->setId_carv($carv->id_carv);
             $c->setName($carv->name);
+            $c->setPicture($carv->picture);
+            $c->setDimension($carv->dimension);
+            $c->setDate($carv->date);
+            $c->setQuality($carv->quality);
             $c->setContent($carv->content);
-            $c->setCrea_date($carv->crea_date);
-            $c->setPicture_f($carv->picture_f);
-            $c->setPicture_l($carv->picture_l);
-            $c->setPicture_r($carv->picture_r);
             $c->setQuantity($carv->quantity);
             $c->setPrice($carv->price);
             $c->getCategory()->setId_cat($carv->id_cat);
@@ -75,17 +75,17 @@ class AdminCarvingModel extends Tree{
     
     public function PutCarving(Carving $carvi){
 
-        $sql = "INSERT INTO carving(name, content, crea_date, picture_f, picture_l, picture_r, quantity, price, id_cat)
-                VALUES(:name, :content, :crea_date, :picture_f, :picture_l, :picture_r, :quantity, :price, :id_cat)";
+        $sql = "INSERT INTO carving(name, picture, dimension, date, quality, content, quantity, price, id_cat)
+                VALUES(:name, :picture, :dimension, :date, :quality, :content, :quantity, :price, :id_cat)";
         
         $tabParam = [
 
             "name"=>$carvi->getName(),
+            "picture"=>$carvi->getPicture(),
+            "dimension"=>$carvi->getDimension(),
+            "date"=>$carvi->getDate(),
+            "quality"=>$carvi->getQuality(),
             "content"=>$carvi->getContent(),
-            "crea_date"=>$carvi->getCrea_date(),
-            "picture_f"=>$carvi->getPicture_f(),
-            "picture_l"=>$carvi->getPicture_l(),
-            "picture_r"=>$carvi->getPicture_r(),
             "quantity"=>$carvi->getQuantity(),
             "price"=>$carvi->getPrice(),
             "id_cat"=>$carvi->getCategory()->getId_cat()
@@ -116,13 +116,13 @@ class AdminCarvingModel extends Tree{
             
             $editCar->setId_carv($carvRow->id_carv);
             $editCar->setName($carvRow->name);
+            $editCar->setPicture($carvRow->picture);
+            $editCar->setDimension($carvRow->dimension);
+            $editCar->setDate($carvRow->date);
+            $editCar->setQuality($carvRow->quality);
             $editCar->setContent($carvRow->content);
-            $editCar->setCrea_date($carvRow->crea_date);
             $editCar->setQuantity($carvRow->quantity);
             $editCar->setPrice($carvRow->price);
-            $editCar->setPicture_f($carvRow->picture_f);
-            $editCar->setPicture_l($carvRow->picture_l);
-            $editCar->setPicture_r($carvRow->picture_r);
             $editCar->getCategory()->setId_cat($carvRow->id_cat);
             // $editCar->getCategory()->setName_cat($CarvRow->name_cat);
 
@@ -133,44 +133,48 @@ class AdminCarvingModel extends Tree{
 
     public function changeCarv(Carving $upCar){
 
-        if($upCar->getPicture_f() === "" || $upCar->getPicture_l() === "" || $upCar->getPicture_r() === "" ){
+        if($upCar->getPicture() === "" ){
             
             $sql = "UPDATE carving
-                    SET name = :name, content = :content, crea_date = :crea_date, quantity = :quantity, price = :price, id_cat = :id_cat
+                    SET name = :name, dimension = :dimension, date = :date, quality = :quality, content = :content, quantity = :quantity, price = :price, id_cat = :id_cat
                     WHERE id_carv = :id_carv";
             
-            $tabParams = [  "name"=>$upCar->getName(),
+            $tabParams = [  
+                            "name"=>$upCar->getName(),
+                            "dimension"=>$upCar->getDimension(),
+                            "date"=>$upCar->getDate(),
+                            "quality"=>$upCar->getQuality(), 
                             "content"=>$upCar->getContent(), 
-                            "crea_date"=>$upCar->getCrea_date(), 
                             "quantity"=>$upCar->getQuantity(), 
                             "price"=>$upCar->getPrice(), 
                             "id_cat"=>$upCar->getCategory()->getId_cat(), 
                             "id_carv"=>$upCar->getId_carv()
                         ];
-        }else{
         
-            $sql = "UPDATE carving
-                    SET name = :name, content = :content, crea_date = :crea_date, picture_f = :picture_f, picture_l = :picture_l, picture_r = :picture_r, quantity = :quantity, price = :price, id_cat = :id_cat
-                    WHERE id_carv = :id_carv";
-                        
-                $tabParams = [
-                                "name"=>$upCar->getName(),
-                                "content"=>$upCar->getContent(), 
-                                "crea_date"=>$upCar->getCrea_date(), 
-                                "picture_f"=>$upCar->getPicture_f(), 
-                                "picture_l"=>$upCar->getPicture_l(), 
-                                "picture_r"=>$upCar->getPicture_r(), 
-                                "quantity"=>$upCar->getQuantity(), 
-                                "price"=>$upCar->getPrice(),
-                                "id_cat"=>$upCar->getCategory()->getId_cat(), 
-                                "id_carv"=>$upCar->getId_carv()
-
-                            ];
             
-        }
+        }else{
+                
+            $sql = "UPDATE carving
+                    SET name = :name, picture = :picture, dimension = :dimension, date = :date, quality = :quality, content = :content, quantity = :quantity, price = :price, id_cat = :id_cat
+                    WHERE id_carv = :id_carv";
+    
+                    
+            $tabParams = [
+                            "name"=>$upCar->getName(),
+                            "picture"=>$upCar->getPicture(), 
+                            "dimension"=>$upCar->getDimension(),
+                            "date"=>$upCar->getDate(),
+                            "quality"=>$upCar->getQuality(), 
+                            "content"=>$upCar->getContent(), 
+                            "quantity"=>$upCar->getQuantity(), 
+                            "price"=>$upCar->getPrice(),
+                            "id_cat"=>$upCar->getCategory()->getId_cat(), 
+                            "id_carv"=>$upCar->getId_carv()
+                        ];
+            
+            }
 
-          $result = $this->getRequest($sql, $tabParams);
-
-         return $result->rowCount();
+                $result = $this->getRequest($sql, $tabParams);
+                return $result->rowCount();
     }
 }

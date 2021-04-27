@@ -12,8 +12,10 @@ class AdminGradeController{
     //___________________________________________________________//
 
     public function listGrades(){
-
-        $allGr = $this->adGrM->getGrade();
+        AuthController::isLogged();
+            
+        
+            $allGr = $this->adGrM->getGrade();
         
         require_once('./views/admin/grades/adminGradeList.php');
     }
@@ -21,8 +23,10 @@ class AdminGradeController{
     //___________________________________________________________//
 
     public function eraseGr(){
-
-        if(isset($_GET['id']) && $_GET['id'] < 1000 && filter_var($_GET['id'], FILTER_VALIDATE_INT)){
+        AuthController::isLogged();
+            AuthController::accessUser();
+        
+            if(isset($_GET['id']) && $_GET['id'] < 1000 && filter_var($_GET['id'], FILTER_VALIDATE_INT)){
             $id = trim($_GET['id']);
             
             $nbLine = $this->adGrM->deleteGrade($id);
@@ -37,7 +41,8 @@ class AdminGradeController{
     //___________________________________________________________//
 
        public function addGr(){
-        //AuthController::isLogged();//(2) Pour s'authentifier 
+        AuthController::isLogged();
+            AuthController::accessUser();
 
         if(isset ($_POST['submit']) && !empty($_POST['grade'])){
             
@@ -60,7 +65,8 @@ class AdminGradeController{
     //___________________________________________________________//
 
     public function editGr(){
-        // AuthController::isLogged();//(2) Pour s'authentifier 
+        AuthController::isLogged();
+            AuthController::accessUser();
 
        if(isset($_GET['id']) && $_GET['id'] < 1000 && filter_var($_GET['id'], FILTER_VALIDATE_INT)){
        

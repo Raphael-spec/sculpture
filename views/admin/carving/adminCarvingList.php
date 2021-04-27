@@ -14,10 +14,9 @@
           <tr>
               <th>Id</th>
               <th>Name</th>
-              <th>Picture.F</th>
-              <th>Picture.L</th>
-              <th>Picture.R</th>
-              <th>Creation D</th>
+              <th>Picture</th>
+              <th>Dimension</th>
+              <th>Date</th>
               <th>Content</th>
               <th>Price</th>
               <th>Category</th>
@@ -29,10 +28,9 @@
           <?php if(is_array($carvs)){ foreach ($carvs as $carv) { ?>
               <td><?=$carv->getId_carv();?></td>
               <td><?=$carv->getName();?></td>
-              <td><img src="./assets/images/<?=$carv->getPicture_f();?>" alt="" width="75"></td>
-              <td><img src="./assets/images/<?=$carv->getPicture_l();?>" alt="" width="75"></td>
-              <td><img src="./assets/images/<?= $carv->getPicture_r();?>" alt="" width="75"></td>
-              <td><?=$carv->getCrea_date();?></td>
+              <td><img src="./assets/images/<?=$carv->getPicture();?>" alt="" width="75"></td>
+              <td><?=$carv->getDimension();?></td>
+              <td><?=$carv->getDate();?></td>
               <td><?=$carv->getContent();?></td>
               <td><?=$carv->getPrice();?></td>
               <td><?=$carv->getCategory()->getName_cat();?></td>
@@ -41,14 +39,14 @@
                     <i class="fas fa-pen"></i>
                 </a>
               </td>
-              <?php// if($_SESSION['Auth']->id_g != 3){ ?>
+              <?php if($_SESSION['Auth']->id_g != 3){ ?>
               <td  class="text-center">
                 <a class="btn btn-danger" href="index.php?action=delete_carv&id=<?=$carv->getId_carv();?>"
                     onclick="return confirm('Are you sure, you want to delete this carving?')">
                     <i class="fas fa-trash"></i>
                 </a>
               </td>
-              <?php //} ?>
+              <?php } ?>
           </tr>
           <?php }}else{ echo"<tr class='text-center text-danger'><td colspan='10' >".$carvs."</td></tr>";} ?>
       </tbody>

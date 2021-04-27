@@ -1,4 +1,7 @@
-<?php ob_start();?>
+<?php ob_start();
+var_dump($_FILES);
+
+?>
 
  <div class="container">
      <div class="row">
@@ -33,37 +36,36 @@
                         </select>
                     </div>
                     <div class="col">
-                        <label for="crea_date">Creation.D</label>
-                        <input type="text" id="crea_date" name="crea_date" class="form-control" value="<?=$editCar->getCrea_date();?>" >
+                        <label for="date">Date.C</label>
+                        <input type="date" id="date" name="date" class="form-control" value="<?=$editCar->getDate();?>" >
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col">
-                        <label for="price">Price</label>
-                        <input type="text" id="price" name="price" class="form-control" value="<?=$editCar->getPrice();?>" >
-                    </div>
-                    <div class="col">
+                    <div class="container col-6 ">
+                        <label for="dime">Dimension</label>
+                        <input type="text" id="dime" name="dime" class="form-control" value="<?=$editCar->getDimension();?>" >
+                   
+                    
                         <label for="quantity">Quantity</label>
                         <input type="number" id="quantity" name="quantity" class="form-control" value="<?=$editCar->getQuantity();?>" >
+                  
+                    
+                        <label for="price">Price</label>
+                        <input type="text" id="price" name="price" class="form-control" value="<?=$editCar->getPrice();?>" >
+                   
+                        <label for="image">Picture</label>
+                        <input type="file" id="image" name="image" class="form-control"  >
+                     </div>
+              
+                     <div class="container  col-6 ">
+                        <img src="./assets/images/<?=$editCar->getPicture();?>" alt="" width="348"  class="img-thumbnail mt-3">
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col">
-                        <label for="picture_f">Picture.F</label>
-                        <input type="file" id="picture_f" name="picture_f" class="form-control"  >
-                        <img src="./assets/images/<?=$editCar->getPicture_f();?>" alt="" width="230" class="img-thumbnail mt-3">
+                    <div class="col mt-3">
+                        <label for="qual">Quality</label>
+                        <textarea id="qual" name="qual" class="form-control" rows="2"><?=$editCar->getQuality();?></textarea>
                     </div>
-                    <div class="col">
-                        <label for="picture_l">Picture.L</label>
-                        <input type="file" id="picture_l" name="picture_l" class="form-control"  >
-                        <img src="./assets/images/<?=$editCar->getPicture_l();?>" alt="" width="230" class="img-thumbnail mt-3">
-                    </div>
-                    <div class="col">
-                        <label for="picture_r">Picture.R</label>
-                        <input type="file" id="picture_r" name="picture_r" class="form-control"  >
-                        <img src="./assets/images/<?=$editCar->getPicture_r();?>" alt="" width="230" class="img-thumbnail mt-3">
-                    </div>
-                    
                 </div>
                 <div class="row">
                     <div class="col mt-3">

@@ -12,7 +12,7 @@ class AdminUserController{
     }
 
     public function listUsers(){
-        //AuthController::isLogged();//(2) Pour s'authentifier 
+        AuthController::isLogged();
         
         if(isset($_GET['id']) && isset($_GET['status']) && !empty($_GET['id'])){
             
@@ -36,12 +36,10 @@ class AdminUserController{
         $allUsers = $this->adUseM->getUser();
         
         require_once('./views/admin/users/adminUsersList.php');
-        //return $allUsers;
     }
 //___________________________________________________________//    
 
     public function login(){
-        //AuthController::isLogged();//(2) Pas sur le login, on veut pas securiser le login
         
         if(isset($_POST['submit'])){
             
@@ -55,8 +53,8 @@ class AdminUserController{
                 if(!empty($data_u)){
                     
                     if($data_u->status > 0){
-                        //session_start();
-                        //$_SESSION['Auth'] = $data_u;
+                        session_start();
+                        $_SESSION['Auth'] = $data_u;
                         header('location:index.php?action=list_carv');
         
                     }else{
@@ -78,7 +76,7 @@ class AdminUserController{
     //___________________________________________________________//
 
     public function addUser(){
-        //AuthController::isLogged();
+        AuthController::isLogged();
         
         if(isset($_POST['submit'])){
 
@@ -118,8 +116,7 @@ class AdminUserController{
     //___________________________________________________________//
 
     public function eraseUser(){
-
-        //AuthController::isLogged();
+        AuthController::isLogged();
         
         if(isset($_GET['id']) && filter_var($_GET['id'], FILTER_VALIDATE_INT)){
           
@@ -141,8 +138,7 @@ class AdminUserController{
     //___________________________________________________________//
 
     public function EditUser(){
-
-        //AuthController::isLogged();
+        AuthController::isLogged();
         
         if(isset($_GET['id']) && filter_var($_GET['id'], FILTER_VALIDATE_INT)){
             

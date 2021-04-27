@@ -20,13 +20,13 @@
                 <a class="btn btn-warning" href="index.php?action=edit_gr&id=<?=$grd->getId_g();?>">
                 <i class="fas fa-pen"></i></a>
             </td>
-            <?php // if($_SESSION['Auth']->id_g != 1){ ?>
+            <?php  if($_SESSION['Auth']->id_g == 1){ ?>
             <td class="text-center">
                 <a class="btn btn-danger" href="index.php?action=delete_gr&id=<?=$grd->getId_g();?>"
                 onclick="return confirm('Are you sure you want to delete this grade?')">
                 <i class="fas fa-trash"></i></a>
             </td>
-            <?php //} ?>
+            <?php } ?>
         </tr>
         <?php } ?>
     </tbody>
