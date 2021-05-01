@@ -102,6 +102,14 @@ class Maze{
                     case 'logout':
                         AuthController::logout();
                         break;
+
+                    case 'contact':
+                        $this->ctrPub->contact();
+                        break;
+
+                    case 'about':
+                        $this->ctrPub->about();
+                        break;
                 }
         
         }else{

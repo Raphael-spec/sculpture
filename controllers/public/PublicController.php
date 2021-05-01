@@ -26,7 +26,7 @@ class PublicController{
                 $tabCat = $this->pubCatM->getCategories();
                 $carvs = $this->pubCarM->getCarving($search);
                 
-                require_once('./views/public/accueil.php');
+                require_once('./views/public/features.php');
             }
             
             $id = trim(htmlentities(addslashes($_GET['id'])));
@@ -48,13 +48,27 @@ class PublicController{
                 $tabCat = $this->pubCatM->getCategories();
                 $carvs = $this->pubCarM->getCarving($search);
                 
-                require_once('./views/public/accueil.php');
+                require_once('./views/public/features.php');
             }
             
             $tabCat = $this->pubCatM->getCategories();
             $carvs = $this->pubCarM->getCarving();
 
-        require_once('./views/public/accueil.php');
+        require_once('./views/public/features.php');
         }
+    }
+    //___________________________________________________________//
+
+    public function contact(){
+
+        require_once('./views/public/contact.php');
+
+    }
+    //___________________________________________________________//
+    
+    public function about(){
+
+        require_once('./views/public/about.php');
+
     }
 }
