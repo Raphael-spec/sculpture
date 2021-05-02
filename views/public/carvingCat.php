@@ -1,12 +1,12 @@
 <?php ob_start(); 
 
- //var_dump($carvs)
+//var_dump($cars)
 ?>
 
-    <div class="row">
+<div class="row">
         <div class="col-8">
             <div class="row row-cols-1 row-cols-md-2 g-4">
-        <?php foreach($carvs as $carv){?>
+        <?php foreach($carvsbyCat as $carv){?>
                 <div class="col">
                     <div class="card">
                             <img src="./assets/images/<?= $carv->getPicture();?>" class="card-img-top" width="300" alt="...">
@@ -20,13 +20,15 @@
                                 <input type="hidden" name="picture" value="<?= $carv->getPicture();?>">
                                 <input type="hidden"  name="dime"value="<?= $carv->getDimension();?>">
                                 <input type="hidden"  name="date"value="<?= $carv->getDate();?>">
+                                <input type="hidden"  name="dime"value="<?= $carv->getDimension();?>">
                                 <input type="hidden"  name="qual"value="<?= $carv->getQuality();?>">
                                 <input type="hidden"  name="content"value="<?= $carv->getContent();?>">
+                                <input type="hidden"  name="qual"value="<?= $carv->getQuality();?>">
                                 <input type="hidden"  name="quant" value="<?= $carv->getQuantity();?>">
                                 <input type="hidden"  name="price" value="<?= $carv->getPrice();?>">
                                 <input type="hidden"  name="id_cat" value="<?= $carv->getCategory()->getId_cat();?>">
                                 <input type="hidden"  name="name_cat" value="<?= $carv->getCategory()->getName_cat();?>">
-                                  <button type="submit" name="pass_to" class="btn btn-outline-primary"> See more</button>
+                                  <button type="submit" name="passto" class="btn btn-outline-primary">See more</button>
                             </form>
                         </div>
                     </div>
@@ -62,7 +64,7 @@
                     </div>
                 </div>
 <!---------->
-</div>
+
 <?php $contenu = ob_get_clean();
     require_once("./views/public/templatePublic.php");
 ?>

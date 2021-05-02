@@ -110,6 +110,14 @@ class Maze{
                     case 'about':
                         $this->ctrPub->about();
                         break;
+                    
+                    case 'features':
+                        $this->ctrPub->getPubCarving();
+                         break;
+
+                    case 'glanceAt':
+                        $this->ctrPub->bringBack();
+                        break;
                 }
         
         }else{

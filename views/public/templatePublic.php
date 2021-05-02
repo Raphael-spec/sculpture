@@ -129,7 +129,7 @@
 </nav>
 </header>
 
-<main class="container mb-5">
+<main class="container mb-5 mt-5">
           <?=$contenu;?>
 
 </main> 

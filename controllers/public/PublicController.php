@@ -36,7 +36,7 @@ class PublicController{
             $c->getCategory()->setId_cat($id);
             
             $tabCat = $this->pubCatM->getCategories();
-            $carvCat = $this->pubMo->findCarvByCat($c);
+            $carvsbyCat = $this->pubMo->findCarvByCat($c);
             
             require_once('./views/public/carvingCat.php');
       
@@ -55,6 +55,29 @@ class PublicController{
             $carvs = $this->pubCarM->getCarving();
 
         require_once('./views/public/features.php');
+        }
+    }
+    //___________________________________________________________//
+
+    public function bringBack(){
+        
+        if(isset($_POST['pass_to']) && !empty($_POST['name']) && !empty($_POST['price'])){
+            
+            $id = htmlspecialchars(addslashes($_POST['id_carv']));
+            $name = htmlspecialchars(addslashes($_POST['name']));
+            $picture = htmlspecialchars(addslashes($_POST['picture']));
+            $dimension = htmlspecialchars(addslashes($_POST['dime']));
+            $date = htmlspecialchars(addslashes($_POST['date']));
+            $quality = htmlspecialchars(addslashes($_POST['qual']));
+            $content = htmlspecialchars(addslashes($_POST['content']));
+            $quantity = htmlspecialchars(addslashes($_POST['quant']));
+            $price = htmlspecialchars(addslashes($_POST['price']));
+            $id_cat = htmlspecialchars(addslashes($_POST['id_cat']));
+            $name_cat = htmlspecialchars(addslashes($_POST['name_cat']));
+
+
+            require_once('./views/public/carvingItem.php');
+
         }
     }
     //___________________________________________________________//
