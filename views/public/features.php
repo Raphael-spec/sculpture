@@ -52,8 +52,8 @@
                 <div class="container">
                     <div class="align-items-center offset-3">
                         <?php foreach($tabCat as $cat){ ?>
-                            <div class="col-10 border border-dark mt-5 mb-5">
-                                <a class=" btn text-center p-4 " href="index.php?action=features&id=<?=$cat->getId_cat();?>"><?=ucfirst($cat->getName_cat());?></a>
+                            <div class="col-10  mt-5 mb-5">
+                                <a class="border border-dark p-2" href="index.php?action=features&id=<?=$cat->getId_cat();?>"><?=ucfirst($cat->getName_cat());?></a>
                             </div>
                         <?php } ?>
                         <!-- <div class="col-12">

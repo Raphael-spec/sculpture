@@ -12,7 +12,7 @@
 <div id="mySidebar" class="sidebar">
 
 <div class="text-center">
-  <img src="./assets/images/pain-k.png" alt="" width="120">
+  <img src="./assets/images/lilnaruto.jpeg" alt="" width="120">
 </div>
 
 <h2 class="text-end text-center text-white">Bonjour</br>

@@ -1,7 +1,7 @@
 <?php ob_start();  ?>
 
 <div class="container-fluid" style="background-image:  url(./assets/images/forest.jpg); background-size: cover;">
-<section class ="contact"  ">
+<section class ="contact"  >
     <div class="content">
         <h2>Contact Us</h2>
         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque nesciunt ratione amet recusandae perferendis, saepe animi quae molestias sunt dolorum asperiores, omnis ad quod laboriosam. Labore perspiciatis sint maiores quam.</p>

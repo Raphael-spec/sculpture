@@ -22,6 +22,7 @@ class AdminCategoryModel extends Tree{
 
             $cat->setId_cat($row->id_cat);
             $cat->setName_cat($row->name_cat);
+            $cat->setPicture_cat($row->picture_cat);
             
             array_push($tabCat, $cat);
         }
@@ -46,23 +47,31 @@ class AdminCategoryModel extends Tree{
 
     public function putCategory(Category $cat){
         
-        $sql = "INSERT INTO category(name_cat)
-                VALUES(:name)";
+        $sql = "INSERT INTO category(name_cat, picture_cat)
+                VALUES(:name, :picture_cat)";
+
+            $tabParam = [
+
+                "name"=>$cat->getName_cat(),
+                "picture_cat"=>$cat->getPicture_cat()
+               
+                    ];
         
-        $result = $this->getRequest($sql,['name'=>$cat->getName_cat()]);
+        
+        $result = $this->getRequest($sql,$tabParam);
 
         return $result;
 
     }
     //___________________________________________________________//
 
-    public function collectCategory($id){
+    public function collectCategory(Category $paraCat){
         
         $sql = "SELECT *
                 FROM category
                 WHERE id_cat = :id";
        
-       $result = $this->getRequest($sql,['id'=>$id]);
+       $result = $this->getRequest($sql,['id'=>$paraCat->getId_cat()]);
         
        if($result->rowCount() > 0){
 
@@ -72,6 +81,7 @@ class AdminCategoryModel extends Tree{
            
             $cat->setId_cat($row->id_cat);
             $cat->setName_cat($row->name_cat);
+            $cat->setPicture_cat($row->picture_cat);
 
             return $cat;
 
@@ -80,17 +90,47 @@ class AdminCategoryModel extends Tree{
 
     public function changeCategory(Category $cat){ 
         
-        $sql = "UPDATE category
-                SET name_cat = :name
-                WHERE id_cat = :id";
+        // $sql = "UPDATE category
+        //         SET name_cat = :name_cat, picture_cat = :picture_cat
+        //         WHERE id_cat = :id";
         
-        $result = $this->getRequest($sql, ['name'=>$cat->getName_cat(), 'id'=>$cat->getId_cat()]);
+        // $result = $this->getRequest($sql, ['name_cat'=>$cat->getName_cat(), 'id'=>$cat->getId_cat(), 'picture_cat'=>$cat->getPicture_cat() ]);
 
-        if($result->rowCount() > 0){
+        // if($result->rowCount() > 0){
             
-            $line = $result->rowCount();
-            return $line;
-        }
-    }
+        //     $line = $result->rowCount();
+        //     return $line;
+        //  }
 
+    if($cat->getPicture_cat() === "" ){
+            
+        $sql = "UPDATE category
+                SET name_cat = :name_cat
+                WHERE id_cat = :id_cat";
+        
+        $tabParams = [  
+                        "name_cat"=>$cat->getName_cat(),
+                        "id_cat"=>$cat->getId_cat() 
+                    ];
+    
+        
+    }else{
+            
+            $sql = "UPDATE category
+                    SET name_cat = :name_cat, picture_cat = :picture_cat
+                    WHERE id_cat = :id_cat";
+
+                    
+            $tabParams = [
+                            "name_cat"=>$cat->getName_cat(),
+                            "picture_cat"=>$cat->getPicture_cat(),
+                            "id_cat"=>$cat->getId_cat() 
+                        ];
+        
+        }
+
+        $result = $this->getRequest($sql, $tabParams);
+                return $result->rowCount();
+     
+    }           
 }

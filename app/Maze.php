@@ -106,6 +106,10 @@ class Maze{
                     case 'contact':
                         $this->ctrPub->contact();
                         break;
+                        
+                    case 'gallery':
+                        $this->ctrPub->gallery();
+                        break;
 
                     case 'about':
                         $this->ctrPub->about();

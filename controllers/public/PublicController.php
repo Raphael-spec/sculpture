@@ -94,4 +94,11 @@ class PublicController{
         require_once('./views/public/about.php');
 
     }
+    //___________________________________________________________//
+    
+    public function gallery(){
+
+        require_once('./views/public/gallery.php');
+
+    }
 }

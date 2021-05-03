@@ -5,7 +5,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Carving Wood</title>
-  <!-- <link rel="stylesheet" href="./assets/css/templatePublicHead.css"> -->
+  <!-- <link rel="stylesheet" href="./assets/css/templatePublicHeader.css"> -->
+  <link rel="stylesheet" href="./assets/css/templatePublicGallery.css">
   <link rel="stylesheet" href="./assets/css/templatePublicContact.css">
   <link rel="stylesheet" href="./assets/css/templatePublic.css">
    <link rel="stylesheet" href="./assets/css/templatePublicFooter.css">
@@ -118,7 +119,7 @@
           </li>
       </ul>
       
-      <ul class="nav justify-content-end">
+      <ul id="badaboom" class="nav justify-content-end">
         <li class="nav-item">
           <form class="d-flex">
             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
@@ -205,7 +206,8 @@
 
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js" integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js" integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>
-
+<script src="./assets/js/templatePublicGallery.js"></script>
+<script src="./assets/js/templatePublicFeatures.js"></script>
 
 </body>
 </html>

@@ -8,6 +8,9 @@
         <tr>
             <th>Id</th>
             <th>Name</th>
+            <th>Pictures</th>
+
+
             <th colspan="2" class="text-center">Action</th>
         </tr>
     </thead>
@@ -16,6 +19,9 @@
         <tr>
             <td><?=$cat->getId_cat();?></td>
             <td><?=$cat->getName_cat();?></td>
+            <td><img src="./assets/images/<?=$cat->getPicture_cat();?>" alt="" width="120"></td>
+
+
             <td class="text-center">
                 <a class="btn btn-warning" href="index.php?action=edit_cat&id=<?=$cat->getId_cat();?>">
                 <i class="fas fa-pen"></i></a>

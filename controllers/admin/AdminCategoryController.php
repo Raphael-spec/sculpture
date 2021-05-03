@@ -48,10 +48,16 @@ class AdminCategoryController{
         if(isset ($_POST['submit']) && !empty($_POST['category'])){
             
             $name_cat = trim(htmlentities(addslashes($_POST['category'])));
+            $picture = $_FILES['picture']['name'];
             
             $newCat = new Category();
             
             $newCat->setName_cat($name_cat);
+            $newCat->setPicture_cat($picture);
+
+            $destination = './assets/images/';
+            move_uploaded_file($_FILES['picture']['tmp_name'],$destination.$picture);
+
 
             $ok = $this->adCatM->putCategory($newCat);
             
@@ -71,16 +77,26 @@ class AdminCategoryController{
        if(isset($_GET['id']) && $_GET['id'] < 1000 && filter_var($_GET['id'], FILTER_VALIDATE_INT)){
        
             $id = trim($_GET['id']);
+
+            $editC = new Category();
+            $editC->setId_cat($id);
         
-            $cat = $this->adCatM->collectCategory($id);
+            $editCat = $this->adCatM->collectCategory($editC);
 
                 if(isset($_POST['submit']) && !empty($_POST['category'])){
                     
                     $category = trim(addslashes(htmlentities($_POST['category'])));
-                    
-                        $cat->setName_cat($category);
+                    $picture = $_FILES['picture']['name'];
+
+                        $editCat->setName_cat($category);
+                        $editCat->setPicture_cat($picture);
+
+                        $destination = './assets/images/';
+            
+                        move_uploaded_file($_FILES['picture']['tmp_name'],$destination.$picture);
+           
                         
-                        $ke = $this->adCatM->changeCategory($cat);
+                        $ke = $this->adCatM->changeCategory($editCat);
                                         
                         header('location:index.php?action=list_cat');
                         
