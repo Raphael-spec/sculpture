@@ -1,5 +1,5 @@
 <?php ob_start();
-var_dump($_FILES);
+//var_dump($_FILES);
 
 ?>
 

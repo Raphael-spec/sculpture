@@ -10,16 +10,22 @@ class Maze{
     private $ctrUs;
     private $ctrCar;
     private $ctrPub;
+    private $ctrPic;
+    private $ctrCus;
+    private $ctrPubCli;
 
 
 
     public function __construct()
     {
         $this->ctrCat = new AdminCategoryController();
+        $this->ctrPic = new AdminPictureController();
         $this->ctrGrd = new AdminGradeController();
         $this->ctrUs = new AdminUserController();
+        $this->ctrCus = new AdminCustomerController();
         $this->ctrCar = new AdminCarvingController();
         $this->ctrPub = new PublicController();
+        $this->ctrPubCli = new PublicClientController();
 
 
 
@@ -31,6 +37,7 @@ class Maze{
 
                 switch($_GET['action']){
 
+                    //______________________CATEGORIES_______________________//
                     case 'list_cat':
                         $this->ctrCat->listCategories();
                         break;
@@ -46,6 +53,8 @@ class Maze{
                     case 'edit_cat':
                         $this->ctrCat->editCat();
                         break;
+
+                    //______________________CARVING_______________________//
 
                     case 'list_carv':
                         $this->ctrCar->listCarving();
@@ -63,6 +72,26 @@ class Maze{
                         $this->ctrCar->editCarving();
                         break;
 
+                    //______________________PICTURES_______________________//
+
+                    case 'list_pic':
+                        $this->ctrPic->listPictures();
+                        break;
+
+                    case 'delete_pic':
+                        $this->ctrPic->erasePicture();
+                        break;
+
+                    case 'add_pic':
+                        $this->ctrPic->addPicture();
+                        break;
+
+                    case 'edit_pic':
+                        $this->ctrPic->editPicture();
+                        break;
+
+                    //______________________GRADES_______________________//
+
                     case 'list_gr':
                         $this->ctrGrd->listGrades();
                         break;
@@ -79,6 +108,8 @@ class Maze{
                         $this->ctrGrd->editGr();
                         break;
 
+                    //______________________USERS_______________________//
+
                     case 'list_us':
                         $this->ctrUs->listUsers();
                         break;
@@ -89,8 +120,8 @@ class Maze{
 
                     case 'edit_us':
                         $this->ctrUs->EditUser();
-                        break;
-                    
+                        break;                    
+                        
                     case 'login':
                         $this->ctrUs->login();
                         break;
@@ -102,6 +133,27 @@ class Maze{
                     case 'logout':
                         AuthController::logout();
                         break;
+                    
+                    //______________________CUSTOMERS_______________________//
+
+                    case 'list_cus':
+                        $this->ctrCus->listClients();
+                        break;
+    
+                    case 'delete_cus':
+                        $this->ctrCus->eraseClient();
+                        break;
+    
+                    case 'add_cus':
+                        $this->ctrCus->addClient();
+                        break;
+    
+                    case 'edit_cus':
+                        $this->ctrCus->editClient();
+                        break;
+                    
+                    //______________________MENU_______________________//
+
 
                     case 'contact':
                         $this->ctrPub->contact();
@@ -122,6 +174,16 @@ class Maze{
                     case 'glanceAt':
                         $this->ctrPub->bringBack();
                         break;
+
+                    //______________________PUBLIC_CLIENT_______________________//
+
+                    case 'regis_client':
+                        $this->ctrPubCli->RegisterClient();
+                        break;
+                    
+                    case 'log_Client':
+                            $this->ctrPubCli->loginClient();
+                            break;
                 }
         
         }else{

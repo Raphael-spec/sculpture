@@ -24,6 +24,7 @@ class AdminGradeController{
 
     public function eraseGr(){
         AuthController::isLogged();
+         AuthController::accessManager();
             AuthController::accessUser();
         
             if(isset($_GET['id']) && $_GET['id'] < 1000 && filter_var($_GET['id'], FILTER_VALIDATE_INT)){
@@ -42,6 +43,7 @@ class AdminGradeController{
 
        public function addGr(){
         AuthController::isLogged();
+         AuthController::accessManager();
             AuthController::accessUser();
 
         if(isset ($_POST['submit']) && !empty($_POST['grade'])){
@@ -66,7 +68,8 @@ class AdminGradeController{
 
     public function editGr(){
         AuthController::isLogged();
-            AuthController::accessUser();
+            AuthController::accessManager();
+                AuthController::accessUser();
 
        if(isset($_GET['id']) && $_GET['id'] < 1000 && filter_var($_GET['id'], FILTER_VALIDATE_INT)){
        

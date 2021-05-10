@@ -77,6 +77,8 @@ class AdminUserController{
 
     public function addUser(){
         AuthController::isLogged();
+            AuthController::accessManager();
+                AuthController::accessUser();
         
         if(isset($_POST['submit'])){
 
@@ -117,6 +119,8 @@ class AdminUserController{
 
     public function eraseUser(){
         AuthController::isLogged();
+            AuthController::accessManager();
+                AuthController::accessUser();
         
         if(isset($_GET['id']) && filter_var($_GET['id'], FILTER_VALIDATE_INT)){
           
@@ -139,6 +143,8 @@ class AdminUserController{
 
     public function EditUser(){
         AuthController::isLogged();
+            AuthController::accessManager();
+             AuthController::accessUser();
         
         if(isset($_GET['id']) && filter_var($_GET['id'], FILTER_VALIDATE_INT)){
             

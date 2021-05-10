@@ -2,15 +2,18 @@
 
 class PublicModel extends Tree{
 
-    public function findCarvByCat(Carving $car){
+    public function findCarvByCat(Picture $pic){
 
         $sql = "SELECT * 
-                FROM carving cv
-                INNER JOIN category c
-                ON cv.id_cat = c.id_cat
-                WHERE cv.id_cat = :id";
+                FROM picture p
+                INNER JOIN carving c
+                ON p.id_carv = c.id_carv
+                INNER JOIN category ca
+                ON ca.id_cat = c.id_cat
+                WHERE ca.id_cat = :id";
+
         
-        $result = $this->getRequest($sql, ["id"=>$car->getCategory()->getId_cat()]);
+        $result = $this->getRequest($sql, ["id"=>$pic->getCarving()->getCategory()->getId_cat()]);
 
         $rows = $result->fetchAll(PDO::FETCH_OBJ);
         
@@ -18,21 +21,25 @@ class PublicModel extends Tree{
         
         foreach($rows as $row){
 
-            $newCarv = new Carving();
+            $pic = new Picture();
 
-            $newCarv->setId_carv($row->id_carv);
-            $newCarv->setName($row->name);
-            $newCarv->setPicture($row->picture);
-            $newCarv->setDimension($row->dimension);
-            $newCarv->setDate($row->date);
-            $newCarv->setQuality($row->quality);
-            $newCarv->setContent($row->content);
-            $newCarv->setQuantity($row->quantity);
-            $newCarv->setPrice($row->price);
-            $newCarv->getCategory()->setId_cat($row->id_cat);
-            $newCarv->getCategory()->setName_cat($row->name_cat);
+            $pic->setId_pic($row->id_pic);
+            $pic->setPicture_l($row->picture_l);
+            $pic->setPicture_r($row->picture_r);
+            $pic->getCarving()->setId_carv($row->id_carv);
+            $pic->getCarving()->setName($row->name);
+            $pic->getCarving()->setPicture($row->picture);
+            $pic->getCarving()->setDimension($row->dimension);
+            $pic->getCarving()->setDate($row->date);
+            $pic->getCarving()->setQuality($row->quality);
+            $pic->getCarving()->setContent($row->content);
+            $pic->getCarving()->setQuantity($row->quantity);
+            $pic->getCarving()->setPrice($row->price);
+            $pic->getCarving()->getCategory()->setName_cat($row->name_cat);
+            $pic->getCarving()->getCategory()->setId_cat($row->id_cat);
 
-            array_push($carvs, $newCarv);
+
+            array_push($carvs, $pic);
 
         }
         return $carvs;

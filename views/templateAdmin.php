@@ -29,37 +29,58 @@
 
   <div style="height:10px"></div>
 
-  <button class="dropdown-btn"><i class="fas fa-layer-group "></i>Categories
+  <button class="dropdown-btn"><i class="fas fa-layer-group "></i> Categories
     <i class="fa fa-caret-down"></i>
   </button>
   <div class="dropdown-container">
-    <a href="index.php?action=list_cat"><i class="fas fa-list"></i>List</a>
-    <a href="index.php?action=add_cat"><i class="fas fa-plus"></i>Add</a>
+    <a href="index.php?action=list_cat"><i class="fas fa-list"></i> List</a>
+    <a href="index.php?action=add_cat"><i class="fas fa-plus"></i> Add</a>
   </div>
 
-  <button class="dropdown-btn"><i class="fas fa-monument "></i>Carving
+  <button class="dropdown-btn"><i class="fas fa-monument "></i> Carving
     <i class="fa fa-caret-down"></i>
   </button>
   <div class="dropdown-container">
-    <a href="index.php?action=list_carv"><i class="fas fa-list"></i>List</a>
-    <a href="index.php?action=add_carv"><i class="fas fa-plus"></i>Add</a>
-  </div>
-  <?php if($_SESSION['Auth']->id_g != 3) {?>
-  <button class="dropdown-btn"><i class="fas fa-graduation-cap "></i>Grades
-    <i class="fa fa-caret-down"></i>
-  </button>
-  <div class="dropdown-container">
-    <a href="index.php?action=list_gr"><i class="fas fa-list"></i>List</a>
-    <a href="index.php?action=add_gr"><i class="fas fa-plus"></i>Add</a>
+    <a href="index.php?action=list_carv"><i class="fas fa-list"></i> List</a>
+    <a href="index.php?action=add_carv"><i class="fas fa-plus"></i> Add</a>
   </div>
 
-  <button class="dropdown-btn"><i class="fas fa-users "></i>Users
+  <button class="dropdown-btn"><i class="fas fa-camera-retro"></i> Pictures
     <i class="fa fa-caret-down"></i>
   </button>
   <div class="dropdown-container">
-    <a href="index.php?action=list_us"><i class="fas fa-list"></i>List</a>
+    <a href="index.php?action=list_pic"><i class="fas fa-list"></i> List</a>
     <?php if($_SESSION['Auth']->id_g == 1) { ?>
-      <a href="index.php?action=record"><i class="fas fa-plus"></i>Recording</a>
+      <a href="index.php?action=add_pic"><i class="fas fa-plus"></i> Add</a>
+    <?php } ?>
+  </div>
+
+  <button class="dropdown-btn"><i class="fas fa-user"></i> Customers
+    <i class="fa fa-caret-down"></i>
+  </button>
+  <div class="dropdown-container">
+    <a href="index.php?action=list_cus"><i class="fas fa-list"></i> List</a>
+    <?php if($_SESSION['Auth']->id_g != 3) { ?>
+      <a href="index.php?action=add_cus"><i class="fas fa-plus"></i> Add</a>
+    <?php } ?>
+  </div>
+
+  <?php if($_SESSION['Auth']->id_g != 3) {?>
+  <button class="dropdown-btn"><i class="fas fa-graduation-cap "></i> Grades
+    <i class="fa fa-caret-down"></i>
+  </button>
+  <div class="dropdown-container">
+    <a href="index.php?action=list_gr"><i class="fas fa-list"></i> List</a>
+    <a href="index.php?action=add_gr"><i class="fas fa-plus"></i> Add</a>
+  </div>
+
+  <button class="dropdown-btn"><i class="fas fa-users "></i> Users
+    <i class="fa fa-caret-down"></i>
+  </button>
+  <div class="dropdown-container">
+    <a href="index.php?action=list_us"><i class="fas fa-list"></i> List</a>
+    <?php if($_SESSION['Auth']->id_g == 1) { ?>
+      <a href="index.php?action=record"><i class="fas fa-plus"></i> Recording</a>
     <?php } ?>
   </div>
   <?php }} ?>

@@ -11,6 +11,7 @@ class AuthController{
             exit;
         }
     }
+    //___________________________________________________________//
 
     public static function logout(){
         
@@ -18,6 +19,7 @@ class AuthController{
         
         header('location:index.php?action=login');
     }
+    //___________________________________________________________//
 
     public static function accessUser(){
         
@@ -27,4 +29,15 @@ class AuthController{
             exit; 
         }
     }
+    //___________________________________________________________//
+
+    public static function accessManager(){
+        
+        if($_SESSION['Auth']->id_g == 2){
+            
+            header('location:index.php?action=login');
+            exit; 
+        }
+    }
+    //___________________________________________________________//
 }

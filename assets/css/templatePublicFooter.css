@@ -1,48 +1,47 @@
-/* @import url('https://fonts.googleapis.com/css2?family=ABeeZee&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=ABeeZee&display=swap');
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-/* a{
+.foo_a{
     text-decoration: none;
     transition: .5s;
     color: #fff;
-} */
-ul, li{
+}
+.foo_ul, li{
     list-style-type: none;
     
 }
-#footer{
+ #footer{
     background-color: rgb(34, 34, 34);
     color: #fff;
-
 }
 .footer_info{
     width: 90%;
     margin: 0 auto;
     display: flex;
     padding: 50px 0;
-}
-.footer_info .footer_width{
+} 
+.footer_info .foo_footer_width{
     padding: 0 15px;
 }
 .footer_info h2{
     margin-bottom: 20px;
 }
-.about , .contactt{
+.about_foo , .contactt_foo{
     width: 40%;
 }
-.link{
+.link_foo{
     width: 20%;
 }
-.social-media{
+.foo_social-media{
     margin-top: 30px;
 }
-.social-media ul{
+.foo_social-media ul{
     display: flex;
 }
-.social-media ul li a{
+.foo_social-media ul li a{
     display: inline-block;
     margin-right: 50px;
     width: 50px;
@@ -53,41 +52,40 @@ ul, li{
     text-align: center;
     color: #fff;
 }
-.social-media ul li a:hover{
+.foo_social-media ul li a:hover{
     background-color: #fff;
     color: #000;
 }
-.link ul li a{
-    display: block;
+.link_foo ul li{
+    /* display: block; et un a au dessus */
     margin-bottom: 15px;
-    font-size: 20px;
-    text-decoration: none;
-    color: #fff;
+    font-size: 18px;
+ 
 }
-.link ul li a:hover{
+.link_foo ul li a:hover{
     color:rgb(82, 78, 78);
 }
 
-.contactt ul li{
+.contactt_foo ul li{
     display: flex;
     align-items: center;
     margin-bottom: 15px;
 }
-.contactt ul li a{
+/* .contactt ul li a{
     text-decoration: none;
     color: #fff;
-}
-.contactt ul li span{
+} */
+.contactt_foo ul li span{
     margin-right: 15px;
 }
-.copy-right{
+.foo_copy-right{
     padding: 15px 0;
     text-align: center;
     background-color: rgb(66, 66, 66);
 }
 
-@media screen and (max-width:992px){
-    .about , .contactt{
+ @media screen and (max-width:992px){
+    .about_foo , .contactt_foo{
         width: 35%;
     }
     .link{
@@ -95,7 +93,7 @@ ul, li{
     }
 }
 @media screen and (max-width:767px){
-    .about , .contactt , .link{
+    .about_foo , .contactt_foo , .link_foo{
         width: 100%;
         margin-bottom: 30px;
     }
@@ -103,4 +101,4 @@ ul, li{
     .footer_info{
         flex-direction: column;
     }
-}
+} 

@@ -98,7 +98,6 @@ class AdminCarvingModel extends Tree{
     }
     //___________________________________________________________//
 
-
     public function collectCarv(Carving $vParam){
        
        $sql = "SELECT *

@@ -12,47 +12,42 @@ class PublicController{
     {
         $this->pubCatM = new AdminCategoryModel();
         $this->pubCarM = new AdminCarvingModel();
+        $this->pubPicM = new AdminPictureModel();
         $this->pubMo = new PublicModel();
     }
     
     public function getPubCarving(){
         
         if(isset($_GET['id']) && !empty($_GET['id'])){
-            
+
             if( isset($_POST['submit']) && !empty($_POST['search'])){
-                
+
                 $search = trim(htmlspecialchars(addslashes($_POST['search'])));
                 
                 $tabCat = $this->pubCatM->getCategories();
-                $carvs = $this->pubCarM->getCarving($search);
-                
+                $carvs = $this->pubPicM->getPicture($search);
+                var_dump($_POST);
                 require_once('./views/public/features.php');
             }
             
-            $id = trim(htmlentities(addslashes($_GET['id'])));
-            
-            $c = new Carving();
-            
-            $c->getCategory()->setId_cat($id);
-            
-            $tabCat = $this->pubCatM->getCategories();
-            $carvsbyCat = $this->pubMo->findCarvByCat($c);
-            
-            require_once('./views/public/carvingCat.php');
-      
+                $id = trim(htmlentities(addslashes($_GET['id'])));
+                $p = new Picture();
+
+                $p->getCarving()->getCategory()->setId_cat($id);
+                $carvsbyCat = $this->pubMo->findCarvByCat($p);
+                $tabCat = $this->pubCatM->getCategories();
+                require_once('./views/public/carvingCat.php');
+
         }else{
-            
             if( isset($_POST['submit']) && !empty($_POST['search'])){
                 $search = trim(htmlspecialchars(addslashes($_POST['search'])));
-                
                 $tabCat = $this->pubCatM->getCategories();
-                $carvs = $this->pubCarM->getCarving($search);
-                
+                $carvs = $this->pubPicM->getPicture($search);
+                var_dump($_POST);
                 require_once('./views/public/features.php');
             }
-            
-            $tabCat = $this->pubCatM->getCategories();
-            $carvs = $this->pubCarM->getCarving();
+                $tabCat = $this->pubCatM->getCategories();
+                $carvs = $this->pubPicM->getPicture();
 
         require_once('./views/public/features.php');
         }
@@ -74,6 +69,9 @@ class PublicController{
             $price = htmlspecialchars(addslashes($_POST['price']));
             $id_cat = htmlspecialchars(addslashes($_POST['id_cat']));
             $name_cat = htmlspecialchars(addslashes($_POST['name_cat']));
+            $id_pic = htmlspecialchars(addslashes($_POST['id_pic']));
+            $picture_l = htmlspecialchars(addslashes($_POST['picture_l']));
+            $picture_r = htmlspecialchars(addslashes($_POST['picture_r']));
 
 
             require_once('./views/public/carvingItem.php');

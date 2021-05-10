@@ -8,7 +8,9 @@
         <tr>
             <th>Id</th>
             <th>Name</th>
+            <?php  if($_SESSION['Auth']->id_g == 1){ ?>
             <th colspan="2" class="text-center">Action</th>
+            <?php } ?>
         </tr>
     </thead>
     <tbody>
