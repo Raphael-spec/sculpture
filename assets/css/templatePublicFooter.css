@@ -29,6 +29,9 @@
 .footer_info h2{
     margin-bottom: 20px;
 }
+.foo_footer_width .about_foo h2{
+    margin-left: 15%;
+}
 .about_foo , .contactt_foo{
     width: 40%;
 }
@@ -57,15 +60,17 @@
     color: #000;
 }
 .link_foo ul li{
-    /* display: block; et un a au dessus */
     margin-bottom: 15px;
     font-size: 18px;
+    margin-left: 12%;
  
 }
 .link_foo ul li a:hover{
     color:rgb(82, 78, 78);
 }
-
+.contactt_foo h2{
+    
+}
 .contactt_foo ul li{
     display: flex;
     align-items: center;

@@ -10,6 +10,7 @@ class AdminCarvingModel extends Tree{
                         FROM carving cv
                         INNER JOIN category ca
                         ON cv.id_cat = ca.id_cat
+                        
                         WHERE name LIKE :name OR name_cat LIKE :name_cat OR date LIKE :date
                         ORDER BY id_carv ASC";
             
@@ -24,6 +25,7 @@ class AdminCarvingModel extends Tree{
                     FROM carving cv
                     INNER JOIN category ca
                     ON cv.id_cat = ca.id_cat
+                  
                     ORDER BY id_carv ASC";
                     
 
@@ -48,7 +50,7 @@ class AdminCarvingModel extends Tree{
             $c->setPrice($carv->price);
             $c->getCategory()->setId_cat($carv->id_cat);
             $c->getCategory()->setName_cat($carv->name_cat);
-            
+           
             array_push($datas, $c);
         }
         

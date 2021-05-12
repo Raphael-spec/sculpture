@@ -50,6 +50,21 @@
     color: cornflowerblue;
 }
 
+/* #search{
+    border: none;
+    border-bottom: 2px solid #333;
+    outline: none;
+    resize: none;
+
+}
+#loupe{
+    border: none;
+    border-bottom: 2px solid #333;
+    outline: none;
+    resize: none;
+
+} */
+
 
 @media (max-width: 991px){
     .feat_contCat {

@@ -62,11 +62,11 @@ class AdminUserController{
                         $error = "your account has been deleted";
                     }
                 }else{
-                    $error = "Your login/mail or/and password doesn't match"; 
+                    $error = "Your login/mail or/and password does/do not match"; 
                
                 }
             }else{
-                $error = "Please enter valid datas"; 
+                $error = "Please enter valids datas"; 
     
             }
         

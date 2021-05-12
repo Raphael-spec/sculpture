@@ -25,12 +25,25 @@
    <header>
     <div class="hea_topheader">
         <ul class="hea_ul">
-          <li><a href="#">sign in</a></li>
-          <li><a href="index.php?action=regis_client">register</a></li>
+        
+        <?php  if(!isset($_SESSION['AuthClient'])){?>
+          <li><a href="index.php?action=log_cus"><i class='fa fa-lock'></i>Sign in</a></li>
+          <li><a href="index.php?action=regis_cus"><i class="fa fa-plus"></i>Register</a></li>
+          <?php } ?>
           <?php if(isset($_SESSION['AuthClient'])){?>
-            <li><a href="#">deconnexion</a></li>
+            <li>
+              <a href="index.php?action=logout_cus"><i class='fa fa-unlock'></i>Deconnexion</a>
+            </li>
+            <li>
+              <a href="index.php?action=profil_cus">
+                <i class="fa fa-user"></i>Profil <?php if(isset($_SESSION['AuthClient'])){
+                  echo $_SESSION['AuthClient']->login;
+                  } ?>
+              </a>
+            </li>
           <?php } ?>
           <li><a href="#"><img src="./assets/media/sac.png" alt="" width="25px"></a></li>
+          
         </ul>
     </div>
     <section id="head_down">
@@ -180,8 +193,9 @@
   </div>
 </footer> -->
 <footer id="footer">
+<!-- <a href="#head_logo" id="ankle"><img src="./assets/media/arrow_up_5.png" alt="" width="50"></a> -->
     <div class="footer_info">
-        <div class="foo_footer_width about_foo">
+        <div class="foo_footer_width about_foo bg-secondary">
             <h2 >About</h2>
               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet beatae non fugit nobis maiores esse ad, vel dolorem, quia ratione dolores repellat praesentium fugiat. Ullam earum iure quae enim blanditiis?</p>
 
@@ -193,7 +207,7 @@
                     </ul>
                 </div>
         </div>
-        <div class="foo_footer_width link_foo">
+        <div class="foo_footer_width link_foo bg-primary">
             <h2>Quick Link</h2>
                 <ul class="foo_ul">
                     <li ><a href="#" class="foo_a">Features</a></li>
@@ -202,9 +216,10 @@
                     <li ><a href="#" class="foo_a">Connexion</a></li>
                     <li ><a href="#" class="foo_a">Register</a></li>
                     <li ><a href="#" class="foo_a">Contact</a></li>
+                    
                 </ul>
         </div>
-        <div class="foo_footer_width contactt_foo">
+        <div class="foo_footer_width contactt_foo bg-info">
             <h2 >Contact</h2>
                 <ul class="foo_ul">
                     <li >

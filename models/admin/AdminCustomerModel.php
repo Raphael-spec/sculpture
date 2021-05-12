@@ -159,13 +159,13 @@ class AdminCustomerModel extends Tree{
         }
     //___________________________________________________________//
 
-        public function signInClient($loginEmail, $password){
+        public function signInClient($loginMail, $password){
        
             $sql = "SELECT * 
                     FROM customer
                     WHERE (login = :logEmail OR mail = :logEmail) AND password = :password";
              
-             $result = $this->getRequest($sql,['logEmail'=>$loginEmail, 'password'=>$password]);
+             $result = $this->getRequest($sql,['logEmail'=>$loginMail, 'password'=>$password]);
             
              $row = $result->fetch(PDO::FETCH_OBJ);
              

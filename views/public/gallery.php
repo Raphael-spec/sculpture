@@ -55,7 +55,7 @@
         <div class="gal_video-container">
             <div class="gal_video">
                 <video   >
-                    <source src="./assets/media/Wood_Carving-One_Piece_Whitebeard.mp4" controls type="video/mp4"/>
+                    <source src="./assets/media/Wood_Carving-One_Piece_Whitebeard.mp4" type="video/mp4"/>
                  </video>
                 <p class="gal_text">One piece : whitebeard</p>
             </div>

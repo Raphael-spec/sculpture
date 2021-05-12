@@ -15,7 +15,7 @@
   <img src="./assets/images/lilnaruto.jpeg" alt="" width="120">
 </div>
 
-<h2 class="text-end text-center text-white">Bonjour</br>
+<h2 class="text-end text-center text-white">What's Up!?</br>
 <?php if(isset($_SESSION['Auth'])){
     echo $_SESSION['Auth']->firstname;
      } ?>

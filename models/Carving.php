@@ -13,14 +13,14 @@ class Carving{
     private $price;
     private $category;
     private $shopping;
-    private $customer;
+    //private $customer;
     
 
     
     public function __construct()
     {
         $this->category = new Category();
-        //$this->shopping = new Shopping();
+        $this->shopping = new Shopping();
         //$this->customer = new Customer();
         
     }
@@ -228,4 +228,45 @@ class Carving{
 
         return $this;
     }
+    
+
+    /**
+     * Get the value of shopping
+     */ 
+    public function getShopping()
+    {
+        return $this->shopping;
+    }
+
+    /**
+     * Set the value of shopping
+     *
+     * @return  self
+     */ 
+    public function setShopping($shopping)
+    {
+        $this->shopping = $shopping;
+
+        return $this;
+    }
+
+    // /**
+    //  * Get the value of customer
+    //  */ 
+    // public function getCustomer()
+    // {
+    //     return $this->customer;
+    // }
+
+    // /**
+    //  * Set the value of customer
+    //  *
+    //  * @return  self
+    //  */ 
+    // public function setCustomer($customer)
+    // {
+    //     $this->customer = $customer;
+
+    //     return $this;
+    // }
 }

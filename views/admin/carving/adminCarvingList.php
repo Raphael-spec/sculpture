@@ -20,6 +20,7 @@
               <th>Content</th>
               <th>Price</th>
               <th>Category</th>
+          
               <th colspan="2" class="text-center">Actions</th>
           </tr>
       </thead>
@@ -34,6 +35,7 @@
               <td><?=$carv->getContent();?></td>
               <td><?=$carv->getPrice();?></td>
               <td><?=$carv->getCategory()->getName_cat();?></td>
+           
               <td class="text-center">
                 <a class="btn btn-warning" href="index.php?action=edit_carv&id=<?=$carv->getId_carv();?>">
                     <i class="fas fa-pen"></i>

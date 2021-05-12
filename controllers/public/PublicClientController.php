@@ -9,7 +9,7 @@ class PublicClientController{
         $this->adCusM = new AdminCustomerModel();
     }
 
-    public function RegisterClient(){
+    public function registerClient(){
 
         if(isset ($_POST['submit']) && !empty($_POST['name']) && !empty($_POST['login'])){
   
@@ -42,7 +42,7 @@ class PublicClientController{
             $yes = $this->adCusM->PutClient($client);
                 if($yes){
                     
-                    header('location:index.php?action=loginClient');
+                    header('location:index.php?action=log_cus');
                 }
             }
         }
@@ -56,12 +56,12 @@ class PublicClientController{
 
         if(isset($_POST['submit'])){
             //var_dump($_POST);
-            if(strlen($_POST['password']) >= 4 && !empty($_POST['loginEmail'])){
+            if(strlen($_POST['password']) >= 4 && !empty($_POST['loginMail'])){
     
-                $loginEmail = trim(htmlentities(addslashes($_POST['loginEmail'])));
+                $loginMail = trim(htmlentities(addslashes($_POST['loginMail'])));
                 $password = md5(trim(htmlentities(addslashes($_POST['password']))));
     
-                $logCusto = $this->adCusM->signInClient($loginEmail, $password);
+                $logCusto = $this->adCusM->signInClient($loginMail, $password);
                     
                     if(!empty($logCusto)){
                             
@@ -69,14 +69,75 @@ class PublicClientController{
                             $_SESSION['AuthClient'] = $logCusto;
                             //var_dump($_SESSION);
                             
-                            header('location:index.php?action=profilClient');
+                            header('location:index.php?action=features');
                     }else{
-                        $error = "Votre login/email ou/et mot de passe ne corespondent pas"; 
+                        
+                        $error = "Your login/mail or/and password does/do not match"; 
                     }
             }else{
-                $error = "Entrée les données valides"; 
+                $error = "Please enter valids datas"; 
             }
         }
         require_once('./views/public/connexClient/loginClient.php');
     }
+    //___________________________________________________________//
+
+    public function profilClient(){
+
+        AuthClientController::isLoggedForIndex();
+           
+            $id = $_SESSION['AuthClient']->id_c;
+                       
+            $editCu = new Customer();
+            
+            $editCu->setId_c($id);
+            
+            $editClie = $this->adCusM->collectClient($editCu);
+            
+            $valid = "";
+         
+            if(isset($_POST['submit']) && !empty($_POST['login']) && !empty($_POST['password'])){
+               
+               $name = trim(htmlentities(addslashes($_POST['name'])));
+               $firstname = trim(htmlentities(addslashes($_POST['firstname'])));
+               $address = trim(htmlentities(addslashes($_POST['address'])));
+               $cp = trim(htmlentities(addslashes($_POST['cp'])));
+               $town = trim(htmlentities(addslashes($_POST['town'])));
+               $country = trim(htmlentities(addslashes($_POST['country'])));
+               $mail = trim(htmlentities(addslashes($_POST['mail'])));
+               $phone = trim(htmlentities(addslashes($_POST['phone'])));
+               $login = trim(htmlentities(addslashes($_POST['login'])));
+               $password = md5(trim(htmlentities(addslashes($_POST['password']))));
+
+               $editClie->setname($name);
+               $editClie->setFirstname($firstname);
+               $editClie->setAddress($address);
+               $editClie->setCp($cp);
+               $editClie->setTown($town);
+               $editClie->setCountry($country);
+               $editClie->setMail($mail);
+               $editClie->setPhone($phone);
+               $editClie->setLogin($login);
+               $editClie->setPassword($password);
+               
+               $ok = $this->adCusM->changeClient($editClie); 
+               
+               
+                if($ok){
+                // var_dump($_SESSION['AuthClient']);
+                    $valid = "Your new profil has been modified"; 
+                    
+                    header('location:index.php?action=profil_cus');
+                }else{
+                    
+                    $valid = "Your pas changé";  
+                }
+                
+         }
+
+
+            require_once('./views/public/connexClient/profilClient.php');
+        
+    }
+    
 }

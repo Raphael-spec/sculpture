@@ -18,6 +18,8 @@ class PublicController{
     
     public function getPubCarving(){
         
+        AuthClientController::isLoggedForIndex();
+       
         if(isset($_GET['id']) && !empty($_GET['id'])){
 
             if( isset($_POST['submit']) && !empty($_POST['search'])){
@@ -55,6 +57,7 @@ class PublicController{
     //___________________________________________________________//
 
     public function bringBack(){
+        AuthClientController::isLoggedForIndex();
         
         if(isset($_POST['pass_to']) && !empty($_POST['name']) && !empty($_POST['price'])){
             
@@ -81,6 +84,7 @@ class PublicController{
     //___________________________________________________________//
 
     public function contact(){
+        AuthClientController::isLoggedForIndex();
 
         require_once('./views/public/contact.php');
 
@@ -88,14 +92,16 @@ class PublicController{
     //___________________________________________________________//
     
     public function about(){
-
+        AuthClientController::isLoggedForIndex();
+        
         require_once('./views/public/about.php');
 
     }
     //___________________________________________________________//
     
     public function gallery(){
-
+        AuthClientController::isLoggedForIndex();
+         
         require_once('./views/public/gallery.php');
 
     }

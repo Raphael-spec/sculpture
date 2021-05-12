@@ -177,13 +177,21 @@ class Maze{
 
                     //______________________PUBLIC_CLIENT_______________________//
 
-                    case 'regis_client':
+                    case 'regis_cus':
                         $this->ctrPubCli->RegisterClient();
                         break;
                     
-                    case 'log_Client':
-                            $this->ctrPubCli->loginClient();
+                    case 'log_cus':
+                        $this->ctrPubCli->loginClient();
+                        break;
+
+                    case 'profil_cus':
+                            $this->ctrPubCli->profilClient();
                             break;
+                        
+                    case 'logout_cus':
+                        AuthClientController::logoutClient();
+                        break;
                 }
         
         }else{

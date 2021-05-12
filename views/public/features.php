@@ -6,7 +6,7 @@
         <div class="col-4 offset-4">
             <form action="<?php $_SERVER['PHP_SELF']; ?>" method="post" class="input-group">
                 <input class="form-control text-center" type="search" name="search" id="search" placeholder="Search...">
-                <button type="submit" class="btn btn-outline-secondary bg-info" name="submit"><i class="fa fa-search"></i></button>
+                <button type="submit" class="btn btn-outline-secondary bg-info " name="submit" id="loupe"><i class="fa fa-search"></i></button>
             </form>
          </div>
     </div>

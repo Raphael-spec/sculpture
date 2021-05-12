@@ -82,8 +82,9 @@ var_dump($_POST)
         <input type="hidden" id="date" value="<?=$date;?>">
         <input type="hidden" id="id_cat" value="<?php $id_cat;?>">
         <input type="hidden" id="name_cat" value="<?=$name_cat;?>">
-      
-        <button id="checkout-cart"  class="col-12 carIt_pay_button" >Add to cart</button>
+        <?php  if(isset($_SESSION['AuthClient'])){?>
+            <button id="checkout-cart"  class="col-12 carIt_pay_button" >Add to cart</button>
+        <?php } ?>
     </form>
     </div>
   </div>

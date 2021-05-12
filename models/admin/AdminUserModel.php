@@ -80,7 +80,8 @@ class AdminUserModel extends Tree{
             $req = "INSERT INTO user(name, firstname, login, password, mail, status, id_g)
                     VALUES(:name, :firstname, :login, :password, :mail, :status, :id_g)";
            
-           $tabUsers = ['name'=>$use->getName(), 
+           $tabUsers = [
+                        'name'=>$use->getName(), 
                         'firstname'=>$use->getFirstname(), 
                         'login'=>$use->getLogin(), 
                         'password'=>$use->getPassword(), 
