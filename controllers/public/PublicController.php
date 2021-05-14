@@ -105,4 +105,12 @@ class PublicController{
         require_once('./views/public/gallery.php');
 
     }
+    //___________________________________________________________//
+
+    public function home(){
+        AuthClientController::isLoggedForIndex();
+         
+        require_once('./views/public/home.php');
+
+    }
 }

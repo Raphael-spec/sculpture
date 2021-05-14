@@ -44,6 +44,7 @@
 #head_down nav ul li a:hover, #head_down nav ul li a.active{
     color: #fff;
     border-bottom: 2px solid #211b4385;
+    
 }
 .head_menu{
     color: #fff;

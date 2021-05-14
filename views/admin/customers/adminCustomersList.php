@@ -20,6 +20,7 @@
               <th>Town</th>
               <th>Country</th>
               <th>Mail</th>
+              <th>Phone</th>
               <th>Login</th>
               <!-- <th>Password</th> -->
               <th colspan="2" class="text-center">Actions</th>
@@ -36,6 +37,7 @@
               <td><?=$cus->getTown();?></td>
               <td><?=$cus->getCountry();?></td>
               <td><?=$cus->getMail();?></td>
+              <td><?=$cus->getPhone();?></td>
               <td><?=$cus->getLogin();?></td>
               <!-- <td><?//=$cus->getPassword();?></td> -->
               <?php if($_SESSION['Auth']->id_g != 3){ ?>
@@ -54,7 +56,7 @@
               </td>
               <?php } ?>
           </tr>
-          <?php }}else{ echo"<tr class='text-center text-danger'><td colspan='10' >".$allCus."</td></tr>";} ?>
+          <?php }}else{ echo"<tr class='text-center text-danger'><td colspan='12' >".$allCus."</td></tr>";} ?>
       </tbody>
   </table>
 

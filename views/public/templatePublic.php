@@ -7,13 +7,15 @@
   <title>Carving Wood</title>
   <link rel="stylesheet" href="./assets/css/templatePublicTopHeader.css">
   <link rel="stylesheet" href="./assets/css/templatePublicHeader.css">
+  <link rel="stylesheet" href="./assets/css/templatePublicHome.css ">
   <link rel="stylesheet" href="./assets/css/templatePublicFeatures.css ">
   <link rel="stylesheet" href="./assets/css/templatePublicCarvingCat.css">
   <link rel="stylesheet" href="./assets/css/templatePublicCarvingItem.css">
+  <link rel="stylesheet" href="./assets/css/templatePublicAbout.css">
   <link rel="stylesheet" href="./assets/css/templatePublicGallery.css">
   <link rel="stylesheet" href="./assets/css/templatePublicContact.css">
   <link rel="stylesheet" href="./assets/css/templatePublic.css">
-   <link rel="stylesheet" href="./assets/css/templatePublicFooter.css">
+  <link rel="stylesheet" href="./assets/css/templatePublicFooter.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
 
@@ -255,7 +257,8 @@
   <script src="./assets/js/templatePublicFeatures.js"></script>
   <script src="./assets/js/templatePublicHeader.js"></script>
   <script src="./assets/js/templatePublicCarvingItem.js"></script>
-</body>
+  <script src="./assets/js/templatePublicHome.js"></script>
+ 
 </html>
 
 
