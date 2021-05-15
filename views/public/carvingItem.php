@@ -1,6 +1,6 @@
 <?php ob_start();
 
-var_dump($_POST)
+//var_dump($_POST)
 ?>
 
 <div class="container">
@@ -68,12 +68,14 @@ var_dump($_POST)
        <p><span><?=$name;?></span>, <strong><?=$date;?></strong></p>
        <hr class="carIT_pay_hr">
         <p><?=$price;?>€</p>
-
+        
       <form>
+        <label for="mail">Email*</label>
+        <input type="email" id="mail" class="form-control mb-4" placeholder="Votre email svp...">
+
         <input type="hidden" id="quantity" class="form-control"  min="1" max="1" value="<?=$quantity;?>" >
         <input type="hidden" id="id" value="<?=$id;?>">
         <input type="hidden" id="name" value="<?=$name;?>">
-        <input type="hidden" id="auteur" value="<?=$auteur;?>">
         <input type="hidden" id="price" value="<?=$price;?>">
         <input type="hidden" id="content" value="<?=$content;?>">
         <input type="hidden" id="quality" value="<?=$quality;?>">
@@ -82,9 +84,9 @@ var_dump($_POST)
         <input type="hidden" id="date" value="<?=$date;?>">
         <input type="hidden" id="id_cat" value="<?php $id_cat;?>">
         <input type="hidden" id="name_cat" value="<?=$name_cat;?>">
-        <?php  if(isset($_SESSION['AuthClient'])){?>
-            <button id="checkout-cart"  class="col-12 carIt_pay_button" >Add to cart</button>
-        <?php } ?>
+        
+            <button id="checkout-button"  class="col-12 carIt_pay_button" >Add to cart</button>
+      
     </form>
     </div>
   </div>

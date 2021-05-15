@@ -1,6 +1,12 @@
 <?php
 
-//session_start();
+session_start();
+
+require './vendor/autoload.php';
+
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception;
 
 class PublicController{
 
@@ -57,7 +63,7 @@ class PublicController{
     //___________________________________________________________//
 
     public function bringBack(){
-        AuthClientController::isLoggedForIndex();
+      
         
         if(isset($_POST['pass_to']) && !empty($_POST['name']) && !empty($_POST['price'])){
             
@@ -83,6 +89,115 @@ class PublicController{
     }
     //___________________________________________________________//
 
+    public function payment(){
+      
+        if(isset($_POST) && !empty($_POST['email'])){
+
+            
+            \Stripe\Stripe::setApiKey('sk_test_51IdC0SEYTj0p2Az76g8Q530n2zC2GgwfkvjzmxmrDI3FrsH91r6CrWPfJQ1ddYCXhm3nN45aVYDdVZYoFkvNT9VN00aI8QsXPR');
+
+                header('Content-Type: application/json');
+
+
+                $checkout_session = \Stripe\Checkout\Session::create([
+                    
+                    'payment_method_types' => ['card'],
+                    'line_items' => [[
+                    'price_data' => [
+                    'currency' => 'eur',
+                    'unit_amount' => $_POST['price']*100,
+                    'product_data' => [
+                        'name' => $_POST['name']."-".$_POST['dimension'],
+                        'images' => ["https://imgshare.io/image/dragonball.pXyBYP"],
+                        'content' => $_POST['content'],
+                        ],
+                        ],
+                        'quantity' => 1,
+                    ]],
+                    'customer_email'=>$_POST['mail'],
+                    'mode' => 'payment',
+                    'success_url' => 'http://localhost/php/poo/app/sculpture//index.php?action=success',
+                    'cancel_url' => 'http://localhost:8080/php/poo/app/sculpture/index.php?action=cancel',
+                    ]);
+                        $_SESSION['pay'] = $_POST;
+                    echo json_encode(['id' => $checkout_session->id]);
+
+                }
+
+            }
+
+            public function confirmation(){
+                    
+                $carv = new Carving();
+                $carv->setId_carv($_SESSION['pay']['id']);
+                // var_dump($_SESSION['pay']);
+            
+            $email = $_SESSION['pay']['mail'];
+            $name = $_SESSION['pay']['name'];
+            $dimension = $_SESSION['pay']['dimension'];
+            $price = $_SESSION['pay']['price'];
+            $content = $_SESSION['pay']['content'];
+            
+            $mail = new PHPMailer(true);
+            
+            try {
+            
+                $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      //Enable verbose debug output
+                $mail->isSMTP();                                            //Send using SMTP
+                $mail->Host       = 'smtp.gmail.com';                     //Set the SMTP server to send through
+                $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
+                $mail->Username   = 'dwwm94@gmail.com';                     //SMTP username
+                $mail->Password   = 'mziyzxforjcwijpo';                                //SMTP password
+                $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;         //Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` encouraged
+                $mail->Port       = 587;                                    //TCP port to connect to, use 465 for `PHPMailer::ENCRYPTION_SMTPS` above
+            
+                //Recipients
+                $mail->setFrom('dwwm94@gmail.com', 'Wood Art');
+                $mail->addAddress($email, 'Mr/Mme');     //Add a recipient
+            
+            
+                //Content
+                $mail->isHTML(true);                                  
+                $mail->Subject = 'Here is the subject';
+                $mail->Body    = "
+                <h2>confirmation d'achat</h2>
+                <div>
+                <b> Name : $name</b>
+                <b> Dimension : $dimension</b>
+                <b> Content : $content</b>
+                <b> Price : $price €</b>
+                <p>Nous vous Remercions pour votre achat, à très bientôt !</p>
+                </div>";
+            
+                $mail->send();
+                echo 'Message has been sent';
+            } catch (Exception $e) {
+                echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+            }
+            
+            require_once('./views/public/success.php');
+            
+                }
+
+    //___________________________________________________________//
+   
+    public function cancel(){
+       
+        
+        
+        require_once('./views/public/cancel.php');
+
+    }
+    //___________________________________________________________//
+
+     public function valid(){
+       
+        
+               
+        require_once('./views/public/valid.php');
+    
+        }
+    //___________________________________________________________//
     public function contact(){
         AuthClientController::isLoggedForIndex();
 

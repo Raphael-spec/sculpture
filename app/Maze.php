@@ -179,6 +179,22 @@ class Maze{
                         $this->ctrPub->bringBack();
                         break;
 
+                    case 'pay':
+                        $this->ctrPub->payment();
+                        break;
+
+                    case 'success':
+                        $this->ctrPub->confirmation();
+                        break;
+
+                    case 'cancel':
+                        $this->ctrPub->cancel();
+                         break;
+
+                    case 'valid':
+                        $this->ctrPub->valid();
+                        break;
+
                     //______________________PUBLIC_CLIENT_______________________//
 
                     case 'regis_cus':

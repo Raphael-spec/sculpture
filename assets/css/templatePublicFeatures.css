@@ -49,21 +49,63 @@
 .feat_catIn p a:hover{
     color: cornflowerblue;
 }
-
-/* #search{
-    border: none;
-    border-bottom: 2px solid #333;
-    outline: none;
-    resize: none;
+.feat_section{
+    margin-bottom: 8%;
+}
+/* _____________________________CARROUSEL____________________________________ */
+.featNet_section{
+    margin-top: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.featNet_title{
+    height: 15vw;
+    width: 100%;
+    text-align: center;
+}
+.feat_carous{
+    height: 250px;
+    width: 80%;
+    position: relative;
 
 }
-#loupe{
-    border: none;
-    border-bottom: 2px solid #333;
-    outline: none;
-    resize: none;
+.feat_carous .feat_SwitchLeft,
+.feat_carous .feat_SwitchRight{
+    color: white;
+    font-weight: bold;
+    height: 100%;
+    width: 45px;
+    line-height: 250px;
+    font-size: 25px;
+    text-align: center;
+    background-color: lightgreen;
+    font-family: sans-serif;
+    top: 0;
+    z-index: 3;
+}
+.feat_carous .feat_SwitchLeft{
+    position: absolute;
+    left: -50px;
+}
+.feat_carous .feat_SwitchRight{
+    position: absolute;
+    right: -50px;
+}
 
-} */
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 @media (max-width: 991px){
@@ -73,3 +115,4 @@
          flex-wrap: wrap;
     }
 }
+/* _____________________________CARROUSEL MEDIA____________________________________ */
