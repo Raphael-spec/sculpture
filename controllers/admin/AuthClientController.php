@@ -1,33 +1,33 @@
 <?php
 
 //session_start();
-class AuthClientController{
+//class AuthClientController{
 
     
-    public static function isLogged(){
-        if(!isset($_SESSION['AuthClient'])){
+//     public static function isLogged(){
+//         if(!isset($_SESSION['AuthClient'])){
             
-            header('location:index.php?action=log_cus');
-            exit;
-        }
-    }
-  //___________________________________________________________//
-    public static function isLoggedForIndex(){
-        if(!isset($_SESSION['AuthClient'])){
+//             header('location:index.php?action=log_cus');
+//             exit;
+//         }
+//     }
+//   //___________________________________________________________//
+//     public static function isLoggedForIndex(){
+//         if(!isset($_SESSION['AuthClient'])){
             
-            // header('location:index.php?action=log_cus');
-            //exit;
-        }
-    }
-    //___________________________________________________________//
+//             // header('location:index.php?action=log_cus');
+//             //exit;
+//         }
+//     }
+//     //___________________________________________________________//
 
-    public static function logoutClient(){
+//     public static function logoutClient(){
        
-        unset($_SESSION['AuthClient']);
+//         unset($_SESSION['AuthClient']);
        
-        header('location:index.php?action=features');
-    }
+//         header('location:index.php?action=features');
+//     }
 
 
     
-}
+//}

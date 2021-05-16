@@ -93,6 +93,33 @@
     position: absolute;
     right: -50px;
 }
+.feat_carousbox{
+    height: 250px;
+    width: auto;
+    overflow: hidden;
+    white-space: nowrap;
+    display: inline-block;
+    text-align: center;
+    padding-bottom: 10px !important;
+    display: flex;
+    align-items: center;
+}
+.feat_carousbox img{
+    min-width: 147px;
+    max-width: 147px;
+    height: 200px;
+    background-size: cover;
+    background-color: lightgreen;
+    margin: 5px 10px;
+    cursor: pointer;
+    transition: 0.5s ease;
+    z-index: 2;
+}
+.feat_carousbox img:hover{
+    transform: scale(1.4);
+    z-index: 5;
+    
+}
 
 
 

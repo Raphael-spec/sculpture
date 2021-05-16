@@ -70,20 +70,20 @@
         <p><?=$price;?>€</p>
         
       <form>
-        <label for="mail">Email*</label>
-        <input type="email" id="mail" class="form-control mb-4" placeholder="Votre email svp...">
+        <label for="email">Email*</label>
+        <input type="email" id="email" class="form-control mb-4" placeholder="Votre email svp...">
 
-        <input type="hidden" id="quantity" class="form-control"  min="1" max="1" value="<?=$quantity;?>" >
-        <input type="hidden" id="id" value="<?=$id;?>">
-        <input type="hidden" id="name" value="<?=$name;?>">
-        <input type="hidden" id="price" value="<?=$price;?>">
-        <input type="hidden" id="content" value="<?=$content;?>">
-        <input type="hidden" id="quality" value="<?=$quality;?>">
-        <input type="hidden" id="picture" value="<?=$picture;?>">
-        <input type="hidden" id="dimension" value="<?=$dimension;?>">
-        <input type="hidden" id="date" value="<?=$date;?>">
-        <input type="hidden" id="id_cat" value="<?php $id_cat;?>">
-        <input type="hidden" id="name_cat" value="<?=$name_cat;?>">
+        <input type="text" name="quantity" id="quantity" class="form-control"  min="1" max="1" value="<?=$quantity;?>" >
+        <input type="text" name="id"  id="id" value="<?=$id;?>">
+        <input type="text" name="name"  id="name" value="<?=$name;?>">
+        <input type="text" name="price"  id="price" value="<?=$price;?>">
+        <input type="text" name="content"  id="content" value="<?=$content;?>">
+        <input type="text" name="quality"  id="quality" value="<?=$quality;?>">
+        <input type="text" name="picture"  id="picture" value="<?=$picture;?>">
+        <input type="text" name="dimension"  id="dimension" value="<?=$dimension;?>">
+        <input type="text" name="date"  id="date" value="<?=$date;?>">
+        <input type="text" name="id_cat"  id="id_cat" value="<?= $id_cat;?>">
+        <input type="text"name="name_cat"  id="name_cat" value="<?=$name_cat;?>">
         
             <button id="checkout-button"  class="col-12 carIt_pay_button" >Add to cart</button>
       

@@ -5,9 +5,9 @@ const checkoutCarv= $("#checkout-button");
     
     checkoutCarv.onclick = function(e){
         e.preventDefault();
-        const mail = document.getElementById('mail');
+        const email = document.getElementById('email');
 
-        console.log(mail.value);
+        console.log(email.value);
 
        $.ajax({
            url:'index.php?action=pay',
@@ -23,7 +23,7 @@ const checkoutCarv= $("#checkout-button");
                dimension:$('#dimension').val(),
                date:$('#date').val(),
                id_cat:$('#id_cat').val(),
-            //    name_cat:$('#name_cat').val(),
+               name_cat:$('#name_cat').val(),
                email:$('#email').val(),
             
            },
@@ -39,7 +39,6 @@ const checkoutCarv= $("#checkout-button");
     }
 
     
-
 
 
 

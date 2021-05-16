@@ -133,6 +133,10 @@ class Maze{
                     case 'logout':
                         AuthController::logout();
                         break;
+
+                    case "to_features" :
+                        AuthController::logoutAndFeatures();
+                        break; 
                     
                     //______________________CUSTOMERS_______________________//
 
@@ -175,7 +179,7 @@ class Maze{
                         $this->ctrPub->getPubCarving();
                          break;
 
-                    case 'glanceAt':
+                    case 'checkout':
                         $this->ctrPub->bringBack();
                         break;
 
@@ -210,7 +214,7 @@ class Maze{
                             break;
                         
                     case 'logout_cus':
-                        AuthClientController::logoutClient();
+                        AuthController::logoutClient();
                         break;
                 }
         

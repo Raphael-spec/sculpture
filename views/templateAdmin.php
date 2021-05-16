@@ -84,7 +84,7 @@
     <?php } ?>
   </div>
   <?php }} ?>
-  <a href="index.php" class="text-end "><i class="fas fa-arrow-circle-left"></i></a>
+  <a href="index.php?action=to_features" class="text-end "><i class="fas fa-arrow-circle-left"></i></a>
 </div>
 
 <div id="main">

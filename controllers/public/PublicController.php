@@ -24,7 +24,7 @@ class PublicController{
     
     public function getPubCarving(){
         
-        AuthClientController::isLoggedForIndex();
+      
        
         if(isset($_GET['id']) && !empty($_GET['id'])){
 
@@ -91,10 +91,10 @@ class PublicController{
 
     public function payment(){
       
-        if(isset($_POST) && !empty($_POST['email'])){
+        if(isset($_POST)){
 
             
-            \Stripe\Stripe::setApiKey('sk_test_51IdC0SEYTj0p2Az76g8Q530n2zC2GgwfkvjzmxmrDI3FrsH91r6CrWPfJQ1ddYCXhm3nN45aVYDdVZYoFkvNT9VN00aI8QsXPR');
+            \Stripe\Stripe::setApiKey('sk_test_51IM8ZrEwRtoFpDAHRzosyjI15p26BORIEDgbmAyTU6vftlVeTcKt3ncppiL7SPkqlOcKYsH3sdHfo41hvqrgBb4G00hRY1LExZ');
 
                 header('Content-Type: application/json');
 
@@ -116,7 +116,7 @@ class PublicController{
                     ]],
                     'customer_email'=>$_POST['mail'],
                     'mode' => 'payment',
-                    'success_url' => 'http://localhost/php/poo/app/sculpture//index.php?action=success',
+                    'success_url' => 'http://localhost/php/poo/app/sculpture/index.php?action=success',
                     'cancel_url' => 'http://localhost:8080/php/poo/app/sculpture/index.php?action=cancel',
                     ]);
                         $_SESSION['pay'] = $_POST;
@@ -128,8 +128,8 @@ class PublicController{
 
             public function confirmation(){
                     
-                $carv = new Carving();
-                $carv->setId_carv($_SESSION['pay']['id']);
+                $carv = new Picture();
+                $carv->getCarving()->setId_carv($_SESSION['pay']['id']);
                 // var_dump($_SESSION['pay']);
             
             $email = $_SESSION['pay']['mail'];
@@ -199,7 +199,7 @@ class PublicController{
         }
     //___________________________________________________________//
     public function contact(){
-        AuthClientController::isLoggedForIndex();
+        
 
         require_once('./views/public/contact.php');
 
@@ -207,7 +207,7 @@ class PublicController{
     //___________________________________________________________//
     
     public function about(){
-        AuthClientController::isLoggedForIndex();
+        
         
         require_once('./views/public/about.php');
 
@@ -215,7 +215,7 @@ class PublicController{
     //___________________________________________________________//
     
     public function gallery(){
-        AuthClientController::isLoggedForIndex();
+        
          
         require_once('./views/public/gallery.php');
 
@@ -223,7 +223,7 @@ class PublicController{
     //___________________________________________________________//
 
     public function home(){
-        AuthClientController::isLoggedForIndex();
+        
          
         require_once('./views/public/home.php');
 

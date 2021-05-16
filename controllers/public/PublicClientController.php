@@ -84,7 +84,7 @@ class PublicClientController{
 
     public function profilClient(){
 
-        AuthClientController::isLoggedForIndex();
+        AuthController::isLoggedCustomer();
            
             $id = $_SESSION['AuthClient']->id_c;
                        

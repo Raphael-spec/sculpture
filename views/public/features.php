@@ -49,7 +49,7 @@
                                 <h5 class="card-title"><?= $carv->getCarving()->getName();?></h5>
                                 <p class="card-text"><?= $carv->getCarving()->getPrice();?>€</p>
                                 
-                                <form action="index.php?action=glanceAt" method="post">
+                                <form action="index.php?action=checkout" method="post">
                                     <input type="hidden" name="id_carv" value="<?= $carv->getCarving()->getId_carv();?>">
                                     <input type="hidden" name="name" value="<?= $carv->getCarving()->getName();?>">
                                     <input type="hidden" name="picture" value="<?= $carv->getCarving()->getPicture();?>">
@@ -87,8 +87,8 @@
                 <!-- Random data will comme here -->
             </div>
 
-            <a href="#" class="feat_SwitchLeft featSliderButton"><</a>
-            <a href="#" class="feat_SwitchRight featSliderButton">></a>
+            <a href="#" class="feat_SwitchLeft featSliderButton" onclick="sliderScrollLeft()"><</a>
+            <a href="#" class="feat_SwitchRight featSliderButton" onclick="sliderScrollRight()">></a>
 
         </div>
     </section>
