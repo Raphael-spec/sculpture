@@ -1,5 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300&display=swap');
+
+
 body {
-    font-family: "Lato", sans-serif;
+  font-family: 'Poppins', sans-serif;
+    background-image: url(../assets/media/cloud.jpeg);
+     min-height: 100vh;
   }
   
   .sidebar {
@@ -55,6 +60,8 @@ body {
   #main {
     transition: margin-left .5s;
     padding: 16px;
+    font-family: 'Poppins', sans-serif;
+     min-height: 100vh;
   }
 
   /* Style the sidenav links and the dropdown button */

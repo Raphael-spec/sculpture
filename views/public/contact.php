@@ -4,7 +4,7 @@
 <section class ="contact"  >
     <div class="content">
         <h2>Contact Us</h2>
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque nesciunt ratione amet recusandae perferendis, saepe animi quae molestias sunt dolorum asperiores, omnis ad quod laboriosam. Labore perspiciatis sint maiores quam.</p>
+        <p>Do not hesitate to contact us. We will try to answer you as soon as possible, taking into account the jet lag. Wishing you a very good day</p>
     </div>
     <div class="inside">
         <div class="contactInfo">
@@ -12,7 +12,7 @@
                 <div class="iconi"><i class="fa fa-map-marker" aria-hidden="true"></i></div>
                 <div class="text">
                     <h3>Address</h3>
-                    <p>512 Brown paper bag <br>Jacksonville <br>75094</p>
+                    <p>512 Brown paper Money bag mayflower <br>Nobusaka <br>75094</p>
                 </div>
             </div>
             <div class="box">

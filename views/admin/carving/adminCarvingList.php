@@ -1,15 +1,15 @@
 <?php ob_start();?>
-<h1 class="display-6 text-center font-verdana text-decoration-underline">Carving list</h1>
+<h1 class="display-6 text-center font-verdana text-decoration-underline mt-3">Carving list</h1>
 
-<div class="row">
-    <div class="col-4 offset-8">
+<div class="row ">
+    <div class="col-4 offset-8 mt-5">
         <form action="<?php $_SERVER['PHP_SELF'];?>" method="post" class="input-group">
             <input class="form-control text-center" type="search" name="search" id="search" placeholder="Search..." >
             <button type="submit" class="btn btn-outline-secondary" name="submit"><i class="fas fa-search"></i></button>
         </form>
     </div>
 </div>
-<table class="table table-striped">
+<table class="table table-striped border border-light p-4 bg-light mt-4 rounded-3">
       <thead>
           <tr>
               <th>Id</th>
@@ -32,7 +32,7 @@
               <td><img src="./assets/images/<?=$carv->getPicture();?>" alt="" width="75"></td>
               <td><?=$carv->getDimension();?></td>
               <td><?=$carv->getDate();?></td>
-              <td><?=$carv->getContent();?></td>
+              <td><?=substr($carv->getContent(),0,250);?></td>
               <td><?=$carv->getPrice();?></td>
               <td><?=$carv->getCategory()->getName_cat();?></td>
            

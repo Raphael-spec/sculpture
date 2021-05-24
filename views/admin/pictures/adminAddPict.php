@@ -1,9 +1,9 @@
 <?php ob_start();?>
 
+<h1 class="display-6 text-center font-verdana text-decoration-underline mt-3 mb-5">Add Pictures</h1>
  <div class="container">
      <div class="row">
-         <div class="col-8 offset-2">
-         <h1 class="display-6 text-center font-verdana text-decoration-underline">Add Pictures</h1>
+         <div class="col-8 offset-2 bg-light p-3">
              <form action="<?php $_SERVER['PHP_SELF'];?>" method="post" enctype="multipart/form-data">
                 
                  <div class="row">
@@ -32,7 +32,7 @@
                         <input type="file" id="picture_r" name="picture_r" class="form-control"  >
                     </div>
                 </div>
-                <button type="submit" class="btn btn-success  col-12 mt-2" name="submit">Add</button>
+                <button type="submit" class="btn btn-success  col-12 mt-2 mb-4" name="submit">Add</button>
             </form>
          </div>
      </div>

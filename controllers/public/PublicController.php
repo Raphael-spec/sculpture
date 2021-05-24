@@ -82,19 +82,142 @@ class PublicController{
             $picture_l = htmlspecialchars(addslashes($_POST['picture_l']));
             $picture_r = htmlspecialchars(addslashes($_POST['picture_r']));
 
+           
 
-            require_once('./views/public/carvingItem.php');
+        require_once('./views/public/carvingItem.php');
 
         }
     }
     //___________________________________________________________//
+    public function addCart(){
+
+
+        if(isset($_POST['cart'])){
+            
+            $id = htmlspecialchars(addslashes($_POST['id_carv']));
+            $name = htmlspecialchars(addslashes($_POST['name']));
+            $picture = htmlspecialchars(addslashes($_POST['picture']));
+            $content = htmlspecialchars(addslashes($_POST['content']));
+            $dimension = htmlspecialchars(addslashes($_POST['dime']));
+            $quantity = htmlspecialchars(addslashes($_POST['quant']));
+            $price = htmlspecialchars(addslashes($_POST['price']));
+            $date = htmlspecialchars(addslashes($_POST['date']));
+            $quality = htmlspecialchars(addslashes($_POST['qual']));
+            $id_cat = htmlspecialchars(addslashes($_POST['id_cat']));
+            $name_cat = htmlspecialchars(addslashes($_POST['name_cat']));
+
+
+
+            echo $quality;
+
+
+    if(isset($_SESSION['cart'])){
+        //$dispo = false;
+        
+
+        $items_id = array_column($_SESSION['cart'],"id"); //cible une colonne et recupere toute la colonne
+        
+            if(in_array($id, $items_id)){
+                
+                //$dispo = true;
+                echo'Cet article est deja ajouté';
+            
+            }else{
+                
+                $nb_cart = count($_SESSION['cart']);
+
+                $item_new = [
+                                "id" => $id,
+                                "name" => $name,
+                                "picture" => $picture,
+                                "content" => $content,
+                                "dimension" => $dimension,
+                                "quantity" => $quantity,
+                                "date" => $date,
+                                "quality" => $quality,
+                                "id_cat" => $id_cat,
+                                "name_cat" => $name_cat,
+                                "price" => $price
+                            ];
+
+                $_SESSION['cart'][$nb_cart] = $item_new;
+            }
+        
+        
+    }else{
+    
+        $item_cart = [
+                        "id" => $id,
+                        "name" => $name,
+                        "picture" => $picture,
+                        "content" => $content,
+                        "dimension" => $dimension,
+                        "quantity" => $quantity,
+                        "date" => $date,
+                        "quality" => $quality,
+                        "id_cat" => $id_cat,
+                        "name_cat" => $name_cat,
+                        "price" => $price
+                    ];
+        
+    
+        $_SESSION['cart'][0] = $item_cart;//premier produit, tableau associative
+
+    
+    }
+
+    require_once('./views/public/addCart.php');
+
+}  
+
+
+}
+//___________________________________________________________//
+// public function ArrayPay(){
+
+
+
+//     if($_SESSION['cart']){
+
+//         $ArrayCart = [];
+//         $ArrayCart = $_SESSION['cart'];
+
+//         echo json_encode($ArrayCart);
+
+//     }
+
+// }
+    
+     public function deleteCart(){
+
+        if(isset($_GET["id"])){
+            //unset($_SESSION['cart']);               
+            // echo'$_GET["id"]';
+            foreach($_SESSION['cart'] as $key =>$cart){
+
+                 if($cart['id'] == $_GET['id']){
+
+                     unset($_SESSION['cart'][$key]);
+                    // var_dump($_SESSION['cart']);
+                        // header('location:index.php?action=cart');
+                    //  echo'<script>window.location"index.php?action=cart"</script>';
+                     require_once('./views/public/addCart.php');
+                    
+                }
+
+            }
+
+        }
+        require_once('./views/public/addCart.php');
+     }
+     //___________________________________________________________//
 
     public function payment(){
       
         if(isset($_POST)){
 
             
-            \Stripe\Stripe::setApiKey('sk_test_51IM8ZrEwRtoFpDAHRzosyjI15p26BORIEDgbmAyTU6vftlVeTcKt3ncppiL7SPkqlOcKYsH3sdHfo41hvqrgBb4G00hRY1LExZ');
+            \Stripe\Stripe::setApiKey('sk_test_51IdC0SEYTj0p2Az76g8Q530n2zC2GgwfkvjzmxmrDI3FrsH91r6CrWPfJQ1ddYCXhm3nN45aVYDdVZYoFkvNT9VN00aI8QsXPR');
 
                 header('Content-Type: application/json');
 
@@ -108,13 +231,13 @@ class PublicController{
                     'unit_amount' => $_POST['price']*100,
                     'product_data' => [
                         'name' => $_POST['name']."-".$_POST['dimension'],
-                        'images' => ["https://imgshare.io/image/dragonball.pXyBYP"],
-                        'content' => $_POST['content'],
+                        'images' => ["https://i.ibb.co/L9nzYFv/carving.jpg"],
+                        'description' => $_POST['content'],
                         ],
                         ],
                         'quantity' => 1,
                     ]],
-                    'customer_email'=>$_POST['mail'],
+                    'customer_email'=>$_POST['email'],
                     'mode' => 'payment',
                     'success_url' => 'http://localhost/php/poo/app/sculpture/index.php?action=success',
                     'cancel_url' => 'http://localhost:8080/php/poo/app/sculpture/index.php?action=cancel',
@@ -127,18 +250,23 @@ class PublicController{
             }
 
             public function confirmation(){
-                    
-                $carv = new Picture();
-                $carv->getCarving()->setId_carv($_SESSION['pay']['id']);
+                
+                $newStock = ((int)$_SESSION['pay']['nb']) - ((int)$_SESSION['pay']['quantity']);   
+                $carv = new Carving();
+                $carv->setId_carv($_SESSION['pay']['id']);
+                $carv->setQuantity($newStock);
                 // var_dump($_SESSION['pay']);
+
+                $nbLine = $this->pubMo->updateStock($carv);
+                if($nbLine > 0 ){
             
-            $email = $_SESSION['pay']['mail'];
-            $name = $_SESSION['pay']['name'];
-            $dimension = $_SESSION['pay']['dimension'];
-            $price = $_SESSION['pay']['price'];
-            $content = $_SESSION['pay']['content'];
-            
-            $mail = new PHPMailer(true);
+                $email = $_SESSION['pay']['email'];
+                $name = $_SESSION['pay']['name'];
+                $dimension = $_SESSION['pay']['dimension'];
+                $price = $_SESSION['pay']['price'];
+                $content = $_SESSION['pay']['content'];
+                
+                $mail = new PHPMailer(true);
             
             try {
             
@@ -174,7 +302,7 @@ class PublicController{
             } catch (Exception $e) {
                 echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
             }
-            
+        } 
             require_once('./views/public/success.php');
             
                 }
@@ -228,4 +356,26 @@ class PublicController{
         require_once('./views/public/home.php');
 
     }
+    //___________________________________________________________//
+
+    public function bcs(){
+        
+         
+        require_once('./views/public/bcs.php');
+    }
+    //___________________________________________________________//
+
+    public function psc(){
+        
+         
+        require_once('./views/public/psc.php');
+    }
+    //___________________________________________________________//
+
+    public function pageNotFound(){
+
+        
+        require_once('./views/public/pageNotFound.php');
+    }
+    //___________________________________________________________//
 }

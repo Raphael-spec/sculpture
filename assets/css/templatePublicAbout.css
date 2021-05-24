@@ -1,6 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300&display=swap');
 
 .abo_section_bg{
     min-height: 100vh;
+    background-image: url(../../assets/media/Weekly.jpg); 
+    background-position: center; 
+    background-size: cover;
 }
 .abo_box{
     width: 450px;
@@ -8,9 +12,9 @@
     padding: 40px;
     text-align: center;
     margin: auto;
-    margin-top: 5%;
+    /* margin-top: 5%; */
     color: white;
-    font-family: 'verdana',sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 .abo_box_img{
     border-radius: 50%;

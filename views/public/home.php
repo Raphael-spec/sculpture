@@ -30,7 +30,7 @@
 <section class="home_section">
     <div class="home_container">
         <span class="home_text1">Welcome in</span>
-        <span class="home_text2">Wood art</span>
+        <a href="index.php?action=features" id="home_a"><span class="home_text2">Wood art</span></a>
     </div>
 </section>
 

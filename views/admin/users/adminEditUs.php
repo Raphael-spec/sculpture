@@ -1,12 +1,12 @@
 <?php ob_start();
 
-var_dump($_POST)
+//var_dump($_POST)
 ?>
 
+<h1 class="display-6 text-center font-verdana text-decoration-underline mt-3">Edit user n° <?=$editUs->getId_u();?></h1>
  <div class="container">
      <div class="row">
-         <div class="col-8 offset-2">
-         <h1 class="display-6 text-center font-verdana text-decoration-underline">Edit user n° <?=$editUs->getId_u();?></h1>
+         <div class="col-8 offset-2 bg-light mt-4 p-3">
              <form action="<?php $_SERVER['PHP_SELF'];?>" method="post" enctype="multipart/form-data">
                 
                 <div class="row">
@@ -55,7 +55,7 @@ var_dump($_POST)
                         </select>
                     </div>
                 </div>
-                <button type="submit" class="btn btn-primary  col-12 mt-2" name="submit">Valid</button>
+                <button type="submit" class="btn btn-primary  col-12 mt-2 mb-4" name="submit">Valid</button>
             </form>
          </div>
      </div>

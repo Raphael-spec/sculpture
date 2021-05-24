@@ -18,20 +18,20 @@
 //     g_videoPlayer.style.display = "block";
    
 // }
-var video = document.querySelectorAll('video')
+// var video = document.querySelectorAll('video')
 
-video.forEach(play =>play.addEventListener('click', () =>{
+// video.forEach(play =>play.addEventListener('click', () =>{
 
-    play.classList.toggle('active');
+//     play.classList.toggle('active');
     
-    if(play.paused){
-        play.play();
-    }else{
-        play.pause();
-        video.setAttribute("controls");
-        // play.currentTime = 0;
-    }
-}));
+//     if(play.paused){
+//         play.play();
+//     }else{
+//         play.pause();
+//         video.setAttribute("controls");
+//         // play.currentTime = 0;
+//     }
+// }));
 
 // video.mouseover=function(){
 //    video.setAttribute("controls");

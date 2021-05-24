@@ -1,9 +1,9 @@
 <?php ob_start();?>
 
+<h1 class="display-6 text-center font-verdana text-decoration-underline mt-3 mb-4">Edit Pictures N°<?=$editPic->getId_pic();?></h1>
  <div class="container">
      <div class="row">
-         <div class="col-8 offset-2">
-         <h1 class="display-6 text-center font-verdana text-decoration-underline">Edit Pictures N°<?=$editPic->getId_pic();?></h1>
+         <div class="col-8 offset-2 bg-light mt-4 p-3">
              <form action="<?php $_SERVER['PHP_SELF'];?>" method="post" enctype="multipart/form-data">
                 
                  <div class="row">
@@ -44,7 +44,7 @@
                         <img src="./assets/images/<?=$editPic->getPicture_r();?>" alt="" width="300"  class="img-thumbnail mt-3">
                     </div>
                 </div>
-                <button type="submit" class="btn btn-warning col-12 mt-2" name="submit">edit</button>
+                <button type="submit" class="btn btn-warning col-12 mt-2 mb-4" name="submit">edit</button>
             </form>
          </div>
      </div>

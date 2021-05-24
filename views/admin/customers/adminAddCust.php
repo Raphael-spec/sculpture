@@ -1,9 +1,9 @@
 <?php ob_start();?>
 
+<h1 class="display-6 text-center font-verdana text-decoration-underline mt-3 mb-5">Customer Registration Form</h1>
  <div class="container">
      <div class="row">
-         <div class="col-8 offset-2">
-         <h1 class="display-6 text-center font-verdana text-decoration-underline">Customer Registration Form</h1>
+         <div class="col-8 offset-2 bg-light p-3">
          <form action="<?php $_SERVER['PHP_SELF'] ?>" method="post" class="text-center" enctype="multipart/form-data">
                 <div class="row mt-3  ">
                   <div class="row border border-success mt-4">
@@ -52,7 +52,7 @@
                        <input type="password" id="password" name="password" class="form-control" placeholder="Please enter a password">
                    </div>
                 </div>
-                <button type="submit" class="btn btn-primary  col-12 mt-3" name="submit">Add</button>
+                <button type="submit" class="btn btn-primary  col-12 mt-3 mb-4" name="submit">Add</button>
             </form>
          </div>
      </div>

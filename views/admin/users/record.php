@@ -1,9 +1,9 @@
 <?php ob_start();?>
 
+<h1 class="display-6 text-center font-verdana text-decoration-underline mt-3 mb-5">Add user</h1>
  <div class="container">
      <div class="row">
-         <div class="col-8 offset-2">
-         <h1 class="display-6 text-center font-verdana text-decoration-underline">Add user</h1>
+         <div class="col-8 offset-2 bg-light p-3">
              <form action="<?php $_SERVER['PHP_SELF'];?>" method="post" enctype="multipart/form-data">
                 
                 <div class="row">
@@ -42,7 +42,7 @@
                         </select>
                     </div>
                 </div>
-                <button type="submit" class="btn btn-primary  col-12 mt-2" name="submit">Valid</button>
+                <button type="submit" class="btn btn-primary  col-12 mt-2 mb-4" name="submit">Valid</button>
             </form>
          </div>
      </div>

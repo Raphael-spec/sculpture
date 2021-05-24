@@ -1,3 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Infant:ital,wght@1,500&family=Rubik:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Infant:ital,wght@1,500;1,700&family=Rubik:wght@300&display=swap');
+
+
+.carIt_section{
+    font-family: 'Rubik', sans-serif;
+}
+
 .carIt_img1{
     display: flex;
     justify-content: center;
@@ -13,6 +22,9 @@
     display: flex;
     justify-content: space-evenly;
 }
+.carIt_title1, .carIt_title2{
+    font-weight: 900;
+} 
 .carIt_title2{
     margin-top: 5%;
 }
@@ -21,6 +33,8 @@
     margin-top: 0;
     border: 2px solid rgb(0, 0, 0);
     border-radius: 15%;
+    
+    
 }
 .carIt_para{
     margin-top: 3%;
@@ -30,6 +44,17 @@
 }
 .carIt_para p{
     padding: 1%;
+}
+.carIt_para p:nth-child(1) {
+    font-weight: 700;
+}
+.carIt_para p:nth-child(1) span {
+    color: grey;
+    font-weight: 700;
+}
+
+.carIt_para2 p:nth-child(1) {
+    font-weight: 700;
 }
 
 .carIt_para2{
@@ -56,16 +81,35 @@
 .carIt_paytitle{
     display: flex;
     flex-direction: column;
-    align-items: center;
-    margin-bottom: 3%;
+    align-items: flex-start;
+    /* margin-bottom: 1%; */
     margin-top: 10%;
+}
+.carIt_paytitle h1{
+    font-family: 'Cormorant Infant', serif;
+    font-size: 50px; 
+}
+.carIt_paytitle h2{
+    font-family: 'Cormorant Infant', serif; 
+    margin-bottom: 4%;
+}
+.carIt_paytitle p{
+    font-size: 30px;
+    font-weight: 800;
+    font-family: 'Cormorant Infant', serif;
+    margin-bottom: 0;
 }
 .carIT_pay_hr{
     /* margin-bottom: 10%;
     margin-top: 2%; */
-    margin: 10% 15% 5% 15%;
-    
+    margin: 7% 15% 8% 15%;
 }
+.CarIt_pay_min{
+    
+    font-family: 'Cormorant Infant', serif; 
+    font-size: 20px;
+}
+
 .carIt_pay_button{
     background-color: black;
     color: white;

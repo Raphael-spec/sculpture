@@ -3,14 +3,21 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Carving Wood</title>
+  <title>Wood Art</title>
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
   <link rel="stylesheet" href="./assets/css/templatePublicTopHeader.css">
   <link rel="stylesheet" href="./assets/css/templatePublicHeader.css">
   <link rel="stylesheet" href="./assets/css/templatePublicHome.css ">
   <link rel="stylesheet" href="./assets/css/templatePublicFeatures.css ">
   <link rel="stylesheet" href="./assets/css/templatePublicCarvingCat.css">
   <link rel="stylesheet" href="./assets/css/templatePublicCarvingItem.css">
+  <link rel="stylesheet" href="./assets/css/templatePublicAddCart.css">
+  <link rel="stylesheet" href="./assets/css/templatePublicValid.css">
+  <link rel="stylesheet" href="./assets/css/templatePublicPageNotFound.css">
+  <link rel="stylesheet" href="./assets/css/templatePublicBcs.css">
+  <link rel="stylesheet" href="./assets/css/templatePublicPsc.css">
   <link rel="stylesheet" href="./assets/css/templatePublicAbout.css">
   <link rel="stylesheet" href="./assets/css/templatePublicGallery.css">
   <link rel="stylesheet" href="./assets/css/templatePublicContact.css">
@@ -44,18 +51,37 @@
               </a>
             </li>
           <?php } ?>
-          <li><a href="#"><img src="./assets/media/sac.png" alt="" width="25px"></a></li>
+          <li>
+          <a href="index.php?action=remove_cart"><img src="./assets/media/sac.png" alt="" width="25px">
+          <span class="badge bg-warning">
+                <?php 
+                
+                    if(isset($_SESSION['cart'])){
+
+                        $nb_cart = sizeof($_SESSION['cart']);
+                        
+                        echo $nb_cart;
+                   
+                    }
+                
+                
+                ?>
+          </span>
+          </a>
+          </li>
           
         </ul>
     </div>
     <section id="head_down">
-        <div id="head_logo">WoodArt</div>
+        <div id="head_logo">
+            <a href="index.php?action=features"><img src="./assets/media/lac.png" alt="" width="80px"></a><p>WOOD ART</p> 
+        </div>
           <nav class="head_nav" >
               <ul class="head_ul">
-                  <li><a href="#" class="active">Features</a></li>
-                  <li><a href="#">About</a></li>
-                  <li><a href="#">Gallery</a></li>
-                  <li><a href="#">Contact</a></li>
+                  <li><a href="index.php?action=features" class="active">Features</a></li>
+                  <li><a href="index.php?action=about">About</a></li>
+                  <li><a href="index.php?action=gallery">Gallery</a></li>
+                  <li><a href="index.php?action=contact">Contact</a></li>
               </ul>
           </nav>
           <div class="head_menu"><i class="fa fa-bars" style="font-size:24px"></i></div>
@@ -174,7 +200,7 @@
 </nav> -->
 </header>
 
-<main class="container mb-5 mt-5">
+<main class="container">
           <?=$contenu;?>
 
 </main> 
@@ -197,9 +223,9 @@
 <footer id="footer">
 <!-- <a href="#head_logo" id="ankle"><img src="./assets/media/arrow_up_5.png" alt="" width="50"></a> -->
     <div class="footer_info">
-        <div class="foo_footer_width about_foo bg-secondary">
+        <div class="foo_footer_width about_foo ">
             <h2 >About</h2>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet beatae non fugit nobis maiores esse ad, vel dolorem, quia ratione dolores repellat praesentium fugiat. Ullam earum iure quae enim blanditiis?</p>
+              <p>Wood art is an art gallery that sells wooden sculptures of manga characters, sculpted by Ryô SAEBA. Don't miss the opportunity to be the only buyer in the world</p>
 
                 <div class="foo_social-media">
                     <ul class="foo_ul" >
@@ -209,41 +235,41 @@
                     </ul>
                 </div>
         </div>
-        <div class="foo_footer_width link_foo bg-primary">
+        <div class="foo_footer_width link_foo ">
             <h2>Quick Link</h2>
                 <ul class="foo_ul">
-                    <li ><a href="#" class="foo_a">Features</a></li>
-                    <li ><a href="#" class="foo_a">About</a></li>
-                    <li ><a href="#" class="foo_a">Gallery</a></li>
-                    <li ><a href="#" class="foo_a">Connexion</a></li>
-                    <li ><a href="#" class="foo_a">Register</a></li>
-                    <li ><a href="#" class="foo_a">Contact</a></li>
+                    <li ><a href="index.php?action=features" class="foo_a">Features</a></li>
+                    <li ><a href="index.php?action=about" class="foo_a">About</a></li>
+                    <li ><a href="index.php?action=gallery" class="foo_a">Gallery</a></li>
+                    <li ><a href="index.php?action=log_cus" class="foo_a">Connexion</a></li>
+                    <li ><a href="index.php?action=regis_cus" class="foo_a">Register</a></li>
+                    <li ><a href="index.php?action=contact" class="foo_a">Contact</a></li>
                     
                 </ul>
         </div>
-        <div class="foo_footer_width contactt_foo bg-info">
+        <div class="foo_footer_width contactt_foo ">
             <h2 >Contact</h2>
                 <ul class="foo_ul">
                     <li >
-                        <span><i class="fa fa-map-marker" aria-hidden="true"></i></span>
+                        <span id="foo_local"><i class="fa fa-map-marker" aria-hidden="true"></i></span>
                         <p>
-                            512 Brown paper bag mayflower Jacksonville 75094
+                            512 Brown paper Money bag mayflower 75094 Nobusaka
                         </p>
                     </li>
                     <li >
                         <span><i class="fa fa-envelope-o" aria-hidden="true"></i></span>
-                        <a href="#" class="foo_a">carvingwood@temporary.net</a>
+                        <a href="#" class="foo_a">woodart@temporary.net</a>
                     </li>
                     <li >
                         <span><i class="fa fa-phone" aria-hidden="true"></i></span>
-                        <a href="#" class="foo_a">000 0000 000</a>
+                        <a href="#" class="foo_a">555 7584 322</a>
                     </li>
 
                 </ul>
         </div>
     </div>
     <div class="foo_copy-right">
-      <p>copyright &copy;2021 carvingWood. designed by L.rhafell</p>
+      <p>copyright &copy;2021 Wood Art. designed by L.rhafarell</p>
     </div>
 </footer>
 
@@ -253,17 +279,20 @@
   <script async src="https://js.stripe.com/v3/"></script>
   <script async src="./assets/js/scriptStripe.js"></script>
   <script async src="https://polyfill.io/v3/polyfill.min.js?version=3.52.1&features=fetch"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.js" integrity="sha512-otOZr2EcknK9a5aa3BbMR9XOjYKtxxscwyRHN6zmdXuRfJ5uApkHB7cz1laWk2g8RKLzV9qv/fl3RPwfCuoxHQ==" crossorigin="anonymous"></script>
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.js" integrity="sha512-otOZr2EcknK9a5aa3BbMR9XOjYKtxxscwyRHN6zmdXuRfJ5uApkHB7cz1laWk2g8RKLzV9qv/fl3RPwfCuoxHQ==" crossorigin="anonymous"></script> -->
   <!-- <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.5.1.js"></script> -->
+  
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js" integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js" integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>
   <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
   <script src="./assets/js/templatePublicGallery.js"></script>
   <script src="./assets/js/templatePublicFeatures.js"></script>
   <script src="./assets/js/templatePublicHeader.js"></script>
   <script src="./assets/js/templatePublicCarvingItem.js"></script>
+  <script src="./assets/js/templatePublicCarvingItem2.js"></script>
   <script src="./assets/js/templatePublicHome.js"></script>
-  <script async src="./assets/js/test.js"></script>
+  <script async src="./assets/js/templatePublicFeatures.js"></script>
 
    <!-- <script async src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> -->
   <!-- <script async src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js%22%3E"></script> -->

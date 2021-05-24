@@ -1,17 +1,19 @@
 <?php ob_start();
-var_dump( $allPic);
+//var_dump( $allPic);
 ?>
+
+<h1 class="display-6 text-center font-verdana text-decoration-underline mt-3">Pictures list</h1>
+
 <div class="row">
-    <div class="col-4 offset-8">
+    <div class="col-4 offset-8 mt-5">
         <form action="<?php $_SERVER['PHP_SELF'];?>" method="post" class="input-group">
             <input class="form-control text-center" type="search" name="search" id="search" placeholder="Search..." >
             <button type="submit" class="btn btn-outline-secondary" name="submit"><i class="fas fa-search"></i></button>
         </form>
     </div>
 </div>
-<h1 class="display-6 text-center font-verdana text-decoration-underline">Pictures list</h1>
 
-<table class="table table-striped">
+<table class="table table-striped border border-light p-4 bg-light mt-4 rounded-3">
     <thead>
         <tr>
             <th>Id</th>

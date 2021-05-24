@@ -44,4 +44,18 @@ class PublicModel extends Tree{
         }
         return $carvs;
     }
+    //___________________________________________________________//
+
+    public function updateStock(Carving $carv){
+        
+        $sql = "UPDATE carving 
+                SET quantity = :quantity 
+                WHERE id_carv = :id";
+
+        $result = $this->getRequest($sql, ['quantity'=>$carv->getQuantity(), 'id'=>$carv->getId_carv()]);
+
+        return $result->rowCount();
+    }
+
+
 }

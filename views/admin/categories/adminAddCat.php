@@ -5,13 +5,12 @@
 
 ;?>
 
-<div class="row col-8 offset-2">
-    <h1 class="display-6 text-center font-verdana border-success text-decoration-underline">Add Category</h1>
-</div>
 
-<div class="container">
+
+<h1 class="display-6 text-center font-verdana border-success text-decoration-underline mt-3 mb-5">Add Category</h1>
+<div class="container ">
     <div class="row">
-        <div class="col-6 offset-3">
+        <div class="col-6 offset-3 bg-light p-3  ">
 
             <form action="index.php?action=add_cat" method="post" enctype="multipart/form-data">
 
@@ -21,7 +20,7 @@
                 <label for="picture" class="h6">Picture</label>
                 <input type="file" id="picture" name="picture" class="form-control"  >
                 
-                <button  type="submit" class="btn btn-success col-12 mt-2" name="submit">Add</button>
+                <button  type="submit" class="btn btn-success col-12 mt-2 mb-4" name="submit">Add</button>
             </form>
 
 

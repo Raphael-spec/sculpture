@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Krona+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300&display=swap');
 /* 
  #gal_container{
     width: 80%;
@@ -77,10 +77,10 @@ video:focus{
     right: 10px;
     width: 30px;
     cursor: pointer;
-}  */ */
+}  */ 
 
 
-
+/* 
  .gal_container .gal_heading{
     font-size: 3rem;
     margin: 2rem 0;
@@ -88,7 +88,7 @@ video:focus{
     color: rgb(160, 71, 160);
     letter-spacing: .2rem;
     text-align: center;
-    /* text-shadow: 0 .3rem .5rem rgba(0, 0, 0,.5); */
+     text-shadow: 0 .3rem .5rem rgba(0, 0, 0,.5); 
      font-family: 'Krona One', sans-serif;
 } 
 
@@ -141,4 +141,62 @@ video:focus{
 .gal_video-container .gal_video .active:hover{
     transition: none;
     transform: translate(-50%, -50%) scale(1);
-} 
+}  */
+
+.pb-video-container {
+    padding-top: 20px;
+    background: #bdc3c7;
+    font-family: 'Poppins', sans-serif;
+    min-height: 105vh;
+    background-image: url(../../assets/media/pirates.jpg);
+    background-position: center; 
+    background-size: cover;
+}
+.gal_title{
+    padding: 5px;
+    font-family:Japon;
+    font-size: 80px;
+    color: #ff0058;
+}
+.gal_video_down{
+   
+}
+
+.pb-video {
+    border: 1px solid #e6e6e6;
+    padding: 5px;
+}
+
+    .pb-video:hover {
+        background: linear-gradient(45deg, #ffbc00, #ff0058);
+}
+    
+
+.pb-video-frame {
+    transition: width 1.1s, height 1.1s;
+}
+
+    .pb-video-frame:hover {
+        height: 300px;
+    }
+
+.pb-row {
+    margin-bottom: 10px;
+}
+@media screen and (max-width:990px){
+    .pb-video-container {
+       
+        min-height: 160vh;
+       
+    }
+    
+}
+
+@media screen and (max-width:770px){
+    .pb-video-container {
+       
+        min-height: 285vh;
+       
+    }
+    
+}

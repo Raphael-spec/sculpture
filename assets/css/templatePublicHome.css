@@ -118,13 +118,18 @@
     left: 50%;
     transform: translate(-50%, -50%);
     width: 100%;
-
 }
+.home_container #home_a{
+    text-decoration: none;
+}
+
 
 .home_container span{
     
     text-transform: uppercase;
     display: block;
+    
+   
 }
 .home_text1{
     
@@ -132,16 +137,43 @@
     font-size: 80px;
     font-family: 'Poppins', sans-serif;
     letter-spacing: 8px;
+    margin-top: 20px;
     margin-bottom: 20px;
+  
     background: black;
     position: relative;
     animation: text 3s 1;
 }
 .home_text2{
-    
-    font-size: 35px;
+    font-family: Manga Style;
+    font-size: 45px;
     color: #ffbc00;
+    transition: color 0.2s linear;
+    animation: fadeIn 7.5s;
+    
 }
+.home_text2:hover{
+  
+    color: #ff0058;
+    transition: color 0.2s linear;
+    animation: fadeIn 7.5s;
+    
+}
+
+@keyframes fadeIn{
+    0%{
+        opacity: 0;
+    }
+    30%{
+        opacity: 0;
+    }
+    85%{
+        opacity: 1;
+
+    }
+}
+
+
 @keyframes text{
     0%{
         color: black;
@@ -150,6 +182,7 @@
     30%{
         letter-spacing: 25px;
         margin-bottom: -40px;
+        opacity: 0.5;
     }
     85%{
         letter-spacing: 8px;

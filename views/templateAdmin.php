@@ -87,12 +87,12 @@
   <a href="index.php?action=to_features" class="text-end "><i class="fas fa-arrow-circle-left"></i></a>
 </div>
 
-<div id="main">
+<div id="main" style="background-image: url(./assets/media/cloud.jpeg);">
   <button class="openbtn" onclick="openNav()">☰ Menu</button>  
 
-    <div class="container mt-4 ">
+    <div class="container mt-4"  >
         <div class="row col-6 offset-3">
-            <h1 class=" text-center border border-secondary text-secondary rounded display-6">OFFICE</h1>
+            <h1 class=" text-center border border-secondary text-secondary rounded display-6 bg-light">OFFICE</h1>
         </div>   
         <?= $contenu; ?>
     </div>    

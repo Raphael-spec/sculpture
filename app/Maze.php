@@ -187,6 +187,19 @@ class Maze{
                         $this->ctrPub->payment();
                         break;
 
+                    case 'cart':
+                        $this->ctrPub->addCart();
+                        break;
+
+                    case 'remove_cart':
+                            $this->ctrPub->deleteCart();
+                            break;
+
+                    // case 'array_cart':
+                    //     $this->ctrPub->ArrayPay();
+                    //     break;
+    
+
                     case 'success':
                         $this->ctrPub->confirmation();
                         break;
@@ -197,6 +210,18 @@ class Maze{
 
                     case 'valid':
                         $this->ctrPub->valid();
+                        break;
+
+                    case 'bcs':
+                        $this->ctrPub-> bcs();
+                        break;
+                        
+                    case 'psc':
+                        $this->ctrPub-> psc();
+                        break;
+
+                    case 'error404':
+                        $this->ctrPub-> pageNotFound();
                         break;
 
                     //______________________PUBLIC_CLIENT_______________________//

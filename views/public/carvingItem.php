@@ -1,11 +1,13 @@
 <?php ob_start();
 
-//var_dump($_POST)
+//var_dump($_SESSION)
+
+
 ?>
 
-<div class="container">
+<div class="container carIt_section mt-5 mb-5">
   <div class="row ">
-    <div class="col-lg-8 col-md-6 col-12 bg-success ">
+    <div class="col-lg-8 col-md-6 col-12  ">
 
         <div class="carIt_img1">
         <a href="./assets/images/<?=$picture;?>" target="_blank" ><img src="./assets/images/<?=$picture;?>"  class="img-thumbnail carIt_pictB " width="600px" alt="..." >
@@ -54,40 +56,45 @@
         <h3 class="carIt_title2">Want to go further</h3>
         <hr class="carIt_hr1">
         <div class="carIt_para3">
-            <p><a href="#">Collecting Sculptures</a></p>
-            <p><a href="#">Preserving the sculptures in your collection</a></p>
+            <p><a href="index.php?action=bcs">Collecting Sculptures</a></p>
+            <p><a href="index.php?action=psc">Preserving the sculptures in your collection</a></p>
         </div>
     </div>
-    <div class=" col-lg-4 col-md-3 col-12 bg-danger">
+    <div class=" col-lg-4 col-md-3 col-12 ">
        <div class="carIt_paytitle">
             <h1><?=$name;?></h1> 
             <h2><?=$name_cat;?></h2>
+            <p class="carIT_pay_pr"><?=$price;?>€</p>
        </div>
        <hr class="carIT_pay_hr">
        <p><?=$content;?></p>
-       <p><span><?=$name;?></span>, <strong><?=$date;?></strong></p>
+       <p class="CarIt_pay_min"><span><?=$name;?></span>, <strong><script>trDate(<?=$date;?>)</script></strong></p>
        <hr class="carIT_pay_hr">
-        <p><?=$price;?>€</p>
         
-      <form>
+      <form method="POST" action="index.php?action=cart">
+        
         <label for="email">Email*</label>
         <input type="email" id="email" class="form-control mb-4" placeholder="Votre email svp...">
-
-        <input type="text" name="quantity" id="quantity" class="form-control"  min="1" max="1" value="<?=$quantity;?>" >
-        <input type="text" name="id"  id="id" value="<?=$id;?>">
+        
+        <label for="quant">Quantity*</label>
+        <input type="number" name="quant" id="quantity" class="form-control mb-4"  min="1" value="1" max="<?=$nb;?>"  >
+        
+        <input type="text" name="id_carv"  id="id" value="<?=$id;?>">
         <input type="text" name="name"  id="name" value="<?=$name;?>">
         <input type="text" name="price"  id="price" value="<?=$price;?>">
         <input type="text" name="content"  id="content" value="<?=$content;?>">
-        <input type="text" name="quality"  id="quality" value="<?=$quality;?>">
+        <input type="text" name="qual"  id="quality" value="<?=$quality;?>">
         <input type="text" name="picture"  id="picture" value="<?=$picture;?>">
-        <input type="text" name="dimension"  id="dimension" value="<?=$dimension;?>">
+        <input type="text" name="dime"  id="dimension" value="<?=$dimension;?>">
         <input type="text" name="date"  id="date" value="<?=$date;?>">
         <input type="text" name="id_cat"  id="id_cat" value="<?= $id_cat;?>">
         <input type="text"name="name_cat"  id="name_cat" value="<?=$name_cat;?>">
+        <input type="hidden" name="nb" id="nb" value="<?=$nb;?>">
         
-            <button id="checkout-button"  class="col-12 carIt_pay_button" >Add to cart</button>
+            <button type=submit name="cart"  class="col-12 carIt_pay_button" >Add to cart</button>
       
     </form>
+   
     </div>
   </div>
 </div>

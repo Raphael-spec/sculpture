@@ -3,10 +3,10 @@
 
 ?>
 
+<h1 class="display-6 text-center font-monospace text-decoration-underline mt-3 mb-5">Edit Carving N°0<?=$editCar->getId_carv();?></h1>
  <div class="container">
      <div class="row">
-         <div class="col-8 offset-2">
-         <h1 class="display-6 text-center font-monospace text-decoration-underline">Edit Carving N°0<?=$editCar->getId_carv();?></h1>
+         <div class="col-8 offset-2 bg-light p-3">
              <form action="<?php $_SERVER['PHP_SELF'];?>" method="post" enctype="multipart/form-data">
                 
                 <div class="row">
@@ -73,7 +73,7 @@
                         <textarea id="content" name="content" class="form-control" rows="5"><?=$editCar->getContent();?></textarea>
                     </div>
                 </div>
-                <button type="submit" class="btn btn-warning  col-12 mt-2" name="submit">Edit</button>
+                <button type="submit" class="btn btn-warning  col-12 mt-2 mb-4" name="submit">Edit</button>
             </form>
          </div>
      </div>

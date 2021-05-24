@@ -1,9 +1,9 @@
 <?php ob_start();?>
 
- <div class="container">
-     <div class="row">
-         <div class="col-8 offset-2">
-         <h1 class="display-6 text-center font-verdana text-decoration-underline">Add Carving</h1>
+<h1 class="display-6 text-center font-verdana text-decoration-underline mt-3 mb-5">Add Carving</h1>
+ <div class="container ">
+     <div class="row ">
+         <div class="col-8 offset-2 bg-light p-3">
              <form action="<?php $_SERVER['PHP_SELF'];?>" method="post" enctype="multipart/form-data">
                 
                 <div class="row">
@@ -59,7 +59,7 @@
                         <textarea id="content" name="content" class="form-control" placeholder="Please enter your content" rows="5"></textarea>
                     </div>
                 </div>
-                <button type="submit" class="btn btn-success  col-12 mt-2" name="submit">Add</button>
+                <button type="submit" class="btn btn-success  col-12 mt-2  mb-4" name="submit">Add</button>
             </form>
          </div>
      </div>

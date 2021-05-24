@@ -1,12 +1,12 @@
 <?php ob_start();?>
 
 <div class="row col-8 offset-2">
-    <h1 class="display-6 text-center font-verdana border-white text-decoration-underline">Edit Category N°0<?=$editCat->getId_cat();?></h1>
+    <h1 class="display-6 text-center font-verdana border-white text-decoration-underline mt-3 mb-4">Edit Category N°0<?=$editCat->getId_cat();?></h1>
 </div>
 
 <div class="container">
     <div class="row">
-        <div class="col-6 offset-3">
+        <div class="col-6 offset-3 bg-light p-3">
             <form action="<?php $_SERVER['PHP_SELF']; ?>" method="post" enctype="multipart/form-data">
                 <div class="row ">
                     <div class=" container col-4 offet-4 mt-4">
@@ -23,7 +23,7 @@
                         <img src="./assets/images/<?=$editCat->getPicture_cat();?>" alt="" width="348"  class="img-thumbnail mt-3">
                     
                         
-                        <button type="submit" class="btn btn-warning col-12 mt-2" name="submit">Edit</button>
+                        <button type="submit" class="btn btn-warning col-12 mt-2 mb-4" name="submit">Edit</button>
             </form>
         </div>
     </div>

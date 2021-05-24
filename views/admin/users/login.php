@@ -1,10 +1,9 @@
 <?php ob_start();?>
 
-<div class="container">
+<h1 class="display-6 text-center font-verdana text-decoration-underline mt-3">Login form</h1>
+<div class="container  ">
     <div class="row">
-        <div class="col-6 offset-3">
-<h1 class="display-6 text-center font-verdana text-decoration-underline">Login form</h1>
-            
+        <div class="col-6 offset-3 bg-light border border-light ">
             <?php if(isset($error)){ ?>
                 <div class="alert alert-danger text-center"><?=$error;?></div>
             <?php } ?>
@@ -16,7 +15,7 @@
                 <label for="password" class="h6">Password*</label>
                 <input type="password" id="password" name="password" class="form-control mt-2" placeholder="Enter your password">
 
-                <button  type="submit" class="btn btn-primary col-12 mt-2" name="submit">Log in</button>
+                <button  type="submit" class="btn btn-primary col-12 mt-2 mb-5" name="submit">Log in</button>
             </form>
 
 

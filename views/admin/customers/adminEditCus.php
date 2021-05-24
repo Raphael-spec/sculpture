@@ -1,12 +1,12 @@
 <?php ob_start();?>
 
+<h1 class="display-6 text-center font-verdana text-decoration-underline mt-3 "> Edit Customer Registration Form N° 0<?=$editClie->getId_c();?></h1>
  <div class="container">
      <div class="row">
-         <div class="col-8 offset-2">
-         <h1 class="display-6 text-center font-verdana text-decoration-underline"> Edit Customer Registration Form N° 0<?=$editClie->getId_c();?></h1>
+         <div class="col-8 offset-2 bg-light mt-4 p-3">
          <form action="<?php $_SERVER['PHP_SELF'] ?>" method="post" class="text-center" enctype="multipart/form-data">
                 <div class="row mt-3  ">
-                  <div class="row border border-warning mt-4">
+                  <div class="row border border-warning ">
                         <div class="col-6">
                             <label for="name">Name</label>
                             <input type="text" id="name" name="name" class="form-control" placeholder="Please enter a name" value="<?=$editClie->getName();?>">
@@ -52,7 +52,7 @@
                        <input type="password" id="password" name="password" class="form-control" placeholder="Please enter a password" value="<?=$editClie->getPassword();?>">
                    </div>
                 </div>
-                <button type="submit" class="btn btn-primary  col-12 mt-3" name="submit">Edit</button>
+                <button type="submit" class="btn btn-primary  col-12 mt-3 mb-4" name="submit">Edit</button>
             </form>
          </div>
      </div>

@@ -1,7 +1,7 @@
 <?php ob_start();?>
-<h1 class="display-6 text-center font-monospace text-decoration-underline">Users List</h1>
+<h1 class="display-6 text-center font-monospace text-decoration-underline mt-3">Users List</h1>
 
-<table class="table table-striped">
+<table class="table table-striped border border-light p-4 bg-light mt-5 rounded-3">
     <thead>
         <tr>
             <th>Id</th>
