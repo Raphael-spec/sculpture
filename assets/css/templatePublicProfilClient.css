@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+.procli_si{
+    min-height: 60vh;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    font-family: 'Poppins', sans-serif;
+    background:  no-repeat url(../../assets/media/symbol.png);
+     background-position: center; 
+    /*background-size: cover; */
+    background-size: contain;
+    background-repeat: no-repeat;
+
+}

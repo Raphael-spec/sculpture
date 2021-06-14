@@ -34,7 +34,9 @@
   </button>
   <div class="dropdown-container">
     <a href="index.php?action=list_cat"><i class="fas fa-list"></i> List</a>
-    <a href="index.php?action=add_cat"><i class="fas fa-plus"></i> Add</a>
+    <?php if($_SESSION['Auth']->id_g != 3) { ?>
+      <a href="index.php?action=add_cat"><i class="fas fa-plus"></i> Add</a>
+    <?php } ?>
   </div>
 
   <button class="dropdown-btn"><i class="fas fa-monument "></i> Carving
@@ -42,7 +44,9 @@
   </button>
   <div class="dropdown-container">
     <a href="index.php?action=list_carv"><i class="fas fa-list"></i> List</a>
-    <a href="index.php?action=add_carv"><i class="fas fa-plus"></i> Add</a>
+    <?php if($_SESSION['Auth']->id_g != 3) { ?>
+      <a href="index.php?action=add_carv"><i class="fas fa-plus"></i> Add</a>
+    <?php } ?>
   </div>
 
   <button class="dropdown-btn"><i class="fas fa-camera-retro"></i> Pictures
@@ -50,7 +54,7 @@
   </button>
   <div class="dropdown-container">
     <a href="index.php?action=list_pic"><i class="fas fa-list"></i> List</a>
-    <?php if($_SESSION['Auth']->id_g == 1) { ?>
+    <?php if($_SESSION['Auth']->id_g != 3) { ?>
       <a href="index.php?action=add_pic"><i class="fas fa-plus"></i> Add</a>
     <?php } ?>
   </div>
@@ -71,7 +75,9 @@
   </button>
   <div class="dropdown-container">
     <a href="index.php?action=list_gr"><i class="fas fa-list"></i> List</a>
-    <a href="index.php?action=add_gr"><i class="fas fa-plus"></i> Add</a>
+    <?php if($_SESSION['Auth']->id_g == 1) { ?>
+      <a href="index.php?action=add_gr"><i class="fas fa-plus"></i> Add</a>
+    <?php } ?>
   </div>
 
   <button class="dropdown-btn"><i class="fas fa-users "></i> Users

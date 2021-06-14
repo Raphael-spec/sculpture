@@ -1,6 +1,6 @@
 <?php ob_start();  ?>
 
-<div class="container-fluid" style="background-image:  url(./assets/images/forest.jpg); background-size: cover;">
+<div  >
 <section class ="contact"  >
     <div class="content">
         <h2>Contact Us</h2>
@@ -26,7 +26,7 @@
                 <div class="iconi"><i class="fa fa-envelope-o" aria-hidden="true"></i></div>
                 <div class="text">
                     <h3>Mail</h3>
-                    <p>carvingwood@temporary.net</p>
+                    <p>woodart@temporary.net</p>
                 </div>
             </div>
         </div>

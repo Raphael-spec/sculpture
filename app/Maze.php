@@ -212,6 +212,10 @@ class Maze{
                         $this->ctrPub->valid();
                         break;
 
+                     // case 'test':
+                    //     $this->ctrPub->succssPage();
+                    //     break;
+
                     case 'bcs':
                         $this->ctrPub-> bcs();
                         break;
@@ -237,6 +241,7 @@ class Maze{
                     case 'profil_cus':
                             $this->ctrPubCli->profilClient();
                             break;
+
                         
                     case 'logout_cus':
                         AuthController::logoutClient();

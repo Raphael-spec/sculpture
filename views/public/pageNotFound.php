@@ -1,6 +1,6 @@
 <?php ob_start();  ?>
 
-<section id="er_pnfound" style="background: url('./assets/media/titan.jpg'); background-size: cover;">
+<section id="er_pnfound" >
    <div id="page_not_found">
         <div  class="error_pnfound">
             <div class="error_notfound404">

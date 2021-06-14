@@ -91,7 +91,6 @@ class PublicController{
     //___________________________________________________________//
     public function addCart(){
 
-
         if(isset($_POST['cart'])){
             
             $id = htmlspecialchars(addslashes($_POST['id_carv']));
@@ -106,26 +105,12 @@ class PublicController{
             $id_cat = htmlspecialchars(addslashes($_POST['id_cat']));
             $name_cat = htmlspecialchars(addslashes($_POST['name_cat']));
 
-
-
-            echo $quality;
-
-
     if(isset($_SESSION['cart'])){
-        //$dispo = false;
-        
-
         $items_id = array_column($_SESSION['cart'],"id"); //cible une colonne et recupere toute la colonne
-        
             if(in_array($id, $items_id)){
-                
-                //$dispo = true;
-                echo'Cet article est deja ajouté';
-            
+                $var = 'This Carving has already been added';
             }else{
-                
                 $nb_cart = count($_SESSION['cart']);
-
                 $item_new = [
                                 "id" => $id,
                                 "name" => $name,
@@ -140,7 +125,7 @@ class PublicController{
                                 "price" => $price
                             ];
 
-                $_SESSION['cart'][$nb_cart] = $item_new;
+                $_SESSION['cart'][] = $item_new;
             }
         
         
@@ -161,7 +146,7 @@ class PublicController{
                     ];
         
     
-        $_SESSION['cart'][0] = $item_cart;//premier produit, tableau associative
+        $_SESSION['cart'][] = $item_cart;//premier produit, tableau associative
 
     
     }
@@ -187,7 +172,7 @@ class PublicController{
 //     }
 
 // }
-    
+ //___________________________________________________________//   
      public function deleteCart(){
 
         if(isset($_GET["id"])){
@@ -212,6 +197,13 @@ class PublicController{
      }
      //___________________________________________________________//
 
+    //  public function succssPage(){
+
+    //     header('location:index.php?action=success');
+
+    //     require_once('./views/public/testPage.php');
+    //  }
+
     public function payment(){
       
         if(isset($_POST)){
@@ -230,9 +222,9 @@ class PublicController{
                     'currency' => 'eur',
                     'unit_amount' => $_POST['price']*100,
                     'product_data' => [
-                        'name' => $_POST['name']."-".$_POST['dimension'],
+                        'name' => $_POST['firstname'] .' - '.$_POST['nameClient'],
                         'images' => ["https://i.ibb.co/L9nzYFv/carving.jpg"],
-                        'description' => $_POST['content'],
+                        'description' => $_POST['address'] . '  ' . $_POST['cp'] .'  ' . $_POST['town'] .'  ' . $_POST['country'],
                         ],
                         ],
                         'quantity' => 1,
@@ -245,26 +237,31 @@ class PublicController{
                         $_SESSION['pay'] = $_POST;
                     echo json_encode(['id' => $checkout_session->id]);
 
-                }
+                    unset($_SESSION['cart']);
 
+                }
             }
 
             public function confirmation(){
                 
-                $newStock = ((int)$_SESSION['pay']['nb']) - ((int)$_SESSION['pay']['quantity']);   
+                 $newStock = ((int)$_SESSION['pay']['nb']) - ((int)$_SESSION['pay']['quantity']);   
                 $carv = new Carving();
                 $carv->setId_carv($_SESSION['pay']['id']);
-                $carv->setQuantity($newStock);
-                // var_dump($_SESSION['pay']);
-
+                 $carv->setQuantity($newStock);
+                var_dump($_SESSION['pay']);
                 $nbLine = $this->pubMo->updateStock($carv);
                 if($nbLine > 0 ){
             
+                    session_start();
+                
                 $email = $_SESSION['pay']['email'];
-                $name = $_SESSION['pay']['name'];
-                $dimension = $_SESSION['pay']['dimension'];
+                $fname = $_SESSION['pay']['firstname'];
+                $name = $_SESSION['pay']['nameClient'];
+                $adresse = $_SESSION['pay']['address'];
                 $price = $_SESSION['pay']['price'];
-                $content = $_SESSION['pay']['content'];
+                $cp = $_SESSION['pay']['cp'];
+                $town = $_SESSION['pay']['town'];
+                $country = $_SESSION['pay']['country'];
                 
                 $mail = new PHPMailer(true);
             
@@ -290,10 +287,14 @@ class PublicController{
                 $mail->Body    = "
                 <h2>confirmation d'achat</h2>
                 <div>
-                <b> Name : $name</b>
-                <b> Dimension : $dimension</b>
-                <b> Content : $content</b>
-                <b> Price : $price €</b>
+                <b> Name : $name</b></br>
+                <b> First Name : $fname</b></br>
+                <b> Address : $adresse</b></br>
+                <b> cp : $cp</b></br>
+                <b> town : $town</b></br>
+                <b> country : $country</b></br>
+                <b> Price : $price €</b></br>
+                <p>Vous avez commandez pour $price et vous sera livrée tres prochainement</p></br>
                 <p>Nous vous Remercions pour votre achat, à très bientôt !</p>
                 </div>";
             
@@ -301,10 +302,9 @@ class PublicController{
                 echo 'Message has been sent';
             } catch (Exception $e) {
                 echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
-            }
-        } 
-            require_once('./views/public/success.php');
-            
+             }
+         } 
+             require_once('./views/public/success.php');
                 }
 
     //___________________________________________________________//

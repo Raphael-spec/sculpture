@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap');
 
-.psc_section{
+/* .psc_section{
     font-family: 'Rubik', sans-serif;
     min-height: 90vh;
     margin-top: 5%;
@@ -16,20 +16,20 @@
     margin-bottom: 3%;
     font-size: 1.3em;
     letter-spacing: 0.8;
-}
+} */
 
-@media (max-width: 724px){
+/* @media (max-width: 724px){
     .psc_section{
         
-        min-height: 100vh;
+         min-height: 100vh; 
         
     }
-}
+}*/
 
-@media (max-width: 600px){
+/*@media (max-width: 600px){
     .psc_section{
         
-        min-height: 110vh;
+         min-height: 110vh; 
         
     }
-}
+} */

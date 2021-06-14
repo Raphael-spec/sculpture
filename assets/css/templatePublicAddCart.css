@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300&display=swap');
+
+.add_price_div input{
+    border-radius: 3%;
+}
+
+
+.add_price{
+    font-family: 'Poppins', sans-serif;
+    border-radius: 3%;
+    font-size: 40px;
+    padding: 10px;
+
+
+}

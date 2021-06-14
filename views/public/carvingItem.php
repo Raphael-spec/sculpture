@@ -68,27 +68,27 @@
        </div>
        <hr class="carIT_pay_hr">
        <p><?=$content;?></p>
-       <p class="CarIt_pay_min"><span><?=$name;?></span>, <strong><script>trDate(<?=$date;?>)</script></strong></p>
+       <p class="CarIt_pay_min"><span><?=$name;?></span>, <strong><?=$date;?></strong></p>
        <hr class="carIT_pay_hr">
         
       <form method="POST" action="index.php?action=cart">
         
-        <label for="email">Email*</label>
-        <input type="email" id="email" class="form-control mb-4" placeholder="Votre email svp...">
+        <!-- <label for="email">Email*</label>
+        <input type="email" id="email" class="form-control mb-4" placeholder="Votre email svp..."> -->
         
-        <label for="quant">Quantity*</label>
-        <input type="number" name="quant" id="quantity" class="form-control mb-4"  min="1" value="1" max="<?=$nb;?>"  >
+        <!-- <label for="quant">Quantity*</label> -->
+        <input type="hidden" name="quant" id="quantity" class="form-control mb-4"  min="1" value="1" max="<?=$nb;?>"  >
         
-        <input type="text" name="id_carv"  id="id" value="<?=$id;?>">
-        <input type="text" name="name"  id="name" value="<?=$name;?>">
-        <input type="text" name="price"  id="price" value="<?=$price;?>">
-        <input type="text" name="content"  id="content" value="<?=$content;?>">
-        <input type="text" name="qual"  id="quality" value="<?=$quality;?>">
-        <input type="text" name="picture"  id="picture" value="<?=$picture;?>">
-        <input type="text" name="dime"  id="dimension" value="<?=$dimension;?>">
-        <input type="text" name="date"  id="date" value="<?=$date;?>">
-        <input type="text" name="id_cat"  id="id_cat" value="<?= $id_cat;?>">
-        <input type="text"name="name_cat"  id="name_cat" value="<?=$name_cat;?>">
+        <input type="hidden" name="id_carv"  id="id" value="<?=$id;?>">
+        <input type="hidden" name="name"  id="name" value="<?=$name;?>">
+        <input type="hidden" name="price"  id="price" value="<?=$price;?>">
+        <input type="hidden" name="content"  id="content" value="<?=$content;?>">
+        <input type="hidden" name="qual"  id="quality" value="<?=$quality;?>">
+        <input type="hidden" name="picture"  id="picture" value="<?=$picture;?>">
+        <input type="hidden" name="dime"  id="dimension" value="<?=$dimension;?>">
+        <input type="hidden" name="date"  id="date" value="<?=$date;?>">
+        <input type="hidden" name="id_cat"  id="id_cat" value="<?= $id_cat;?>">
+        <input type="hidden"name="name_cat"  id="name_cat" value="<?=$name_cat;?>">
         <input type="hidden" name="nb" id="nb" value="<?=$nb;?>">
         
             <button type=submit name="cart"  class="col-12 carIt_pay_button" >Add to cart</button>

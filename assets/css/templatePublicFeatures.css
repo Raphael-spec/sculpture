@@ -1,7 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300&display=swap');
 
-
+.feat_section{
+margin-left: 7%;
+margin-right: 7%;
+}
 .feat_search{
     padding-top: 6%;
 }
@@ -9,24 +12,40 @@
 
 .feat_contCat {
     margin-top: 7%;
-    margin-left: 5%;
+    /* margin-left: 1%; */
     margin-bottom: 7%;
      display: flex;
      justify-content: center;
+     background-image: url(../../assets/media/sunlight.jpg);
+     background-position: center; 
+     background-size: cover;
+     border: 3px solid #c9c6c3;
+     border-radius: 4px;
 }
 .feat_catIn {
-    
-    margin-right: 6%;
+    margin-top: 3%;
+    margin-right: 3%;
+    margin-left: 3%;
 }
 .feat_catIn img{
-    /* z-index: -1; */
     box-shadow: 0px 27px 20px -20px rgb(0, 0, 0, 0.4);
     transition: all ease-in-out 300ms; 
 }
+.feat_card{
+    /* background-color: rgba(61, 58, 58, 0.829); */
+    padding: 10px;
+    background-image: url(../../assets/media/sha2.png);
+    background-position: center; 
+    background-size: cover;
+    background: linear-gradient(#ece5e5, #a8a8ac);
+    border-radius: 2px;
+}
+
 .feat_cardCar{
     box-shadow: 0px 7px 10px 0px rgb(0, 0, 0, 0.3);
     background: linear-gradient( #ffffff, #e9e9e9);
     transition: all ease-in-out 300ms; 
+    margin: 2%;
 
 }
 .feat_catIn p {
@@ -71,78 +90,14 @@
 }
 
 
-/* _____________________________CARROUSEL____________________________________ */
-/* .featNet_section{
-    margin-top: 10%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-}
-.featNet_title{
-    height: 15vw;
-    width: 100%;
-    text-align: center;
-}
-.feat_carous{
-    height: 250px;
-    width: 80%;
-    position: relative;
-
-}
-.feat_carous .feat_SwitchLeft,
-.feat_carous .feat_SwitchRight{
-    color: white;
-    font-weight: bold;
-    height: 100%;
-    width: 45px;
-    line-height: 250px;
-    font-size: 25px;
-    text-align: center;
-    background-color: lightgreen;
-    font-family: sans-serif;
-    top: 0;
-    z-index: 3;
-}
-.feat_carous .feat_SwitchLeft{
-    position: absolute;
-    left: -50px;
-}
-.feat_carous .feat_SwitchRight{
-    position: absolute;
-    right: -50px;
-}
-.feat_carousbox{
-    height: 250px;
-    width: auto;
-    overflow: hidden;
-    white-space: nowrap;
-    display: inline-block;
-    text-align: center;
-    padding-bottom: 10px !important;
-    display: flex;
-    align-items: center;
-}
-.feat_carousbox img{
-    min-width: 147px;
-    max-width: 147px;
-    height: 200px;
-    background-size: cover;
-    background-color: lightgreen;
-    margin: 5px 10px;
-    cursor: pointer;
-    transition: 0.5s ease;
-    z-index: 2;
-}
-.feat_carousbox img:hover{
-    transform: scale(1.4);
-    z-index: 5;
-    
-} */
 /* _____________________________CARROUSEL ____________________________________ */
 
 .feat_carousel_section {
     position: relative;
+    margin-left: 10%;
+    margin-right: 10%;
+    /* padding-left: 7%;
+    padding-right: 7%; */
     /* height: 100%; */
     /* margin-bottom: 10%; */
     

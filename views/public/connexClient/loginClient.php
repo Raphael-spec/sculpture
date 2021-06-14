@@ -1,10 +1,10 @@
 <?php ob_start();?>
 
-<div class="container">
+<div class="container logcli_si" >
     <div class="row">
         <div class="col-6 offset-3">
         <div class="row">
-            <div class="col-8 offset-2 border border-primary mb-5 p-3">
+            <div class=" border border-primary mb-5 mt-5 p-3">
                 <h1 class="display-6 text-center font-verdana text-decoration-underline ">Connexion form</h1>
              </div>
         </div>
@@ -19,7 +19,7 @@
                 <label for="password" class="h6">Password*</label>
                 <input type="password" id="password" name="password" class="form-control mt-2" placeholder=" Please Enter your password">
 
-                <button  type="submit" class="btn btn-primary col-12 mt-2" name="submit">Valid</button>
+                <button  type="submit" class="btn btn-primary col-12 mt-4 mb-4" name="submit">Valid</button>
             </form>
 
 

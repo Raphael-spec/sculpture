@@ -3,6 +3,11 @@
 .val_section{
     min-height: 100vh;
     background: #ddd;
+    background-image: url(../../assets/media/dragonball.jpg);
+    background-size: cover;
+    background-position: center; 
+    background-repeat: no-repeat;
+   
 }
 
 .val_center{

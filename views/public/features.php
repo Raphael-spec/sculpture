@@ -12,34 +12,23 @@
              </div>
         </div>
     
-        <!-- <div class="container mb-4 ">
-            <div class="row row-cols-2 row-cols-lg-5 g-4 g-lg-3   ">
-                <?//php foreach($tabCat as $cat){ ?>
-                    <div class="col-12 col-md-6 col-lg-6  ">
-                        <div class=" p-3  feat_contCat">
-                            
-                            <a href="index.php?action=features&id=<?//=$cat->getId_cat();?>" class="text-center">
-                                <img src="./assets/images/<?//=$cat->getPicture_cat();?>"  width="150" alt="" >
-                                    <?//=ucfirst($cat->getName_cat());?></a>
-                        </div>
+    <div class="row">
+        <div class="col-12">
+            <div class="feat_contCat">
+                <?php foreach($tabCat as $cat){ ?>
+                    <div class="feat_catIn">
+                    <a href="index.php?action=features&id=<?=$cat->getId_cat();?>" class="text-center"><img src="./assets/images/<?=$cat->getPicture_cat();?>" class="img-thumbnail"  width="170" alt="" ></a>
+                        <p><a href="index.php?action=features&id=<?=$cat->getId_cat();?>" class="text-center"><?=ucfirst($cat->getName_cat());?></a></p>
                     </div>
-                <?php //} ?>
+                <?php } ?>
             </div>
-        </div> -->
-    
-        <div class="feat_contCat">
-             <?php foreach($tabCat as $cat){ ?>
-                 <div class="feat_catIn">
-                 <a href="index.php?action=features&id=<?=$cat->getId_cat();?>" class="text-center"><img src="./assets/images/<?=$cat->getPicture_cat();?>" class="img-thumbnail"  width="170" alt="" ></a>
-                    <p><a href="index.php?action=features&id=<?=$cat->getId_cat();?>" class="text-center"><?=ucfirst($cat->getName_cat());?></a></p>
-                </div>
-            <?php } ?>
-        </div>
+        </div >
+    </div>
     
         
     
         <!-- <div class="row"> -->
-            <div class="col-12">
+            <div class="col-12 feat_card">
                 <div class="row row-cols-1 row-cols-lg-3 row-cols-md-2 g-4">
                 <?php foreach($carvs as $carv){?>
                     <div class="col">
@@ -83,24 +72,7 @@
             </div>
 </section>                
 <!------------------------------end cards--------------------------------------------------------->
-           
-   
-  <!-- <section class="featNet_section">
-        <div class="featNet_title">
-            <h1>Next Inspirations</h1>
-        </div>
-
-        <div class="feat_carous">
-            <div class="feat_carousbox">
-                 Random data will comme here -->
-             <!--</div>
-
-            <a href="#" class="feat_SwitchLeft featSliderButton" onclick="sliderScrollLeft()"><</a>
-            <a href="#" class="feat_SwitchRight featSliderButton" onclick="sliderScrollRight()">></a>
-
-        </div>
-    </section> -->
-    <!------------------------------end cards--------------------------------------------------------->
+  
     <section class=".feat_carousel_section">
         <div class="featNet_title">
                     <h1>Next Inspirations</h1>
@@ -111,12 +83,17 @@
                     <div class="swiper-slide"><img src="./assets/media/basa.jpg" alt="" width="50"></div>
                     <div class="swiper-slide"><img src="./assets/media/ble.jpg" alt="" width="50"></div>
                     <div class="swiper-slide"><img src="./assets/media/cha.jpg" alt="" width="50"></div>
-                    <div class="swiper-slide"></div>
-                    <div class="swiper-slide"></div>
-                    <div class="swiper-slide"></div>
-                    <div class="swiper-slide"></div>
-
-
+                    <div class="swiper-slide"><img src="./assets/media/clover.jpg" alt="" width="50"></div>
+                    <div class="swiper-slide"><img src="./assets/media/dbz1.jpg" alt="" width="50"></div>
+                    <div class="swiper-slide"><img src="./assets/media/demon.jpg" alt="" width="50"></div>
+                    <div class="swiper-slide"><img src="./assets/media/hero.jpg" alt="" width="50"></div>
+                    <div class="swiper-slide"><img src="./assets/media/ken.jpg" alt="" width="50"></div>
+                    <div class="swiper-slide"><img src="./assets/media/juju2.png" alt="" width="50"></div>
+                    <div class="swiper-slide"><img src="./assets/media/mas.jpg" alt="" width="50"></div>
+                    <div class="swiper-slide"><img src="./assets/media/naruto.jpeg" alt="" width="50"></div>
+                    <div class="swiper-slide"><img src="./assets/media/one2.jpg" alt="" width="50"></div>
+                    <div class="swiper-slide"><img src="./assets/media/seiya.jpg" alt="" width="50"></div>
+                    <div class="swiper-slide"><img src="./assets/media/sak.jpg" alt="" width="50"></div>
                     <div class="swiper-pagination"></div>
                 </div>
             </div>

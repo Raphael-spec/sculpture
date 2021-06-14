@@ -105,14 +105,14 @@
     #head_down nav{
         position: absolute;
         width: 100%;
-        height: calc(100vh - 50px);
-        /* background-color: #333; */
+        height: calc(24.6vh - 50px);
+        background: linear-gradient(45deg, #ffbc00, #ff0058);
         top: 80px;
         left: -100%;
         transition: 0.5s;
         z-index: 5;
     }
-    #head_down nav .active{
+    #head_down nav.active{
         left: 0;
         z-index: 5;
     }
@@ -123,12 +123,12 @@
         z-index: 5;
     }
     #head_down nav ul li a{
-        background: linear-gradient(45deg, #ffbc00, #ff0058);
+        
         border-bottom: 1px solid rgba(0, 0, 0, .2);
         z-index: 5;
     }
 }
-/* @media (max-width: 794px){
+@media (max-width: 794px){
     #head_down nav{
         top: 80px;
     }
@@ -138,4 +138,4 @@
     #head_down nav{
         top: 80px;
     }
-} */
+}

@@ -19,6 +19,9 @@
   <link rel="stylesheet" href="./assets/css/templatePublicBcs.css">
   <link rel="stylesheet" href="./assets/css/templatePublicPsc.css">
   <link rel="stylesheet" href="./assets/css/templatePublicAbout.css">
+  <link rel="stylesheet" href="./assets/css/templatePublicLoginClient.css">
+  <link rel="stylesheet" href="./assets/css/templatePublicProfilClient.css">
+  <link rel="stylesheet" href="./assets/css/templatePublicRegisterClient.css">
   <link rel="stylesheet" href="./assets/css/templatePublicGallery.css">
   <link rel="stylesheet" href="./assets/css/templatePublicContact.css">
   <link rel="stylesheet" href="./assets/css/templatePublic.css">
@@ -53,7 +56,7 @@
           <?php } ?>
           <li>
           <a href="index.php?action=remove_cart"><img src="./assets/media/sac.png" alt="" width="25px">
-          <span class="badge bg-warning">
+          <span class="badge rounded-pill bg-warning" >
                 <?php 
                 
                     if(isset($_SESSION['cart'])){
@@ -62,6 +65,10 @@
                         
                         echo $nb_cart;
                    
+                    }else{
+
+                      echo'0';
+
                     }
                 
                 
@@ -200,7 +207,7 @@
 </nav> -->
 </header>
 
-<main class="container">
+<main >
           <?=$contenu;?>
 
 </main> 

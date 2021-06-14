@@ -1,23 +1,5 @@
-<!-- <div class="container p-5  mt-5" style="min-height:750px">
-  <div class="row">
-    <div class="col-3">
-  
-    </div>
-    <div class="col-6 text-center border border-secondary rounded ">
-    <h1 class="text-success mb-5">Confirmation de commande</h1>
-    <img src="./assets/media/sunlight.jpg" width="400" alt="">
-    <p class=" text-secondary display-6 ">Merci pour votre achat <p>
-    <div class="row">
-        <div class="col-6 offset-3">
-    <a href="index.php" style="text-decoration: none"><p class=" border border-secondary text-success border border-3 h4 rounded-pill mt-3">a très bientôt<p></a>
-        </div>
-    </div>
-    </div>
-    <div class="col-3">
-     
-    </div>
-  </div> -->
-<section class="val_section" style="background: center / contain no-repeat url('./assets/media/dragonball.jpg'); background-size: cover;">
+
+<section class="val_section">
     <div class="val_center">
       <div class="val_title">
           <h1>Purchase confirmation</h1>
