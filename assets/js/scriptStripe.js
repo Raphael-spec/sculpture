@@ -1,4 +1,4 @@
-console.log(session)
+//console.log(session)
 myname = '';
 myfirstname = '';
 myaddress = '';
@@ -6,6 +6,7 @@ mycp = '';
 mytown = '';
 mycountry = '';
 myemail = '';
+client = '';
 
 $(function(){
 
@@ -21,22 +22,24 @@ $(function(){
         mycp = cp;
         mytown = town;
         mycountry = country;
-        myemail = email
+        myemail = email;
+        client=id_c
 
-        console.log(myname,myfirstname,myaddress,mycp,mytown,mycountry,myemail)
-
-        }else{
-        myname= $('#name').val();
-        myfirstname = $('#firstname').val();
-        myaddress =  $('#address').val();
-        mycp =  $('#cp').val();
-        mytown =  $('#town').val();
-        mycountry = $('#country').val();
-        myemail = $('#email').val();
-
-        console.log(myname,myfirstname,myaddress,mycp,mytown,mycountry,myemail)
+        console.log(myname,myfirstname,myaddress,mycp,mytown,mycountry,myemail,client)
 
         }
+        // else{
+        // myname= $('#name').val();
+        // myfirstname = $('#firstname').val();
+        // myaddress =  $('#address').val();
+        // mycp =  $('#cp').val();
+        // mytown =  $('#town').val();
+        // mycountry = $('#country').val();
+        // myemail = $('#email').val();
+
+        // console.log(myname,myfirstname,myaddress,mycp,mytown,mycountry,myemail)
+
+        // }
         
         e.preventDefault();
 
@@ -44,15 +47,7 @@ $(function(){
             url:'http://localhost/php/poo/app/sculpture/index.php?action=pay',
             method:'post',
             data:{
-
-            // email:email,
-            // price:$('#price').val(),
-            // nameClient:nameClient,
-            // firstname:firstname,
-            // address:address,
-            // cp:cp,
-            // town:town,
-            // country:country
+            id_c:id_c,
             email:myemail,
             price:$('#price').val(),
             nameClient:myname,

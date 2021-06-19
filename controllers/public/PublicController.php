@@ -153,26 +153,11 @@ class PublicController{
 
     require_once('./views/public/addCart.php');
 
-}  
+    }  
 
 
-}
-//___________________________________________________________//
-// public function ArrayPay(){
-
-
-
-//     if($_SESSION['cart']){
-
-//         $ArrayCart = [];
-//         $ArrayCart = $_SESSION['cart'];
-
-//         echo json_encode($ArrayCart);
-
-//     }
-
-// }
- //___________________________________________________________//   
+    }
+    //___________________________________________________________//   
      public function deleteCart(){
 
         if(isset($_GET["id"])){
@@ -195,17 +180,10 @@ class PublicController{
         }
         require_once('./views/public/addCart.php');
      }
-     //___________________________________________________________//
-
-    //  public function succssPage(){
-
-    //     header('location:index.php?action=success');
-
-    //     require_once('./views/public/testPage.php');
-    //  }
+    //___________________________________________________________//
 
     public function payment(){
-      
+
         if(isset($_POST)){
 
             
@@ -231,7 +209,7 @@ class PublicController{
                     ]],
                     'customer_email'=>$_POST['email'],
                     'mode' => 'payment',
-                    'success_url' => 'http://localhost/php/poo/app/sculpture/index.php?action=success',
+                    'success_url' => 'http://localhost/php/poo/app/sculpture/index.php?action=shop_insert',
                     'cancel_url' => 'http://localhost:8080/php/poo/app/sculpture/index.php?action=cancel',
                     ]);
                         $_SESSION['pay'] = $_POST;
@@ -242,17 +220,16 @@ class PublicController{
                 }
             }
 
-            public function confirmation(){
+            public function successful(){
                 
-                 $newStock = ((int)$_SESSION['pay']['nb']) - ((int)$_SESSION['pay']['quantity']);   
-                $carv = new Carving();
-                $carv->setId_carv($_SESSION['pay']['id']);
-                 $carv->setQuantity($newStock);
-                var_dump($_SESSION['pay']);
-                $nbLine = $this->pubMo->updateStock($carv);
-                if($nbLine > 0 ){
-            
-                    session_start();
+                //  $newStock = ((int)$_SESSION['pay']['nb']) - ((int)$_SESSION['pay']['quantity']);   
+                // $carv = new Carving();
+                // $carv->setId_carv($_SESSION['pay']['id']);
+                //  $carv->setQuantity($newStock);
+                // var_dump($_SESSION['pay']);
+                // $nbLine = $this->pubMo->updateStock($carv);
+                // if($nbLine > 0 ){ }
+                //session_start();
                 
                 $email = $_SESSION['pay']['email'];
                 $fname = $_SESSION['pay']['firstname'];
@@ -280,7 +257,6 @@ class PublicController{
                 $mail->setFrom('dwwm94@gmail.com', 'Wood Art');
                 $mail->addAddress($email, 'Mr/Mme');     //Add a recipient
             
-            
                 //Content
                 $mail->isHTML(true);                                  
                 $mail->Subject = 'Here is the subject';
@@ -293,9 +269,9 @@ class PublicController{
                 <b> cp : $cp</b></br>
                 <b> town : $town</b></br>
                 <b> country : $country</b></br>
-                <b> Price : $price €</b></br>
-                <p>Vous avez commandez pour $price et vous sera livrée tres prochainement</p></br>
-                <p>Nous vous Remercions pour votre achat, à très bientôt !</p>
+                <b> Price : $price euros</b></br>
+                <p>Vous avez commandez pour $price et vous serez livre dans 7 jours ouvrables</p></br>
+                <p>Nous vous remercions pour votre achat, a tres bientot !</p>
                 </div>";
             
                 $mail->send();
@@ -303,11 +279,11 @@ class PublicController{
             } catch (Exception $e) {
                 echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
              }
-         } 
              require_once('./views/public/success.php');
-                }
+        }
 
     //___________________________________________________________//
+
    
     public function cancel(){
        

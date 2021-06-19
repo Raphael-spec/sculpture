@@ -1,14 +1,39 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
 
-.procli_si{
-    min-height: 60vh;
+ .procli_si{
+    min-height: 80vh;
     margin-top: 50px;
     margin-bottom: 50px;
     font-family: 'Poppins', sans-serif;
     background:  no-repeat url(../../assets/media/symbol.png);
      background-position: center; 
     /*background-size: cover; */
-    background-size: contain;
-    background-repeat: no-repeat;
+     background-size: contain;
+    background-repeat: no-repeat; 
+   
+    }
 
-}
+    #space_pro{
+
+        margin-bottom: 20%;
+    }
+    
+    @media (max-width: 991px){
+        
+        #space_pro{
+
+            margin-bottom: 0%;
+        }
+
+    }
+    /* @media (max-width: 794px){
+        #head_down nav{
+            top: 80px;
+        }
+    }
+    
+@media (max-width: 628px){
+    #head_down nav{
+        top: 80px;
+    }
+} */

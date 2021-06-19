@@ -3,10 +3,14 @@
 class PublicClientController{
 
     private $adCusM;
+    private $adShM;
+
 
     public function __construct()
     {
         $this->adCusM = new AdminCustomerModel();
+        $this->adShM = new AdminShoppingModel();
+
     }
 
     public function registerClient(){
@@ -124,20 +128,27 @@ class PublicClientController{
                
                
                 if($ok){
-                // var_dump($_SESSION['AuthClient']);
                     $valid = "Your new profil has been modified"; 
                     
                     header('location:index.php?action=profil_cus');
                 }else{
                     
-                    $valid = "Your pas changé";  
+                    $valid = "Your profil hasn't been modified";  
                 }
                 
          }
+
+         $order = new Shopping();
+         $order->getCustomer()->setId_c($id);
+
+         $orders = $this->adShM->SelectShoppingClient($order);
 
 
             require_once('./views/public/connexClient/profilClient.php');
         
     }
+
+
+
     
 }

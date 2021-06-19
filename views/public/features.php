@@ -56,13 +56,22 @@
                                     <?php if( $carv->getCarving()->getQuantity() > 0){ ?>
                                       <button type="submit" name="pass_to" class="btn btn-outline-primary"> See more</button>
                                       
-                                    <?php } ?>
+                                    <?php }else{ ?>
+
+                                        <a href="#" class="btn btn-dark text-white"> 
+                                        Unavailable
+                                    </a>
+                                    <?php }?>
+
+                                    
                                 </form>
-                                <?php if($carv->getCarving()->getQuantity() == 0){ ?>
+                             
+                             
+                                <!-- <?php// if($carv->getCarving()->getQuantity() == 0){ ?>
                                     <a href="#" class="btn btn-dark text-white"> 
                                         Unavailable
                                     </a>
-                                <?php } ?>
+                                <?php ////} ?> -->
                               
                             </div>
                         </div>

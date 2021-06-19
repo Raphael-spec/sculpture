@@ -2,7 +2,7 @@
 //var_dump($_SESSION['cart']);
 if(isset($_SESSION['AuthClient'])){
   //var_dump($_SESSION['AuthClient']);
-
+  $client = json_encode($_SESSION['AuthClient']->id_c);
   $mail = json_encode($_SESSION['AuthClient']->mail);
   $name = json_encode($_SESSION['AuthClient']->name);
   $firstname = json_encode($_SESSION['AuthClient']->firstname);
@@ -12,11 +12,12 @@ if(isset($_SESSION['AuthClient'])){
   $country = json_encode($_SESSION['AuthClient']->country);
   
 //echo $name . $firstname . $address . $cp . $town .$country;
+//echo $client;
 
 }
 
 ?>
-<section class="container">
+<section class="container addcart_size">
             <a  class="btn btn-primary mt-5 mb-3" href="index.php?action=features">Continue your purchase</a>
 
             <?php if(isset($var)){?>
@@ -70,16 +71,16 @@ if(isset($_SESSION['AuthClient'])){
             </table >
           
 
-            <form action="index.php?action=pay" method="post" enctype="multipart/form-data" >
+            <form action="" method="post" enctype="multipart/form-data" >
               
 
               <?php if(isset($_SESSION['AuthClient'])){ ?>
 
-            
-
                         <script>
+                        
                           var panier = <?php echo json_encode($_SESSION['cart']) ?>;
                           var email = <?php  echo $mail ?>;
+                          var id_c = <?php  echo $client ?>;
                           var nameClient = <?php echo $name ?>;
                           var firstname = <?php echo $firstname ?>;
                           var address = <?php echo $address ?>;
@@ -93,60 +94,25 @@ if(isset($_SESSION['AuthClient'])){
                           <input type="hidden" class="text-center add_price" id="price" name="price"  value="<?=$sum?>" >
                         </div>
 
+                        <div class="row col-4 offset-4"> 
+                              <div class="mt-4 mb-5">
+                                  <button class="btn btn-success col-12" id="checkout-button">Buy Now!</button>
+                              </div>
+                          </div>
                     
                         <?php }else{ ?>
-
-                          <script>
-                            var session = false;
-                          </script>
-                    <div class="container">
-                      <div class="row col-6 offset-3 border border-dark p-4 mb-5">
-                        <h1 class="display-6 text-center font-verdana text-decoration-underline mt-3 mb-5">Please enter your details</h1>
-                            <div class="row ">
-                                  <div class="col-6">
-                                    <label for="name" class="h6">Name*</label>
-                                    <input type="text" id="name" name="name" class="form-control mb-4" placeholder="Please enter you name">
-                                  </div>           
-                                    <div class="col-6">
-                                    <label for="firstname" class="h6">Firstname*</label>
-                                    <input type="text" id="firstname" name="firstname" class="form-control mb-4" placeholder="Please enter you firstname">
-                                  </div>
-                            </div> 
-                            <div class="row"> 
-                                  <div class="col-12">
-                                    <label for="address" class="h6">Address*</label>
-                                    <input type="text" id="address" name="address" class="form-control mb-4" placeholder="Please enter you address">
-                                  </div>
-                                  <div class="col-6">
-                                    <label for="cp" class="h6">Cp*</label>
-                                    <input type="text" id="cp" name="cp" class="form-control mb-4" placeholder="Please enter you cp">
-                                  </div>
-                                  <div class="col-6">
-                                    <label for="email" class="h6">Town*</label>
-                                    <input type="text" id="town" name="town" class="form-control mb-4" placeholder="Please enter you town">
-                                  </div>
-                                  <div class="col-12">
-                                    <label for="country" class="h6">Country*</label>
-                                    <input type="text" id="country" name="country" class="form-control mb-4" placeholder="Please enter you country">
-                                  </div>
-                            </div> 
-                            <div class="row"> 
-                                <div class="col-12">
-                                  <label for="email" class="h6">Email*</label>
-                                  <input type="email" id="email" name="email" class="form-control mb-4" placeholder="Please enter you email">
-                                </div>
+                          <div class="row">
+                            <div class="col-6 offset-3">
+                              
+                            <div class="alert alert-warning text-center mb-3">Please login for purchase</div>
                             </div>
-                                <input type="hidden" id="price" name="price"  value="<?=$sum?>" >
+                          </div>
+
                       
                     <?php  }?>
                           </div>
                         </div>
 
-                          <div class="row col-4 offset-4"> 
-                              <div class="mt-4 mb-5">
-                                  <button class="btn btn-success col-12" id="checkout-button">Buy Now!</button>
-                              </div>
-                          </div>
                 
               </form>
   </section>

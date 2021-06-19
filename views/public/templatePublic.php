@@ -211,24 +211,7 @@
           <?=$contenu;?>
 
 </main> 
-<!-- <footer id="footer">
-  <div class="footer-content">
-      <h3>Carving Wood</h3>
-      <p>Lorem, ipsum dolor.</p>
-          <ul class="socials">
-              <li><a href="#"><i class="fa fa-facebook" ></i></a></li>
-              <li><a href="#"><i class="fa fa-twitter" ></i></a></li>
-              <li><a href="#"><i class="fa fa-google-plus" ></i></a></li>
-              <li><a href="#"><i class="fa fa-youtube" ></i></a></li>
-              <li><a href="#"><i class="fa fa-linkedin-square" ></i></a></li>
-          </ul>
-  </div>
-  <div class="footer-bottom">
-      <p>copyright &copy;2021 carvingWood. designed by <span>L.rhafell</span></p>
-  </div>
-</footer> -->
 <footer id="footer">
-<!-- <a href="#head_logo" id="ankle"><img src="./assets/media/arrow_up_5.png" alt="" width="50"></a> -->
     <div class="footer_info">
         <div class="foo_footer_width about_foo ">
             <h2 >About</h2>

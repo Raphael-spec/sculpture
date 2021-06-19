@@ -13,6 +13,7 @@ class AdminUserController{
 
     public function listUsers(){
         AuthController::isLogged();
+            AuthController::accessUser();
         
         if(isset($_GET['id']) && isset($_GET['status']) && !empty($_GET['id'])){
             

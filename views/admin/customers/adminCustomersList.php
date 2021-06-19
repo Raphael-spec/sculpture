@@ -23,7 +23,9 @@
               <th>Phone</th>
               <th>Login</th>
               <!-- <th>Password</th> -->
+              <?php if($_SESSION['Auth']->id_g != 3){ ?>
               <th colspan="2" class="text-center">Actions</th>
+              <?php } ?>
           </tr>
       </thead>
      <tbody>

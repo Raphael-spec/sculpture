@@ -1,10 +1,12 @@
+
 <?php ob_start();
- header('location:index.php?action=valid');
+echo "<script>window.location.assign('index.php?action=valid')</script>";
+  ?>
 
+
+
+
+<?php
+    $contenu = ob_get_clean();
+    require_once('./views/public/templatePublic.php');
 ?>
-
-
-
-<?php  $contenu = ob_get_clean();
-    require_once("./views/public/templatePublic.php");
-?> 

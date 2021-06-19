@@ -13,6 +13,7 @@ class Maze{
     private $ctrPic;
     private $ctrCus;
     private $ctrPubCli;
+    private $ctrShop;
 
 
 
@@ -26,6 +27,7 @@ class Maze{
         $this->ctrCar = new AdminCarvingController();
         $this->ctrPub = new PublicController();
         $this->ctrPubCli = new PublicClientController();
+        $this->ctrShop = new AdminShoppingController();
 
 
 
@@ -192,16 +194,11 @@ class Maze{
                         break;
 
                     case 'remove_cart':
-                            $this->ctrPub->deleteCart();
-                            break;
-
-                    // case 'array_cart':
-                    //     $this->ctrPub->ArrayPay();
-                    //     break;
-    
+                        $this->ctrPub->deleteCart();
+                        break;
 
                     case 'success':
-                        $this->ctrPub->confirmation();
+                        $this->ctrPub->successful();
                         break;
 
                     case 'cancel':
@@ -211,10 +208,6 @@ class Maze{
                     case 'valid':
                         $this->ctrPub->valid();
                         break;
-
-                     // case 'test':
-                    //     $this->ctrPub->succssPage();
-                    //     break;
 
                     case 'bcs':
                         $this->ctrPub-> bcs();
@@ -239,13 +232,27 @@ class Maze{
                         break;
 
                     case 'profil_cus':
-                            $this->ctrPubCli->profilClient();
-                            break;
-
-                        
-                    case 'logout_cus':
-                        AuthController::logoutClient();
+                        $this->ctrPubCli->profilClient();
                         break;
+                            
+                     case 'logout_cus':
+                         AuthController::logoutClient();
+                        break;
+                    //______________________SHOPPING_______________________//
+
+                    case 'shop_insert':
+                        $this->ctrShop->ShoppingInsert();
+                        break;
+                    case 'shop_sadmin':
+                        $this->ctrShop->shoppingAdmin();
+                        break;
+                    case 'delete_shop':
+                        $this->ctrShop->shoppingAdminDelete();
+                        break;
+
+                   
+
+
                 }
         
         }else{

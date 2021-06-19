@@ -68,8 +68,17 @@
       <a href="index.php?action=add_cus"><i class="fas fa-plus"></i> Add</a>
     <?php } ?>
   </div>
-
+ 
   <?php if($_SESSION['Auth']->id_g != 3) {?>
+  <button class="dropdown-btn"><i class="fas fa-users "></i> Shopping
+    <i class="fa fa-caret-down"></i>
+  </button>
+  <div class="dropdown-container">
+  <?php if($_SESSION['Auth']->id_g != 3) { ?>
+    <a href="index.php?action=shop_sadmin"><i class="fas fa-list"></i> List</a>
+    <?php } ?>
+  </div>
+
   <button class="dropdown-btn"><i class="fas fa-graduation-cap "></i> Grades
     <i class="fa fa-caret-down"></i>
   </button>
@@ -89,6 +98,7 @@
       <a href="index.php?action=record"><i class="fas fa-plus"></i> Recording</a>
     <?php } ?>
   </div>
+ 
   <?php }} ?>
   <a href="index.php?action=to_features" class="text-end "><i class="fas fa-arrow-circle-left"></i></a>
 </div>

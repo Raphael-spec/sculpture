@@ -1,30 +1,17 @@
-<?php ob_start();?>
+<?php ob_start();
+
+         ?>
+
+
+     
+
         
-    <!-- <div class="row">
-               <div class="col-4 offset-4  ">
-                    <?php // if(isset($valid)){  ?>
-                        <div class="alert alert-success text-center"><?//= $valid;?></div>
-                    <?php //} ?>
-                </div>
-        </div> -->
-
-      <!-- <div class="row">
-               <div class="col-6 offset-3  ">
-
-            <div class="accordion accordion-flush mt-5" id="accordionFlushExample">
-  <div class="accordion-item">
-    <h2 class="accordion-header" id="flush-headingOne">
-      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-        Your profile
-      </button>
-    </h2>
-    <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-      <div class="accordion-body"> -->
-
-      <div class="container procli_si ">
-            <div class="row">
+        <div class="container procli_si">
+  <div class="row row-cols-1 row-cols-lg-2 row-cols-md-1 ">
+    <div class="col">
+    <section>
                  <div class="col-6 offset-3">
-                    <h1 class="display-6 text-center font-verdana text-decoration-underline"><?php if(isset($_SESSION['AuthClient'])){
+                    <h1 class="display-6 text-center font-verdana text-decoration-underline "><?php if(isset($_SESSION['AuthClient'])){
                         echo $_SESSION['AuthClient']->login;
                         } ?>'s Registration Form</h1>
 
@@ -83,17 +70,61 @@
                                     </div>
                                 </form>
                         </div>
-                </div>
-        </div>
+            </section>
+    </div>
+    <div class="col">
       
-      <!-- </div>
+    <section>
+      
+      <h1 id="space_pro" class="display-6 text-center font-verdana text-decoration-underline"><?php if(isset($_SESSION['AuthClient'])){
+      echo $_SESSION['AuthClient']->login;
+      } ?>'s Orders</h1>
+
+<table class="table table-striped border border-light p-4 bg-light mt-5 rounded-3 space_table">
+  <thead>
+      <tr>
+          <th>Id</th>
+          <th>Date</th>
+          <th>Livraison</th>
+      </tr>
+  </thead>
+  <tbody>
+
+        <?php if(empty($orders)){ ?>
+
+           <tr > <td colspan='3' class="text-center text-warning">No orders</td>  </tr>
+
+      <?php   }else{ ?>
+
+        
+      <?php foreach ($orders as $order) { ?>
+      <tr>
+          <td><?=$order->getId_shop();?></td>
+          <td><?=$order->getDate();?></td>
+          <td> <?php 
+                      $date1 = strtotime($order->getDate());
+                      $date = strtotime("+2 day", $date1);
+
+                      if(date('Y/m/d', $date) <= date('Y/m/d')){
+                          echo 'livré';
+                      }else{
+                          echo 'en cours';
+                      }
+                  ?>
+
+            </td>
+      </tr>
+      <?php } } ?>
+
+  </tbody>
+</table>
+
+
+</section> 
     </div>
   </div>
-</div>
 
-</div>
-        </div>  -->
-
+   </div>  
 <?php
     $contenu = ob_get_clean();
     require_once('./views/public/templatePublic.php');
