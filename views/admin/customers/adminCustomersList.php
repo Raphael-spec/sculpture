@@ -9,19 +9,19 @@
         </form>
     </div>
 </div>
-<table class="table table-striped border border-light p-4 bg-light mt-4 rounded-3">
+<table class="table table-responsive-sm table-striped border border-light p-4 bg-light mt-4 rounded-3" id="table_b-e">
       <thead>
           <tr>
               <th>Id_c</th>
               <th>Name</th>
               <th>Firstname</th>
-              <th>Address</th>
-              <th>Cp</th>
-              <th>Town</th>
-              <th>Country</th>
-              <th>Mail</th>
-              <th>Phone</th>
-              <th>Login</th>
+              <th id="col_b-e4">Address</th>
+              <th id="col_b-e">Cp</th>
+              <th id="col_b-e2">Town</th>
+              <th id="col_b-e3">Country</th>
+              <th >Mail</th>
+              <th id="col_b-e5">Phone</th>
+              <th id="col_b-e6">Login</th>
               <!-- <th>Password</th> -->
               <?php if($_SESSION['Auth']->id_g != 3){ ?>
               <th colspan="2" class="text-center">Actions</th>
@@ -34,18 +34,18 @@
               <td><?=$cus->getId_c();?></td>
               <td><?=$cus->getName();?></td>
               <td><?=$cus->getFirstname();?></td>
-              <td><?=$cus->getAddress();?></td>
-              <td><?=$cus->getCp();?></td>
-              <td><?=$cus->getTown();?></td>
-              <td><?=$cus->getCountry();?></td>
+              <td id="coll_b-e4"><?=$cus->getAddress();?></td>
+              <td id="coll_b-e"><?=$cus->getCp();?></td>
+              <td id="coll_b-e2"><?=$cus->getTown();?></td>
+              <td id="coll_b-e3"><?=$cus->getCountry();?></td>
               <td><?=$cus->getMail();?></td>
-              <td><?=$cus->getPhone();?></td>
-              <td><?=$cus->getLogin();?></td>
+              <td id="coll_b-e5"><?=$cus->getPhone();?></td>
+              <td id="coll_b-e6"><?=$cus->getLogin();?></td>
               <!-- <td><?//=$cus->getPassword();?></td> -->
               <?php if($_SESSION['Auth']->id_g != 3){ ?>
               <td class="text-center">
                 <a class="btn btn-warning" href="index.php?action=edit_cus&id=<?=$cus->getId_c();?>">
-                    <i class="fas fa-pen"></i>
+                    <i class="fas fa-pen" id="butt_b-e"></i>
                 </a>
               </td>
               <?php } ?>
@@ -53,7 +53,7 @@
               <td  class="text-center">
                 <a class="btn btn-danger" href="index.php?action=delete_cus&id=<?=$cus->getId_c();?>"
                     onclick="return confirm('Are you sure, you want to delete this client?')">
-                    <i class="fas fa-trash"></i>
+                    <i class="fas fa-trash" id="butt_b-e2"></i>
                 </a>
               </td>
               <?php } ?>

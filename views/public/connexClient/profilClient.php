@@ -2,10 +2,6 @@
 
          ?>
 
-
-     
-
-        
         <div class="container procli_si">
   <div class="row row-cols-1 row-cols-lg-2 row-cols-md-1 ">
     <div class="col">
@@ -83,9 +79,10 @@
 <table class="table table-striped border border-light p-4 bg-light mt-5 rounded-3 space_table">
   <thead>
       <tr>
-          <th>Id</th>
-          <th>Date</th>
-          <th>Livraison</th>
+          <th>N° order</th>
+          <th>Purchase date</th>
+          <th>Total amount</th>
+          <th>Delivery</th>
       </tr>
   </thead>
   <tbody>
@@ -101,9 +98,10 @@
       <tr>
           <td><?=$order->getId_shop();?></td>
           <td><?=$order->getDate();?></td>
+          <td><?=$order->getPrice();?>€</td>
           <td> <?php 
                       $date1 = strtotime($order->getDate());
-                      $date = strtotime("+2 day", $date1);
+                      $date = strtotime("+7 day", $date1);
 
                       if(date('Y/m/d', $date) <= date('Y/m/d')){
                           echo 'livré';

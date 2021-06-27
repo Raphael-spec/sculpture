@@ -12,8 +12,8 @@
                 <label for="loginMail" class="h6">Login or Mail*</label>
                 <input type="text" id="loginMail" name="loginMail" class="form-control mt-2" placeholder="Please enter your login or mail">
                 
-                <label for="password" class="h6">Password*</label>
-                <input type="password" id="password" name="password" class="form-control mt-2" placeholder="Enter your password">
+                <label for="password" class="h6 mt-3">Password*</label>
+                <input type="password" id="password" name="password" class="form-control mt-2" placeholder="Please Enter your password">
 
                 <button  type="submit" class="btn btn-primary col-12 mt-2 mb-5" name="submit">Log in</button>
             </form>

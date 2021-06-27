@@ -9,7 +9,7 @@
                  <div class="row">
                   
                     <div class="col">
-                        <label for="id_carv">Name of Carving</label>
+                        <label for="id_carv" class="h6" >Name of Carving</label>
                         <select id="id_carv" name="id_carv" class="form-select">
                         <option value="">Choose</option>
                         <?php foreach ($datas as  $dat) {;?>
@@ -24,11 +24,11 @@
              
                 <div class="row">
                     <div class="col">
-                        <label for="picture_l">Picture_l</label>
+                        <label for="picture_l" class="h6 mt-3">Picture_l</label>
                         <input type="file" id="picture_l" name="picture_l" class="form-control"  >
                     </div>
                     <div class="col">
-                        <label for="picture_r">Picture_r</label>
+                        <label for="picture_r" class="h6 mt-3">Picture_r</label>
                         <input type="file" id="picture_r" name="picture_r" class="form-control"  >
                     </div>
                 </div>

@@ -5,6 +5,7 @@ class shopping{
     private $id_shop;
     private $date;
     private $customer;
+    private $price;
     
 
     
@@ -72,6 +73,26 @@ class shopping{
     public function setCustomer($customer)
     {
         $this->customer = $customer;
+
+        return $this;
+    }
+
+     /**
+     * Get the value of price
+     */ 
+    public function getPrice()
+    {
+        return $this->price;
+    }
+
+    /**
+     * Set the value of price
+     *
+     * @return  self
+     */ 
+    public function setPrice($price)
+    {
+        $this->price = $price;
 
         return $this;
     }

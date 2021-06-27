@@ -3,7 +3,7 @@
 class AdminCarvingController{
 
     private $adCrM;
-    // private $adCatM;
+   
 
     public function __construct()
     {
@@ -13,7 +13,7 @@ class AdminCarvingController{
 
     public function listCarving(){
         AuthController::isLogged();
-        //var_dump($_POST);
+       
           if(isset($_POST['submit']) && !empty($_POST['search'])){
              
               $search = trim(htmlspecialchars(addslashes($_POST['search'])));
@@ -34,7 +34,7 @@ class AdminCarvingController{
         AuthController::isLogged();
             AuthController::accessUser();
         
-        if(isset($_GET['id']) && filter_var($_GET['id'], FILTER_VALIDATE_INT)){//<1000 ne sert a rien sur ce coup la et dum trim
+        if(isset($_GET['id']) && filter_var($_GET['id'], FILTER_VALIDATE_INT)){
           
           $id = $_GET['id'];
           

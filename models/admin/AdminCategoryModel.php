@@ -90,17 +90,7 @@ class AdminCategoryModel extends Tree{
 
     public function changeCategory(Category $cat){ 
         
-        // $sql = "UPDATE category
-        //         SET name_cat = :name_cat, picture_cat = :picture_cat
-        //         WHERE id_cat = :id";
-        
-        // $result = $this->getRequest($sql, ['name_cat'=>$cat->getName_cat(), 'id'=>$cat->getId_cat(), 'picture_cat'=>$cat->getPicture_cat() ]);
-
-        // if($result->rowCount() > 0){
-            
-        //     $line = $result->rowCount();
-        //     return $line;
-        //  }
+      
 
     if($cat->getPicture_cat() === "" ){
             

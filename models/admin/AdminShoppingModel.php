@@ -5,11 +5,12 @@ class AdminShoppingModel extends Tree{
 
     public function InsertShop(Shopping $order){
 
-        $sql = "INSERT INTO shopping(id_c)
-                VALUES(:id_c)";
+        $sql = "INSERT INTO shopping(id_c, price)
+                VALUES(:id_c, :price)";
         
         $tabParam = [
             "id_c"=>$order->getCustomer()->getId_c(),
+            "price"=>$order->getPrice()
                 ];
 
         $result = $this->getRequest($sql, $tabParam);
@@ -30,6 +31,7 @@ class AdminShoppingModel extends Tree{
             $shop = new Shopping();
             $shop->setId_shop($row->id_shop);
             $shop->setDate($row->date);
+            $shop->setPrice($row->price);
             $shop->getCustomer()->setId_c($row->id_c);
 
 
@@ -60,6 +62,7 @@ class AdminShoppingModel extends Tree{
                 
                 $shoppingOrder->setId_shop($row->id_shop);
                 $shoppingOrder->setDate($row->date);
+                $shoppingOrder->setPrice($row->price);
                 $shoppingOrder->getCustomer()->setId_c($row->id_c);
 
                 array_push($tabShop, $shoppingOrder);

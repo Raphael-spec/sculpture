@@ -17,7 +17,7 @@
                 <label for="category" class="h6">Category</label>
                 <input type="text" id="category" name="category" class="form-control mt-2" placeholder="Please put a new category">
 
-                <label for="picture" class="h6">Picture</label>
+                <label for="picture" class="h6 mt-3">Picture</label>
                 <input type="file" id="picture" name="picture" class="form-control"  >
                 
                 <button  type="submit" class="btn btn-success col-12 mt-2 mb-4" name="submit">Add</button>

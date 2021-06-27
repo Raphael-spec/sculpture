@@ -34,7 +34,7 @@ class PublicController{
                 
                 $tabCat = $this->pubCatM->getCategories();
                 $carvs = $this->pubPicM->getPicture($search);
-                var_dump($_POST);
+                //var_dump($_POST);
                 require_once('./views/public/features.php');
             }
             
@@ -106,7 +106,7 @@ class PublicController{
             $name_cat = htmlspecialchars(addslashes($_POST['name_cat']));
 
     if(isset($_SESSION['cart'])){
-        $items_id = array_column($_SESSION['cart'],"id"); //cible une colonne et recupere toute la colonne
+        $items_id = array_column($_SESSION['cart'],"id"); 
             if(in_array($id, $items_id)){
                 $var = 'This Carving has already been added';
             }else{
@@ -146,7 +146,7 @@ class PublicController{
                     ];
         
     
-        $_SESSION['cart'][] = $item_cart;//premier produit, tableau associative
+        $_SESSION['cart'][] = $item_cart;
 
     
     }
@@ -161,16 +161,13 @@ class PublicController{
      public function deleteCart(){
 
         if(isset($_GET["id"])){
-            //unset($_SESSION['cart']);               
-            // echo'$_GET["id"]';
+           
             foreach($_SESSION['cart'] as $key =>$cart){
 
                  if($cart['id'] == $_GET['id']){
 
                      unset($_SESSION['cart'][$key]);
-                    // var_dump($_SESSION['cart']);
-                        // header('location:index.php?action=cart');
-                    //  echo'<script>window.location"index.php?action=cart"</script>';
+                   
                      require_once('./views/public/addCart.php');
                     
                 }
@@ -221,16 +218,7 @@ class PublicController{
             }
 
             public function successful(){
-                
-                //  $newStock = ((int)$_SESSION['pay']['nb']) - ((int)$_SESSION['pay']['quantity']);   
-                // $carv = new Carving();
-                // $carv->setId_carv($_SESSION['pay']['id']);
-                //  $carv->setQuantity($newStock);
-                // var_dump($_SESSION['pay']);
-                // $nbLine = $this->pubMo->updateStock($carv);
-                // if($nbLine > 0 ){ }
-                //session_start();
-                
+                 
                 $email = $_SESSION['pay']['email'];
                 $fname = $_SESSION['pay']['firstname'];
                 $name = $_SESSION['pay']['nameClient'];
@@ -259,9 +247,9 @@ class PublicController{
             
                 //Content
                 $mail->isHTML(true);                                  
-                $mail->Subject = 'Here is the subject';
+                $mail->Subject = 'Wood Arts Purchase';
                 $mail->Body    = "
-                <h2>confirmation d'achat</h2>
+                <h2>Purchase Confirmation</h2>
                 <div>
                 <b> Name : $name</b></br>
                 <b> First Name : $fname</b></br>
@@ -270,8 +258,8 @@ class PublicController{
                 <b> town : $town</b></br>
                 <b> country : $country</b></br>
                 <b> Price : $price euros</b></br>
-                <p>Vous avez commandez pour $price et vous serez livre dans 7 jours ouvrables</p></br>
-                <p>Nous vous remercions pour votre achat, a tres bientot !</p>
+                <p>You have ordered for $price euros and you will be delivered within 7 working days</p></br>
+                <p>Thank you for your purchase, see you soon!</p>
                 </div>";
             
                 $mail->send();
@@ -348,10 +336,5 @@ class PublicController{
     }
     //___________________________________________________________//
 
-    public function pageNotFound(){
 
-        
-        require_once('./views/public/pageNotFound.php');
-    }
-    //___________________________________________________________//
 }

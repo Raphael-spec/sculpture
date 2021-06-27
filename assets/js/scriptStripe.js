@@ -1,12 +1,12 @@
 //console.log(session)
-myname = '';
-myfirstname = '';
-myaddress = '';
-mycp = '';
-mytown = '';
-mycountry = '';
-myemail = '';
-client = '';
+// myname = '';
+// myfirstname = '';
+// myaddress = '';
+// mycp = '';
+// mytown = '';
+// mycountry = '';
+// myemail = '';
+// client = '';
 
 $(function(){
 
@@ -28,19 +28,7 @@ $(function(){
         console.log(myname,myfirstname,myaddress,mycp,mytown,mycountry,myemail,client)
 
         }
-        // else{
-        // myname= $('#name').val();
-        // myfirstname = $('#firstname').val();
-        // myaddress =  $('#address').val();
-        // mycp =  $('#cp').val();
-        // mytown =  $('#town').val();
-        // mycountry = $('#country').val();
-        // myemail = $('#email').val();
 
-        // console.log(myname,myfirstname,myaddress,mycp,mytown,mycountry,myemail)
-
-        // }
-        
         e.preventDefault();
 
         $.ajax({

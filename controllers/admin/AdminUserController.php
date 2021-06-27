@@ -13,6 +13,7 @@ class AdminUserController{
 
     public function listUsers(){
         AuthController::isLogged();
+        
             AuthController::accessUser();
         
         if(isset($_GET['id']) && isset($_GET['status']) && !empty($_GET['id'])){
@@ -178,8 +179,7 @@ class AdminUserController{
                
                $ok = $this->adUseM ->changeUser($editUs); 
               
-            //    var_dump($_POST);
-            //    echo'bonjour';
+           
                 header('location:index.php?action=list_us');
                 
             }

@@ -98,7 +98,7 @@ class PublicClientController{
             
             $editClie = $this->adCusM->collectClient($editCu);
             
-            $valid = "";
+            //$valid = "";
          
             if(isset($_POST['submit']) && !empty($_POST['login']) && !empty($_POST['password'])){
                

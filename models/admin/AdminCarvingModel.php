@@ -125,7 +125,6 @@ class AdminCarvingModel extends Tree{
             $editCar->setQuantity($carvRow->quantity);
             $editCar->setPrice($carvRow->price);
             $editCar->getCategory()->setId_cat($carvRow->id_cat);
-            // $editCar->getCategory()->setName_cat($CarvRow->name_cat);
 
             return $editCar;
         }

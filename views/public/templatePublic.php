@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="./assets/media/lac.png">
   <title>Wood Art</title>
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
   <link rel="stylesheet" href="./assets/css/templatePublicTopHeader.css">
@@ -94,117 +95,7 @@
           <div class="head_menu"><i class="fa fa-bars" style="font-size:24px"></i></div>
 
     </section>
-<!-- <nav>
-    <div class="logo">CarvingWood</div>
-    <label for="btn" class="iconi">
-      <span class="fa fa-bars"></span>
-    </label>
-    <input type="checkbox" id="btn">
-    <ul id="first">
-      <li>
-        <a href="#">Features</a>
-      </li>
-      <li><a href="index.php?action=about">About</a></li>
-      <li><a href="#">Gallery</a></li>
-      
-      <li>
-        <label for="btn-1" class="show">Services +</label>
-        <a href="#">Services</a>
-        <input class="barre" type="checkbox" id="btn-1">
-        <ul id="sec">
-            <li><a href="#">Connexion</a></li>
-            <li><a href="#">Register</a></li>
-        </ul>
-      </li>
-      
-      <li><a href="index.php?action=contact">Contact</a></li>
-      <li><a href="#"><i class="fa fa-cart-plus" style="font-size:24px"></i></a></li>
-    </ul>
-  </nav> -->
-  <!-- <nav class="navbar navbar-expand-lg navbar-light bg-info">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">Navbar</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0" >
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Dropdown
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
-          </ul>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
-        </li>
-       
-      </ul>
-      <form class="d-flex">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
-    </div>
-  </div>
-</nav> -->
 
-
-<!-- <nav class="d-flex justify-content-between bg-info pt-2 pb-2">
-    <ul class="nav justify-content-end">
-        <li class="nav-item">
-          <a class="navbar-brand" href="#">Navbar</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-        </li>
-    </ul>
- 
-    <ul class="nav justify-content-center">
-          <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Active</a>
-          </li>
-          <li class="nav-item">
-              <a class="nav-link" href="#">Link</a>
-          </li>
-          <li class="nav-item">
-              <a class="nav-link" href="#">Link</a>
-          </li>
-          <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Dropdown
-                  </a>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li><a class="dropdown-item" href="#">Connexion</a></li>
-                  <li><a class="dropdown-item" href="#">Register</a></li>
-                   <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="#">Something else here</a></li> 
-                </ul>
-          </li>
-      </ul>
-      
-      <ul id="badaboom" class="nav justify-content-end">
-        <li class="nav-item">
-          <form class="d-flex">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success" type="submit">Search</button>
-          </form>
-      </li>
-    </ul>
-</nav> -->
 </header>
 
 <main >
@@ -219,9 +110,9 @@
 
                 <div class="foo_social-media">
                     <ul class="foo_ul" >
-                        <li ><a href="#" class="foo_a" ><i class="fa fa-facebook" ></i></a></li>
-                        <li ><a href="#" class="foo_a"><i class="fa fa-linkedin-square" ></i></a></li>
-                        <li ><a href="#" class="foo_a"><i class="fa fa-twitter" ></i></a></li>
+                        <li ><a href="https://fr-fr.facebook.com/" class="foo_a" ><i class="fa fa-facebook" ></i></a></li>
+                        <li ><a href="https://fr.linkedin.com/" class="foo_a"><i class="fa fa-linkedin-square" ></i></a></li>
+                        <li ><a href="https://twitter.com/?lang=fr" class="foo_a"><i class="fa fa-twitter" ></i></a></li>
                     </ul>
                 </div>
         </div>
@@ -263,14 +154,10 @@
     </div>
 </footer>
 
-  <!-- <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script> -->
 
   <script async src="https://js.stripe.com/v3/"></script>
   <script async src="./assets/js/scriptStripe.js"></script>
   <script async src="https://polyfill.io/v3/polyfill.min.js?version=3.52.1&features=fetch"></script>
-  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.js" integrity="sha512-otOZr2EcknK9a5aa3BbMR9XOjYKtxxscwyRHN6zmdXuRfJ5uApkHB7cz1laWk2g8RKLzV9qv/fl3RPwfCuoxHQ==" crossorigin="anonymous"></script> -->
-  <!-- <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.5.1.js"></script> -->
   
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js" integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js" integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>
@@ -284,8 +171,6 @@
   <script src="./assets/js/templatePublicHome.js"></script>
   <script async src="./assets/js/templatePublicFeatures.js"></script>
 
-   <!-- <script async src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> -->
-  <!-- <script async src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js%22%3E"></script> -->
 
  
 

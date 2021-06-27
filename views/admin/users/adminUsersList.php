@@ -1,14 +1,14 @@
 <?php ob_start();?>
 <h1 class="display-6 text-center font-monospace text-decoration-underline mt-3">Users List</h1>
 
-<table class="table table-striped border border-light p-4 bg-light mt-5 rounded-3">
+<table class="table table-responsive-sm table-striped border border-light p-4 bg-light mt-5 rounded-3" id="table_b-e">
     <thead>
         <tr>
             <th>Id</th>
             <th>Name</th>
-            <th>Firstname</th>
+            <th id="col_b-e">Firstname</th>
             <th>Login</th>
-            <th>Mail</th>
+            <th id="col_b-e2">Mail</th>
             <th>Grade</th>
             <?php if($_SESSION['Auth']->id_g == 1){ ?>
             <th class="text-center">In/Out</th>
@@ -21,9 +21,9 @@
         <tr>
             <td><?=$user->getId_u();?></td>
             <td><?=$user->getName();?></td>
-            <td><?=$user->getFirstname();?></td>
+            <td id="coll_b-e"><?=$user->getFirstname();?></td>
             <td><?=$user->getLogin();?></td>
-            <td><?=$user->getMail();?></td>
+            <td id="coll_b-e2"><?=$user->getMail();?></td>
             <td><?=$user->getGrade()->getName_g();?></td>
             <?php if($_SESSION['Auth']->id_g == 1){ ?>
 
@@ -38,13 +38,13 @@
             </td>
             <td class="text-center">
                 <a class="btn btn-warning" href="index.php?action=edit_us&id=<?=$user->getId_u();?>">
-                    <i class="fas fa-pen"></i>
+                    <i class="fas fa-pen" id="butt_b-e"></i>
                 </a>
               </td>
               <td  class="text-center">
                 <a class="btn btn-danger" href="index.php?action=delete_us&id=<?=$user->getId_u();?>"
                     onclick="return confirm('Are you sure you want to delete this user?')">
-                    <i class="fas fa-trash"></i>
+                    <i class="fas fa-trash" id="butt_b-e2"></i>
                 </a>
               </td>
           

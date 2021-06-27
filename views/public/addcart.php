@@ -1,7 +1,7 @@
 <?php ob_start();
-//var_dump($_SESSION['cart']);
+
 if(isset($_SESSION['AuthClient'])){
-  //var_dump($_SESSION['AuthClient']);
+
   $client = json_encode($_SESSION['AuthClient']->id_c);
   $mail = json_encode($_SESSION['AuthClient']->mail);
   $name = json_encode($_SESSION['AuthClient']->name);
@@ -11,11 +11,7 @@ if(isset($_SESSION['AuthClient'])){
   $town = json_encode($_SESSION['AuthClient']->town);
   $country = json_encode($_SESSION['AuthClient']->country);
   
-//echo $name . $firstname . $address . $cp . $town .$country;
-//echo $client;
-
 }
-
 ?>
 <section class="container addcart_size">
             <a  class="btn btn-primary mt-5 mb-3" href="index.php?action=features">Continue your purchase</a>
@@ -32,7 +28,7 @@ if(isset($_SESSION['AuthClient'])){
             <table class="table table-striped mb-5"  class=" add_table">
               <thead class="table-secondary">
                 <tr>
-                  <!-- <th>id</th> -->
+                 
                   <th>Name</th>
                   <th>Picture</th>
                   <th>Content</th>

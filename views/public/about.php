@@ -10,9 +10,9 @@
             Je ne peux cacher, ma passion, je suis un grand fan de manga. Je m'inspire des  exclusivement de tout l'univers manga. Parmi ceux dont je suis fan où pour lesquelles j'ai eu un coup de coeur. Je  ne sculpte que lorsque l'envie me prend. Soit de scènes existantes, tirés de  mangas ou bien dans les animes. Pour moi c'est un réel plaisir de pourvoir sculpté. J'ai la chance de sculpter sous aucune pression, ce n'est que du plaisir. Je ne travaille pas sous commande. Je ne laisse place qu'a mon inspiration. Pour tous les fans de manga, si vous acquérez une des mes oeuvres. Sachez que vous serez les seules à les avoir dans le monde. il n'y aucune reproduction.<br>
             Et l'argent est reversé à une oeuvre de charité, la "Jane Goodall Institute" est une organisation mondiale de protection de la vie sauvage et de l'environnement. Alors n'hésitez pas à vous faire plaisir et préservez la nature  </p>
             <ul>
-                <li><a href=""><i class="fa fa-youtube-play"></i></a></li>
-                <li><a href=""><i class="fa fa-twitch"></i></a></li>  
-                <li><a href=""><i class="fa fa-vimeo"></i></a></li>              
+                <li><a href="https://www.youtube.com/"><i class="fa fa-youtube-play"></i></a></li>
+                <li><a href="https://www.twitch.tv/"><i class="fa fa-twitch"></i></a></li>  
+                <li><a href="https://vimeo.com/fr"><i class="fa fa-vimeo"></i></a></li>              
             </ul>
     </div>
 

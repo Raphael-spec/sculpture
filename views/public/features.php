@@ -27,7 +27,7 @@
     
         
     
-        <!-- <div class="row"> -->
+      
             <div class="col-12 feat_card">
                 <div class="row row-cols-1 row-cols-lg-3 row-cols-md-2 g-4">
                 <?php foreach($carvs as $carv){?>
@@ -63,16 +63,8 @@
                                     </a>
                                     <?php }?>
 
-                                    
                                 </form>
-                             
-                             
-                                <!-- <?php// if($carv->getCarving()->getQuantity() == 0){ ?>
-                                    <a href="#" class="btn btn-dark text-white"> 
-                                        Unavailable
-                                    </a>
-                                <?php ////} ?> -->
-                              
+                                                           
                             </div>
                         </div>
                     </div>

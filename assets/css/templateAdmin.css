@@ -98,3 +98,23 @@ body {
     .sidebar {padding-top: 15px;}
     .sidebar a {font-size: 18px;}
   }
+
+  @media screen and (max-width:990px){
+    .sidebar a {
+      font-size: 17px;
+    }
+    .sidebar .closebtn {
+      font-size: 30px;
+    }
+    .openbtn{
+      font-size: 17px;
+    }
+    .sidenav a, .dropdown-btn{
+      font-size: 17px;
+    }
+
+    .dropdown-container{
+      font-size: 15px;
+    }
+    
+}

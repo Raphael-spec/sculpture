@@ -1,8 +1,5 @@
 <?php ob_start();
 
-//var_dump($_SESSION)
-
-
 ?>
 
 <div class="container carIt_section mt-5 mb-5">
@@ -73,11 +70,8 @@
         
       <form method="POST" action="index.php?action=cart">
         
-        <!-- <label for="email">Email*</label>
-        <input type="email" id="email" class="form-control mb-4" placeholder="Votre email svp..."> -->
-        
-        <!-- <label for="quant">Quantity*</label> -->
-        <input type="hidden" name="quant" id="quantity" class="form-control mb-4"  min="1" value="1" max="<?=$nb;?>"  >
+
+        <input type="hidden" name="quant" id="quantity" class="form-control mb-4"  min="1" value="1"  >
         
         <input type="hidden" name="id_carv"  id="id" value="<?=$id;?>">
         <input type="hidden" name="name"  id="name" value="<?=$name;?>">
@@ -89,7 +83,7 @@
         <input type="hidden" name="date"  id="date" value="<?=$date;?>">
         <input type="hidden" name="id_cat"  id="id_cat" value="<?= $id_cat;?>">
         <input type="hidden"name="name_cat"  id="name_cat" value="<?=$name_cat;?>">
-        <input type="hidden" name="nb" id="nb" value="<?=$nb;?>">
+       
         
             <button type=submit name="cart"  class="col-12 carIt_pay_button" >Add to cart</button>
       

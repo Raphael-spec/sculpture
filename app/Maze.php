@@ -35,229 +35,235 @@ class Maze{
 
     public function getMaze(){
 
-        if(isset($_GET['action'])){
+            try{
+                if(isset($_GET['action'])){
 
-                switch($_GET['action']){
+                        switch($_GET['action']){
 
-                    //______________________CATEGORIES_______________________//
-                    case 'list_cat':
-                        $this->ctrCat->listCategories();
-                        break;
-                    
-                    case 'delete_cat':
-                        $this->ctrCat->eraseCat();
-                        break;
-
-                    case 'add_cat':
-                        $this->ctrCat->addCat();
-                        break;
-
-                    case 'edit_cat':
-                        $this->ctrCat->editCat();
-                        break;
-
-                    //______________________CARVING_______________________//
-
-                    case 'list_carv':
-                        $this->ctrCar->listCarving();
-                        break;
-
-                    case 'delete_carv':
-                        $this->ctrCar->eraseCarving();
-                        break;
-
-                    case 'add_carv':
-                        $this->ctrCar->addCarving();
-                        break;
-                    
-                    case 'edit_carv':
-                        $this->ctrCar->editCarving();
-                        break;
-
-                    //______________________PICTURES_______________________//
-
-                    case 'list_pic':
-                        $this->ctrPic->listPictures();
-                        break;
-
-                    case 'delete_pic':
-                        $this->ctrPic->erasePicture();
-                        break;
-
-                    case 'add_pic':
-                        $this->ctrPic->addPicture();
-                        break;
-
-                    case 'edit_pic':
-                        $this->ctrPic->editPicture();
-                        break;
-
-                    //______________________GRADES_______________________//
-
-                    case 'list_gr':
-                        $this->ctrGrd->listGrades();
-                        break;
-
-                    case 'delete_gr':
-                        $this->ctrGrd->eraseGr();
-                        break;
-
-                    case 'add_gr':
-                        $this->ctrGrd->addGr();
-                        break;
-
-                    case 'edit_gr':
-                        $this->ctrGrd->editGr();
-                        break;
-
-                    //______________________USERS_______________________//
-
-                    case 'list_us':
-                        $this->ctrUs->listUsers();
-                        break;
-
-                    case 'delete_us':
-                        $this->ctrUs->eraseUser();
-                        break;
-
-                    case 'edit_us':
-                        $this->ctrUs->EditUser();
-                        break;                    
-                        
-                    case 'login':
-                        $this->ctrUs->login();
-                        break;
-
-                    case 'record':
-                        $this->ctrUs->addUser();
-                        break;
-
-                    case 'logout':
-                        AuthController::logout();
-                        break;
-
-                    case "to_features" :
-                        AuthController::logoutAndFeatures();
-                        break; 
-                    
-                    //______________________CUSTOMERS_______________________//
-
-                    case 'list_cus':
-                        $this->ctrCus->listClients();
-                        break;
-    
-                    case 'delete_cus':
-                        $this->ctrCus->eraseClient();
-                        break;
-    
-                    case 'add_cus':
-                        $this->ctrCus->addClient();
-                        break;
-    
-                    case 'edit_cus':
-                        $this->ctrCus->editClient();
-                        break;
-                    
-                    //______________________MENU_______________________//
-
-
-                    case 'contact':
-                        $this->ctrPub->contact();
-                        break;
-
-                    case 'home':
-                        $this->ctrPub->home();
-                        break;
-                        
-                    case 'gallery':
-                        $this->ctrPub->gallery();
-                        break;
-
-                    case 'about':
-                        $this->ctrPub->about();
-                        break;
-                    
-                    case 'features':
-                        $this->ctrPub->getPubCarving();
-                         break;
-
-                    case 'checkout':
-                        $this->ctrPub->bringBack();
-                        break;
-
-                    case 'pay':
-                        $this->ctrPub->payment();
-                        break;
-
-                    case 'cart':
-                        $this->ctrPub->addCart();
-                        break;
-
-                    case 'remove_cart':
-                        $this->ctrPub->deleteCart();
-                        break;
-
-                    case 'success':
-                        $this->ctrPub->successful();
-                        break;
-
-                    case 'cancel':
-                        $this->ctrPub->cancel();
-                         break;
-
-                    case 'valid':
-                        $this->ctrPub->valid();
-                        break;
-
-                    case 'bcs':
-                        $this->ctrPub-> bcs();
-                        break;
-                        
-                    case 'psc':
-                        $this->ctrPub-> psc();
-                        break;
-
-                    case 'error404':
-                        $this->ctrPub-> pageNotFound();
-                        break;
-
-                    //______________________PUBLIC_CLIENT_______________________//
-
-                    case 'regis_cus':
-                        $this->ctrPubCli->RegisterClient();
-                        break;
-                    
-                    case 'log_cus':
-                        $this->ctrPubCli->loginClient();
-                        break;
-
-                    case 'profil_cus':
-                        $this->ctrPubCli->profilClient();
-                        break;
+                            //______________________CATEGORIES_______________________//
+                            case 'list_cat':
+                                $this->ctrCat->listCategories();
+                                break;
                             
-                     case 'logout_cus':
-                         AuthController::logoutClient();
-                        break;
-                    //______________________SHOPPING_______________________//
+                            case 'delete_cat':
+                                $this->ctrCat->eraseCat();
+                                break;
 
-                    case 'shop_insert':
-                        $this->ctrShop->ShoppingInsert();
-                        break;
-                    case 'shop_sadmin':
-                        $this->ctrShop->shoppingAdmin();
-                        break;
-                    case 'delete_shop':
-                        $this->ctrShop->shoppingAdminDelete();
-                        break;
+                            case 'add_cat':
+                                $this->ctrCat->addCat();
+                                break;
 
-                   
+                            case 'edit_cat':
+                                $this->ctrCat->editCat();
+                                break;
+
+                            //______________________CARVING_______________________//
+
+                            case 'list_carv':
+                                $this->ctrCar->listCarving();
+                                break;
+
+                            case 'delete_carv':
+                                $this->ctrCar->eraseCarving();
+                                break;
+
+                            case 'add_carv':
+                                $this->ctrCar->addCarving();
+                                break;
+                            
+                            case 'edit_carv':
+                                $this->ctrCar->editCarving();
+                                break;
+
+                            //______________________PICTURES_______________________//
+
+                            case 'list_pic':
+                                $this->ctrPic->listPictures();
+                                break;
+
+                            case 'delete_pic':
+                                $this->ctrPic->erasePicture();
+                                break;
+
+                            case 'add_pic':
+                                $this->ctrPic->addPicture();
+                                break;
+
+                            case 'edit_pic':
+                                $this->ctrPic->editPicture();
+                                break;
+
+                            //______________________GRADES_______________________//
+
+                            case 'list_gr':
+                                $this->ctrGrd->listGrades();
+                                break;
+
+                            case 'delete_gr':
+                                $this->ctrGrd->eraseGr();
+                                break;
+
+                            case 'add_gr':
+                                $this->ctrGrd->addGr();
+                                break;
+
+                            case 'edit_gr':
+                                $this->ctrGrd->editGr();
+                                break;
+
+                            //______________________USERS_______________________//
+
+                            case 'list_us':
+                                $this->ctrUs->listUsers();
+                                break;
+
+                            case 'delete_us':
+                                $this->ctrUs->eraseUser();
+                                break;
+
+                            case 'edit_us':
+                                $this->ctrUs->EditUser();
+                                break;                    
+                                
+                            case 'login':
+                                $this->ctrUs->login();
+                                break;
+
+                            case 'record':
+                                $this->ctrUs->addUser();
+                                break;
+
+                            case 'logout':
+                                AuthController::logout();
+                                break;
+
+                            case "to_features" :
+                                AuthController::logoutAndFeatures();
+                                break; 
+                            
+                            //______________________CUSTOMERS_______________________//
+
+                            case 'list_cus':
+                                $this->ctrCus->listClients();
+                                break;
+            
+                            case 'delete_cus':
+                                $this->ctrCus->eraseClient();
+                                break;
+            
+                            case 'add_cus':
+                                $this->ctrCus->addClient();
+                                break;
+            
+                            case 'edit_cus':
+                                $this->ctrCus->editClient();
+                                break;
+                            
+                            //______________________MENU_______________________//
 
 
-                }
+                            case 'contact':
+                                $this->ctrPub->contact();
+                                break;
+                                
+                            case 'gallery':
+                                $this->ctrPub->gallery();
+                                break;
+
+                            case 'about':
+                                $this->ctrPub->about();
+                                break;
+                            
+                            case 'features':
+                                $this->ctrPub->getPubCarving();
+                                break;
+
+                            case 'checkout':
+                                $this->ctrPub->bringBack();
+                                break;
+
+                            case 'pay':
+                                $this->ctrPub->payment();
+                                break;
+
+                            case 'cart':
+                                $this->ctrPub->addCart();
+                                break;
+
+                            case 'remove_cart':
+                                $this->ctrPub->deleteCart();
+                                break;
+
+                            case 'success':
+                                $this->ctrPub->successful();
+                                break;
+
+                            case 'cancel':
+                                $this->ctrPub->cancel();
+                                break;
+
+                            case 'valid':
+                                $this->ctrPub->valid();
+                                break;
+
+                            case 'bcs':
+                                $this->ctrPub-> bcs();
+                                break;
+                                
+                            case 'psc':
+                                $this->ctrPub-> psc();
+                                break;
+
+                            //______________________PUBLIC_CLIENT_______________________//
+
+                            case 'regis_cus':
+                                $this->ctrPubCli->RegisterClient();
+                                break;
+                            
+                            case 'log_cus':
+                                $this->ctrPubCli->loginClient();
+                                break;
+
+                            case 'profil_cus':
+                                $this->ctrPubCli->profilClient();
+                                break;
+                                    
+                            case 'logout_cus':
+                                AuthController::logoutClient();
+                                break;
+                            //______________________SHOPPING_______________________//
+
+                            case 'shop_insert':
+                                $this->ctrShop->ShoppingInsert();
+                                break;
+                            case 'shop_sadmin':
+                                $this->ctrShop->shoppingAdmin();
+                                break;
+                            case 'delete_shop':
+                                $this->ctrShop->shoppingAdminDelete();
+                                break;
+
+                            default:
+                                throw new Exception('Action non définie');
+
+                         }
         
-        }else{
+            }else{
 
-            $this->ctrPub->getPubCarving();
+            $this->ctrPub->home();
+            session_unset();
+
+            } 
+
+        }catch(Exception $e){
+            
+            $this->pageNotFound($e->getMessage());
         }
     }
+
+    private function pageNotFound(){
+        
+        require_once('./views/pageNotFound.php');
+    }
+
 }

@@ -24,7 +24,6 @@
         </div >
     </div>
 
-<!-- <div class="row"> -->
         <div class="col-12 feat_card">
             <div class="row row-cols-1 row-cols-lg-3 row-cols-md-2 g-4">
         <?php foreach($carvsbyCat as $carv){?>
@@ -35,7 +34,7 @@
                             <h5 class="card-title feat_name_card"><?= $carv->getCarving()->getName();?></h5>
                             <p class="card-text feat_price_card"><?= $carv->getCarving()->getPrice();?>€</p>
                             
-                            <form action="index.php?action=glanceAt" method="post">
+                            <form action="index.php?action=checkout" method="post">
                                 <input type="hidden" name="id_carv" value="<?= $carv->getCarving()->getId_carv();?>">
                                 <input type="hidden" name="name" value="<?= $carv->getCarving()->getName();?>">
                                 <input type="hidden" name="picture" value="<?= $carv->getCarving()->getPicture();?>">

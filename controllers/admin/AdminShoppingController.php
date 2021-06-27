@@ -3,7 +3,7 @@
 class AdminShoppingController{
 
     private $adShM;
-    // private $adCatM;
+ 
 
     public function __construct()
     {
@@ -13,16 +13,14 @@ class AdminShoppingController{
 
   public function ShoppingInsert(){
 
-    //AuthController::isLogged();
-        
-        session_start();
 
-        //var_dump($_SESSION);
+        $price = $_SESSION['pay']['price'];
         $client = $_SESSION['AuthClient']->id_c;
-
-
+    
         $newS = new Shopping();
         $newS->getCustomer()->setId_c($client);
+        $newS->setPrice($price);
+
        
         $ok = $this->adShM->InsertShop($newS);
         
@@ -33,10 +31,11 @@ class AdminShoppingController{
    //___________________________________________________________//
 
   public function shoppingAdmin(){
+    AuthController::isLogged();
       AuthController::accessUser();
 
         $result = $this->adShM->SelectShoppingTrois();
-       // var_dump($result);
+      
         require_once("./views/admin/shopping/adminShoppingList.php");
 
   }

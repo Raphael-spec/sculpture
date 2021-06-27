@@ -1,3 +1,3 @@
 <?php 
- header('location:index.php?action=valid');
+//header('location:index.php?action=valid');
 ?>
