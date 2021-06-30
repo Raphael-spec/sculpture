@@ -146,7 +146,7 @@ class PublicController{
                     ];
         
     
-        $_SESSION['cart'][] = $item_cart;
+        $_SESSION['cart'][0] = $item_cart;
 
     
     }

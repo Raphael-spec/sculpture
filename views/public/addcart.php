@@ -41,7 +41,9 @@ if(isset($_SESSION['AuthClient'])){
               </thead>
               <tbody>
             
-              <?php $sum = 0;
+              <?php
+              $sum = 0;
+              if(isset($_SESSION['cart']) && !empty($_SESSION['cart'])){
                       foreach($_SESSION['cart'] as $cart){
                         $sum += $cart['price'];
                 ?>
@@ -55,10 +57,18 @@ if(isset($_SESSION['AuthClient'])){
                   <td><?=$cart['price']?></td>
                   <td><a class="btn btn-danger" href="index.php?action=remove_cart&id=<?=$cart['id']?>" onclick="return confirm('Are you sure, you want to delete this carving?')"><i class="fa fa-trash"></i></a></td>
                 </tr>
-                <?php } ?>
                 <tr>
+                <?php }  ?>
                     <td colspan="5" class="text-end">Total</td>
                     <td colspan="2"><?=$sum?>€</td>
+                <?php }else if(empty($_SESSION['cart'] )){
+
+                            echo '<div class="row">
+                            <div class="col-4 offset-4">
+                              <div class="alert alert-danger text-center mb-3">YOUR CART IS EMPTY</div>
+                              </div>
+                            </div>';
+                  } ?>
                 </tr>
                 <tr>
                 
